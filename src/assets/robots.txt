@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /write/
+
+Sitemap: https://temnorid.com/sitemap.xml

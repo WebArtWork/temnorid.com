@@ -1,0 +1,54 @@
+<section class="landing-hero t-rule-b">
+	<div class="mx-auto max-w-[var(--container)] px-4 sm:px-6 t-page">
+		<h1 class="t-hero" translate>Темнорід</h1>
+		<p class="mt-6 max-w-[var(--reading)] t-lead" translate>
+			Темнорід — світ темного середньовічного фентезі, натхненний XIV століттям (1300–1400). Королівства, армії та могутні маги змагаються за землі й вплив.
+		</p>
+
+		<div class="t-stack flex flex-wrap gap-3">
+			@if (firstStory(); as story) {
+				<a class="btn btn--primary" [routerLink]="['/stories', story.slug]">
+					<span class="material-symbols-outlined" aria-hidden="true">menu_book</span>
+					<span translate>Читати першу історію</span>
+				</a>
+			}
+			<a class="btn" routerLink="/stories">
+				<span class="material-symbols-outlined" aria-hidden="true">auto_stories</span>
+				<span translate>Усі історії</span>
+			</a>
+		</div>
+	</div>
+</section>
+
+<section class="mx-auto max-w-[var(--container)] px-4 sm:px-6 t-page t-rule-b" aria-labelledby="landing-world">
+	<h2 id="landing-world" class="t-heading" translate>Світ Темнороду</h2>
+	<div class="mt-6 max-w-[var(--reading)] space-y-4 leading-7">
+		<p translate>Кам’яні фортеці, укріплені міста, давні руїни й небезпечні дикі землі утворюють світ постійних конфліктів.</p>
+		<p translate>Воїни б’ються мечами, щитами, луками та облоговою зброєю, а маги керують могутньою стихійною магією.</p>
+		<p translate>Перший розділ знайомить із двома силами. Вогонь уособлює руйнування й нестримну міць. Камінь — витривалість, захист і силу.</p>
+	</div>
+</section>
+
+
+<section
+	class="mx-auto max-w-[var(--container)] px-4 sm:px-6 t-page"
+	aria-labelledby="landing-stories"
+>
+	<div class="flex flex-wrap items-baseline justify-between gap-4">
+		<h2 id="landing-stories" class="t-heading" translate>Історії</h2>
+		<a class="theme-focus t-link" routerLink="/stories">
+			<span translate>Усі історії</span>
+			<span class="material-symbols-outlined text-[20px]" aria-hidden="true"
+				>arrow_forward</span
+			>
+		</a>
+	</div>
+
+	<ul class="t-stack grid t-gap md:grid-cols-2">
+		@for (story of latestStories(); track story.slug) {
+			<li>
+				<app-story-card [story]="story" />
+			</li>
+		}
+	</ul>
+</section>

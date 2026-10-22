@@ -1,0 +1,116 @@
+[
+	{
+		"slug": "lords",
+		"status": "in-development",
+		"content": {
+			"ua": {
+				"title": "Лорди",
+				"summary": "Лорди — гра в розробці у світі темного середньовічного фентезі Темнорід. Подробиці з’являться тут.",
+				"paragraphs": []
+			},
+			"en": {
+				"title": "Lords",
+				"summary": "Lords is a game in development set in Temnorid, a dark medieval fantasy world. More details will appear here.",
+				"paragraphs": []
+			}
+		}
+	},
+	{
+		"slug": "farm",
+		"status": "in-development",
+		"content": {
+			"ua": {
+				"title": "Ферма",
+				"summary": "Ферма — гра в розробці у світі темного середньовічного фентезі Темнорід. Подробиці з’являться тут.",
+				"paragraphs": []
+			},
+			"en": {
+				"title": "Farm",
+				"summary": "Farm is a game in development set in Temnorid, a dark medieval fantasy world. More details will appear here.",
+				"paragraphs": []
+			}
+		}
+	},
+	{
+		"slug": "arena",
+		"url": "https://temnorid-arena.webart.work",
+		"status": "released",
+		"content": {
+			"ua": {
+				"title": "Арена",
+				"summary": "Закляття замість зброї. Швидка арена для магів на ПК, телефоні та Meta Quest 3.",
+				"paragraphs": [
+					"Арена — швидка гра для магів. Кидай вогняні кулі, заморожуй усіх, хто підійшов надто близько, ховайся за щитом і телепортуйся з небезпеки. Грай на ПК, телефоні чи у VR на Meta Quest 3 — усі в тих самих матчах.",
+					"Версія 0.1 — нескінченний бій усіх проти всіх. Ти починаєш матч, приєднуються п'ять ботів, і всі б'ються з усіма на кам'яній арені. Переможені маги повертаються за три секунди.",
+					"Кожен маг має ті самі чотири закляття. Кожне коштує ману й має перезарядку, а мана відновлюється сама, тож бій вирішує вчасність, а не здобич."
+				]
+			},
+			"en": {
+				"title": "Arena",
+				"summary": "Spells instead of guns. A fast arena game for mages on PC, phone and Meta Quest 3.",
+				"paragraphs": [
+					"Arena is a fast arena game for mages. Throw fireballs, freeze anyone who gets close, shield up and blink out of trouble. Play on PC, a phone or in VR on Meta Quest 3, all in the same matches.",
+					"Version 0.1 is an endless free-for-all deathmatch. You start a match, five bots join, and everyone fights everyone in a stone arena. Defeated mages come back three seconds later.",
+					"Every mage carries the same four spells. Each costs mana and has a cooldown, and mana refills on its own, so the fight is about timing, not loot."
+				]
+			}
+		}
+	},
+	{
+		"slug": "politics",
+		"url": "https://temnorid-conquest.webart.work",
+		"status": "released",
+		"content": {
+			"ua": {
+				"title": "Політика",
+				"summary": "Здобудь вплив. Збери силу. Завоюй Темнорід. Стратегічна онлайн-гра для 1–4 гравців.",
+				"paragraphs": [
+					"Темнорід розділений між силами, що борються за владу. Збирай власну колоду, відправляй героїв у ключові місця світу, укладай союзи, накопичуй ресурси та вступай у битви, які можуть змінити хід усієї гри.",
+					"Світ Темнороду — це не просто карта. Міста, фортеці, руїни, магічні місця та території створюють мережу можливостей, за які борються всі гравці.",
+					"Кожне важливе місце може бути зайняте суперником. Тому кожен хід — це не лише те, що потрібно тобі, а й те, що не можна дозволити отримати іншому."
+				]
+			},
+			"en": {
+				"title": "Politics",
+				"summary": "Gain influence. Build power. Conquer Temnorid. An online strategy game for 1–4 players.",
+				"paragraphs": [
+					"Temnorid is divided between powers competing for control. Build your deck, send heroes to key locations, form alliances, gather resources and enter battles capable of changing the course of the game.",
+					"The world of Temnorid is more than a map. Cities, fortresses, ruins, magical locations and contested territories form a network of opportunities shared by every player.",
+					"Every important location may be claimed first. Every move is not only about what you need, but what you cannot allow an enemy to gain."
+				]
+			}
+		}
+	},
+	{
+		"slug": "dungeon",
+		"status": "in-development",
+		"content": {
+			"ua": {
+				"title": "Підземелля",
+				"summary": "Гра в розробці. Подробиці з'являться тут.",
+				"paragraphs": []
+			},
+			"en": {
+				"title": "Dungeon",
+				"summary": "In development. Details will appear here.",
+				"paragraphs": []
+			}
+		}
+	},
+	{
+		"slug": "conquest",
+		"status": "in-development",
+		"content": {
+			"ua": {
+				"title": "Завоювання",
+				"summary": "Гра в розробці. Подробиці з'являться тут.",
+				"paragraphs": []
+			},
+			"en": {
+				"title": "Conquest",
+				"summary": "In development. Details will appear here.",
+				"paragraphs": []
+			}
+		}
+	}
+]

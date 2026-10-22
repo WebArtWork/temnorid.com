@@ -1,0 +1,184 @@
+<app-writer-frame>
+	@switch (status()) {
+		@case ('loading') {
+			<p class="text-[var(--c-text-muted)]" role="status" translate>Завантаження…</p>
+		}
+		@case ('missing') {
+			<p class="leading-7" role="alert" translate>
+				Розділ не знайдено. Можливо, його або історію видалили.
+			</p>
+		}
+		@case ('error') {
+			<p class="writer-error" role="alert" translate>
+				Не вдалося завантажити запис. Оновіть сторінку.
+			</p>
+		}
+		@case ('ready') {
+			@if (story(); as story) {
+				<form class="max-w-[48rem]" (ngSubmit)="save()" novalidate>
+					<header class="flex flex-wrap items-start justify-between gap-4">
+						<div>
+							<app-breadcrumbs
+								heading
+								[items]="[
+									{ label: 'Історії', link: '/write/stories', translate: true },
+									{
+										label: story.title,
+										link: '/write/story',
+										queryParams: { slug: story.slug },
+									},
+									chapter()
+										? { label: current().title }
+										: { label: 'Новий розділ', translate: true },
+								]"
+							/>
+							@if (!canEdit()) {
+								<p class="mt-2 text-[var(--c-text-muted)]">
+									<span translate>Автор</span>: {{ story.ownerName }}.
+									<span translate>Редагувати може лише автор.</span>
+								</p>
+							}
+						</div>
+					</header>
+
+					<div class="mt-6 space-y-6">
+						<div>
+							<label class="writer-label" for="chapter-title" translate>
+								Назва розділу
+							</label>
+							<input
+								id="chapter-title"
+								class="writer-input"
+								name="title"
+								type="text"
+								autocomplete="off"
+								maxlength="160"
+								[ngModel]="current().title"
+								(ngModelChange)="setField('title', $event)"
+								[disabled]="!canEdit()"
+								[attr.aria-invalid]="!!errors().title"
+								[attr.aria-describedby]="
+									errors().title ? 'chapter-title-error' : null
+								"
+							/>
+							@if (errors().title) {
+								<p
+									id="chapter-title-error"
+									class="writer-error"
+									[translate]="errors().title!"
+								>
+									{{ errors().title }}
+								</p>
+							}
+						</div>
+
+						<div>
+							<p class="writer-label" translate>Текст розділу</p>
+							<tinymce
+								name="html"
+								[config]="editorConfig"
+								(ready)="onEditorReady($event)"
+								[ariaLabel]="bodyLabel()"
+								[ngModel]="current().html"
+								(ngModelChange)="setField('html', $event)"
+								[disabled]="!canEdit()"
+							/>
+							<p class="writer-hint" translate>
+								Лише текст: без зображень, відео й вставок.
+							</p>
+						</div>
+
+						@if (tagGroups().length) {
+							<fieldset>
+								<legend class="writer-label" translate>
+									Хто й що в цьому розділі
+								</legend>
+								<div class="space-y-4">
+									@for (group of tagGroups(); track group.config.kind) {
+										<div>
+											<p
+												class="text-sm text-[var(--c-text-muted)]"
+												[translate]="group.config.title"
+											>
+												{{ group.config.title }}
+											</p>
+											<ul class="mt-1 grid gap-1 sm:grid-cols-2">
+												@for (option of group.options; track option.value) {
+													<li>
+														<label
+															class="flex min-h-11 cursor-pointer items-center gap-3 rounded-md px-2 hover:bg-[var(--c-bg-tertiary)]"
+														>
+															<input
+																class="size-4 accent-[var(--c-primary)]"
+																type="checkbox"
+																[checked]="
+																	tags().includes(option.value)
+																"
+																[disabled]="!canEdit()"
+																(change)="
+																	toggleTag(
+																		option.value,
+																		$any($event.target).checked
+																	)
+																"
+															/>
+															<span>{{ option.label }}</span>
+														</label>
+													</li>
+												}
+											</ul>
+										</div>
+									}
+								</div>
+							</fieldset>
+						}
+					</div>
+
+					@if (canEdit()) {
+						<div
+							class="mt-8 flex flex-wrap items-center gap-3 border-t border-[var(--c-border)] pt-6"
+						>
+							<button class="btn btn--primary" [disabled]="saving()" type="submit">
+								@if (saving()) {
+									<span
+										class="material-symbols-outlined animate-spin"
+										aria-hidden="true"
+										>progress_activity</span
+									>
+								} @else {
+									<span class="material-symbols-outlined" aria-hidden="true"
+										>save</span
+									>
+								}
+								<span translate>Зберегти</span>
+							</button>
+							@if (chapter()) {
+								<button
+									class="btn btn--danger sm:ml-auto"
+									(click)="remove()"
+									type="button"
+								>
+									<span class="material-symbols-outlined" aria-hidden="true"
+										>delete</span
+									><span translate>Видалити</span>
+								</button>
+							}
+						</div>
+					}
+
+					<div class="mt-3 min-h-6" aria-live="polite">
+						@if (saveError()) {
+							<p class="writer-error" role="alert" [translate]="saveError()">
+								{{ saveError() }}
+							</p>
+						} @else if (dirty()) {
+							<p class="writer-hint" translate>Є незбережені зміни.</p>
+						} @else if (savedAt()) {
+							<p class="writer-hint" translate>Збережено.</p>
+						}
+					</div>
+				</form>
+			}
+		}
+	}
+</app-writer-frame>

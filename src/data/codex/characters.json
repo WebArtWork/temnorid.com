@@ -1,0 +1,81 @@
+[
+	{
+		"slug": "yaryna",
+		"storySlugs": ["village-from-stone"],
+		"related": ["characters/danylo", "characters/olena", "buildings/first-house", "locations/grey-mountain"],
+		"content": {
+			"ua": {
+				"name": "Ярина",
+				"role": "Онука каменяра",
+				"summary": "Дівчина, яка пронесла крізь довгу ніч дідові інструменти і першою промовила ім'я над каменем.",
+				"paragraphs": [
+					"Коли сорок одна людина вийшла з темряви до Сірої гори, Ярині було дванадцять. Жару вона не несла. Вона несла дідові інструменти: молоток, три долота й мірний шнур із вузлами. Десь між згорілим лісом і солончаками дорога забрала її маму.",
+					"Саме Ярина назвала мамине ім'я першому каменю, і камінь потеплішав. Свій власний перший камінь вона витесала на другий рік і промовила над ним своє ім'я, щоб хоч один камінь у селі пам'ятав когось живого.",
+					"Ярина дожила до глибокої старості й знала напам'ять кожне ім'я в стінах села. Вона залишила йому правило: жодна стіна не постає без імені. І до кінця життя слухала стукіт у глибині гори."
+				]
+			},
+			"en": {
+				"name": "Yaryna",
+				"role": "The stonecutter's granddaughter",
+				"summary": "The girl who carried her grandfather's tools through the long night and was the first to speak a name over a stone.",
+				"paragraphs": [
+					"When forty-one people walked out of the dark to the Grey Mountain, Yaryna was twelve. She carried no ember. She carried her grandfather's tools: a hammer, three chisels and a knotted measuring cord. Somewhere between the burned forest and the salt flats, the road took her mother.",
+					"It was Yaryna who told the first stone her mother's name, and the stone grew warm. She cut her own first stone in the second year and spoke her own name over it, so that at least one stone in the village would remember someone still alive.",
+					"Yaryna lived to be very old and knew every name in the village walls by heart. She left the village one rule: no wall goes up without a name. To the end of her life she listened to the knocking deep inside the mountain."
+				]
+			}
+		}
+	},
+	{
+		"slug": "danylo",
+		"storySlugs": ["village-from-stone"],
+		"related": ["characters/yaryna", "buildings/first-house", "buildings/named-houses"],
+		"content": {
+			"ua": {
+				"name": "Данило",
+				"role": "Каменяр",
+				"summary": "Каменяр із містечка, якого більше немає. Він першим почув гору і витесав перший камінь села.",
+				"paragraphs": [
+					"Данило тесав камінь у містечку, яке зникло ще до довгої дороги. Він казав, що тепер містечко живе в його інструментах.",
+					"Біля Сірої гори він першим приклав до скелі вухо і почув, що вона тепла і стукає. Наступного ранку він вибрав місце низько на схилі й витесав перший камінь. «Хата починається з одного каменя, — казав він. — Усе інше то вже просто впертість».",
+					"Тієї ночі він витесав камінь для кожного імені, яке йому приносили. Хвалив він мовчанням, і найвищою його похвалою був довгий погляд на камінь, який Ярина витесала сама."
+				]
+			},
+			"en": {
+				"name": "Danylo",
+				"role": "Stonecutter",
+				"summary": "A stonecutter from a town that no longer exists. He was the first to hear the mountain and cut the village's first stone.",
+				"paragraphs": [
+					"Danylo cut stone in a town that was gone before the long road began. He said the town lived in his tools now.",
+					"At the Grey Mountain he was the first to put his ear to the rock and hear that it was warm and knocking. The next morning he chose a place low on the slope and cut the first stone. \"A house starts with one stone,\" he said. \"Everything after that is just stubbornness.\"",
+					"That night he cut a stone for every name that was brought to him. He praised with silence, and his highest praise was the long look he gave the stone Yaryna cut on her own."
+				]
+			}
+		}
+	},
+	{
+		"slug": "olena",
+		"storySlugs": ["village-from-stone"],
+		"related": ["characters/yaryna", "locations/village-from-stone"],
+		"content": {
+			"ua": {
+				"name": "Олена",
+				"role": "Старшина",
+				"summary": "Старшина мандрівників. Вона вирішила лишитися біля гори і дала людям ім'я Темнорід.",
+				"paragraphs": [
+					"Олена вела сорок одну людину крізь довгу ніч. Коли біля Сірої гори дехто захотів іти геть, вона спитала, куди саме. Позаду були солончаки й могили, попереду нічого. Вони лишилися.",
+					"На четвертий рік, коли повернулося світло, Олена сказала, що народові потрібне ім'я, як хаті перший камінь. Не на честь утраченого містечка і не на честь гори, а на честь дороги. Так люди стали Темнородом, тими, хто народився з темряви."
+				]
+			},
+			"en": {
+				"name": "Olena",
+				"role": "Headwoman",
+				"summary": "Headwoman of the walkers. She chose to stay at the mountain and gave the people the name Temnorid.",
+				"paragraphs": [
+					"Olena led forty-one people through the long night. When some of them wanted to leave the Grey Mountain, she asked where exactly they meant to go. Behind them lay the salt flats and the graves; ahead lay nothing. They stayed.",
+					"In the fourth year, when the light came back, Olena said a people needs a name the way a house needs a first stone. Not after the lost town, and not after the mountain, but after the road. So the people became the Temnorid, the ones born of the dark."
+				]
+			}
+		}
+	}
+]

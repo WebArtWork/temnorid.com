@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <title>Temnorid — Dark Medieval Fantasy World</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      try {
+        const storedMode = localStorage.getItem('app-mode');
+        const preferredMode =
+          storedMode === 'dark' || storedMode === 'light'
+            ? storedMode
+            : window.matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+        document.documentElement.setAttribute('data-mode', preferredMode);
+      } catch {}
+    </script>
+
+    <meta
+      name="description"
+      content="Explore Temnorid, a dark medieval fantasy world inspired by the 14th century, where kingdoms, armies and wizards fight with steel, elemental magic and strategy."
+    />
+    <meta name="author" content="Temnorid" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#f8f3e9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#110c08" media="(prefers-color-scheme: dark)" />
+
+    <meta itemprop="name" content="Temnorid — Dark Medieval Fantasy World" />
+    <meta
+      itemprop="description"
+      content="Explore Temnorid, a dark medieval fantasy world inspired by the 14th century, where kingdoms, armies and wizards fight with steel, elemental magic and strategy."
+    />
+    <meta itemprop="image" content="https://temnorid.com/seo/home.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Temnorid" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:url" content="https://temnorid.com/" />
+    <meta property="og:title" content="Temnorid — Dark Medieval Fantasy World" />
+    <meta
+      property="og:description"
+      content="Explore Temnorid, a dark medieval fantasy world inspired by the 14th century, where kingdoms, armies and wizards fight with steel, elemental magic and strategy."
+    />
+    <meta property="og:image" content="https://temnorid.com/seo/home.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Temnorid — Dark Medieval Fantasy World" />
+    <meta
+      name="twitter:description"
+      content="Explore Temnorid, a dark medieval fantasy world inspired by the 14th century, where kingdoms, armies and wizards fight with steel, elemental magic and strategy."
+    />
+    <meta name="twitter:image" content="https://temnorid.com/seo/home.png" />
+    <meta name="twitter:image:src" content="https://temnorid.com/seo/home.png" />
+
+    <link rel="canonical" href="https://temnorid.com/" />
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,600;0,700;1,400&family=Alegreya+SC:wght@500;700&family=Alegreya+Sans:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>

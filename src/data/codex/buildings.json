@@ -1,0 +1,54 @@
+[
+	{
+		"slug": "first-house",
+		"storySlugs": ["village-from-stone"],
+		"related": ["characters/danylo", "characters/yaryna", "locations/grey-mountain"],
+		"content": {
+			"ua": {
+				"name": "Перша хата",
+				"role": "Хата",
+				"summary": "Перша хата села, низько на схилі. Її перший камінь носить ім'я Ярининої мами.",
+				"paragraphs": [
+					"Данило вибрав для неї місце низько на схилі, де скеля випиналася, мов плече. Скеля розкололася рівно, наче чекала удару, і брила була ще тепла.",
+					"Над першим каменем Ярина промовила мамине ім'я, і камінь потеплішав, а темрява відступила на ширину пальця. До старості Ярина приходила сюди тихими ночами слухати стукіт гори."
+				]
+			},
+			"en": {
+				"name": "The First House",
+				"role": "House",
+				"summary": "The village's first house, low on the slope. Its first stone carries the name of Yaryna's mother.",
+				"paragraphs": [
+					"Danylo chose its place low on the slope, where the rock bulged outward like a shoulder. The rock split cleanly, as if waiting for the blow, and the block was still warm.",
+					"Yaryna spoke her mother's name over the first stone, and the stone grew warm, and the dark stepped back by the width of a finger. Into old age, Yaryna came here on quiet nights to listen to the mountain knock."
+				]
+			}
+		}
+	},
+	{
+		"slug": "named-houses",
+		"storySlugs": ["village-from-stone"],
+		"related": ["locations/village-from-stone", "characters/danylo", "characters/yaryna"],
+		"content": {
+			"ua": {
+				"name": "Хати з іменами",
+				"role": "Житло",
+				"summary": "Кам'яні хати Села з каменю. У кожній стіні є ім'я, і тому вони теплі без вогню.",
+				"paragraphs": [
+					"Кожна родина приносила Данилові імена своїх утрачених, і для кожного імені він витесував камінь. З цих каменів постали низькі стіни, одвірки й дахи з плаского сланцю.",
+					"Хати тримають тепло імен, тож у них немає печей і над ними не видно диму. Діти вчаться ходити, тримаючись за теплі камені своїх дідів і бабусь.",
+					"Правило Ярини досі в силі: жодна стіна не постає без імені. Ні клуня, ні тин, ні сходинка."
+				]
+			},
+			"en": {
+				"name": "The Named Houses",
+				"role": "Dwellings",
+				"summary": "The stone houses of the Village from Stone. Every wall holds a name, which is why they stay warm without fire.",
+				"paragraphs": [
+					"Every family brought Danylo the names of those they had lost, and for each name he cut a stone. From these stones rose low walls, doorframes and roofs of flat slate.",
+					"The houses hold the warmth of the names, so they have no hearths and no smoke rises over them. Children learn to walk by holding on to the warm stones of their grandparents.",
+					"Yaryna's rule still stands: no wall goes up without a name. Not a barn, not a fence, not a single step."
+				]
+			}
+		}
+	}
+]

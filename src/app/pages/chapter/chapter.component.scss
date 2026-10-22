@@ -1,0 +1,13 @@
+:host {
+	display: block;
+}
+
+.chapter-body {
+	color: var(--c-text);
+	font-size: 1.2rem;
+	line-height: 1.75;
+
+	p + p {
+		margin-top: 1.1rem;
+	}
+}

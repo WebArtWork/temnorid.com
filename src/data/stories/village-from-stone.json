@@ -1,0 +1,88 @@
+{
+	"slug": "village-from-stone",
+	"number": 1,
+	"readingMinutes": 8,
+	"publishedAt": "2026-10-21",
+	"content": {
+		"ua": {
+			"title": "Село з каменю",
+			"summary": "Коли Темнорід ще не мав імені, жменька людей вийшла з нескінченної ночі й знайшла гору, яка слухала. Це історія про те, як збудували перше село і чому в його стінах завжди є ім'я."
+		},
+		"en": {
+			"title": "Village from Stone",
+			"summary": "Before Temnorid had a name, a handful of people walked out of an endless night and found a mountain that listened. This is how the first village was built, and why its walls are never left without a name."
+		}
+	},
+	"chapters": [
+		{
+			"slug": "night-that-did-not-end",
+			"order": 0,
+			"content": {
+				"ua": {
+					"title": "Ніч, що не скінчилася",
+					"html": "<p>Останнього світанку ніхто не пам'ятав. Старі про нього сперечалися, як старі сперечаються про погоду, але навіть вони давно перестали лічити дні. Лічити не було чого. Була тільки темрява і дорога крізь неї.</p><p>Тією дорогою йшла сорок одна людина. Несли, що могли: ковдри, кількох кіз, мішки насіння, якого ніхто не сіяв уже багато років, і жар. Жар важив найбільше. Він жив у глиняних горщиках, обкладених мокрим мохом, і щовечора, чи то пак у час, який мандрівники домовилися звати вечором, хтось підкидав йому трохи сухої трави й дмухав, доки вуглини не займалися червоним.</p><p>Ярині було дванадцять, і жару вона не несла. Вона несла дідові інструменти: молоток із держаком, витертим гладко, як річковий камінь, три долота й шнур із вузлами на рівних відстанях, щоб міряти. Дід, Данило, був каменярем у містечку, якого більше не існувало. Він казав, що тепер містечко живе в інструментах. Загубить їх, і загубить містечко.</p><p>Та в дорозі вони все одно втрачали. Втратили воза на другій річці. Втратили двох кіз через холод. Десь між згорілим лісом і солончаками втратили Яринину маму: одного вечора вона лягла з гарячкою і вже не встала. Її накрили камінням, бо землі, м'якої настільки, щоб копати, не було, і пішли далі.</p><p>Коли вони побачили гору, живою лишалася тільки одна жаринка.</p>"
+				},
+				"en": {
+					"title": "The Night That Did Not End",
+					"html": "<p>Nobody remembered the last sunrise. The old people argued about it, the way old people argue about the weather, but even they had stopped counting the days. There were no days to count. There was only the dark, and the road through it.</p><p>Forty-one people walked that road. They carried what they could: blankets, a few goats, sacks of seed nobody had planted in years, and the embers. The embers mattered more than anything. They lived in clay pots wrapped in wet moss, and every evening, or what the walkers had agreed to call evening, someone fed them a little dry grass and blew on them until they glowed.</p><p>Yaryna was twelve and carried no ember. She carried her grandfather's tools instead: a hammer with a handle worn smooth as a river stone, three chisels, and a cord knotted at even lengths for measuring. Her grandfather, Danylo, had been a stonecutter in a town that no longer existed. He said the town lived in the tools now. If she lost them, she lost the town.</p><p>On the road they lost things anyway. They lost the cart at the second river. They lost two goats to the cold. Somewhere between the burned forest and the salt flats they lost Yaryna's mother, who lay down one evening with a fever and did not get up. They covered her with stones, because there was no earth soft enough to dig, and walked on.</p><p>By the time they saw the mountain, only one ember was still alive.</p>"
+				}
+			}
+		},
+		{
+			"slug": "grey-mountain",
+			"order": 1,
+			"content": {
+				"ua": {
+					"title": "Сіра гора",
+					"html": "<p>Вона виросла з темряви, як затамований подих. Сіра, з гладкими схилами, без дерев, без снігу. Мандрівники зупинилися біля її підніжжя, і ніхто не озвався, бо про гору, якої мить тому тут не було, нічого розумного не скажеш.</p><p>Першим підійшов Данило. Приклав до скелі долоню, потім щоку, потім вухо. Стояв так довго, що старшина Олена зрештою спитала, чи він, бува, не заснув.</p><p>— Вона тепла, — сказав він. — І вона стукає.</p><p>Ярина теж притулилася вухом до каменю. Спершу чула тільки власне серце. А тоді, глибоко під ним, повільніше за будь-яке серце, пролунав звук, ніби хтось гупнув кулаком у двері на дні колодязя. Раз. Довга тиша. І ще раз.</p><p>Дехто хотів негайно йти геть. Олена спитала, куди саме. Позаду лишилися солончаки й могили. Попереду не було нічого, що вони могли б розгледіти. Гора була тепла, а їм було дуже холодно. Вони лишилися.</p>"
+				},
+				"en": {
+					"title": "The Grey Mountain",
+					"html": "<p>It rose out of the dark like a held breath. Grey, smooth-sided, without trees, without snow. The walkers stopped at its foot and nobody spoke, because there is nothing sensible to say about a mountain that was not there a moment ago.</p><p>Danylo went to it first. He laid his palm against the rock, then his cheek, then his ear. He stayed like that for so long that the headwoman, Olena, finally asked whether he had fallen asleep.</p><p>\"It's warm,\" he said. \"And it's knocking.\"</p><p>Yaryna pressed her own ear to the stone. At first she heard only her heartbeat. Then, far below it, slower than any heart, came a sound like a fist on a door at the bottom of a well. Once. A long silence. Once again.</p><p>Some of the walkers wanted to leave at once. Olena asked where exactly they meant to go. Behind them lay the salt flats and the graves. Ahead lay nothing they could see. The mountain was warm, and they were very cold. They stayed.</p>"
+				}
+			}
+		},
+		{
+			"slug": "first-stone",
+			"order": 2,
+			"content": {
+				"ua": {
+					"title": "Перший камінь",
+					"html": "<p>Уранці (вони й досі звали це ранком) Данило взяв у Ярини молоток і найширше долото й вибрав місце низько на схилі, де скеля випиналася, мов плече.</p><p>— Хата починається з одного каменя, — сказав він їй. — Усе інше то вже просто впертість.</p><p>Скеля розкололася рівно, наче давно чекала цього удару. Брила, що відпала, була завбільшки з ягня і ще тепла. Данило покрутив її в руках, насупився і спитав у Ярини, як звали її маму.</p><p>Вона не зрозуміла навіщо. Він пояснив, що там, звідки він родом, муляр промовляв ім'я над першим каменем хати, щоб хата знала, для кого її зведено. Давня звичка, сказав він. Мабуть, нічого не означає.</p><p>Ярина стала навколішки й назвала мамине ім'я каменю. Тихо, як кажуть те, що не певен, чи можна казати.</p><p>Камінь потеплішав. Не розпікся, а саме потеплішав, як рука, що щойно відпустила твою. І темрява довкола ніби відступила на ширину пальця.</p><p>Тієї ночі ніхто не спав. Одна за одною родини приходили до Данила з іменами: чоловік, якого забрала друга річка; дівчатка-близнючки, що не пережили першої зими темряви; брат, бабуся, сусід, чийого прізвища ніхто не міг пригадати, тож його ім'я сказали двічі, щоб надолужити. Для кожного Данило витесав камінь. Кожен камінь узяв своє ім'я і зберіг його тепло.</p><p>Останній жар вони дали згаснути на дев'ятий день. Він їм більше не був потрібен.</p>"
+				},
+				"en": {
+					"title": "The First Stone",
+					"html": "<p>In the morning (they still called it morning) Danylo took the hammer and the widest chisel from Yaryna and chose a place low on the slope, where the rock bulged outward like a shoulder.</p><p>\"A house starts with one stone,\" he told her. \"Everything after that is just stubbornness.\"</p><p>The rock split cleanly, as if it had been waiting for the blow. The block that came away was the size of a lamb and still warm. Danylo turned it over in his hands, frowning, and asked Yaryna for her mother's name.</p><p>She did not understand why. He explained that where he came from, a mason spoke a name over the first stone of a house, so the house would know whom it was built for. An old habit, he said. Probably it meant nothing.</p><p>Yaryna knelt and told the stone her mother's name. Quietly, the way you say something you are not sure you are allowed to say.</p><p>The stone grew warmer. Not hot, only warm, like a hand that has just let go of yours. And the dark around them seemed to step back by the width of a finger.</p><p>Nobody slept that night. One by one, families came to Danylo with names: a husband taken by the second river; twin girls who had not survived the first winter of the dark; a brother, a grandmother, a neighbour whose surname nobody could remember, so they said his first name twice to make up for it. Danylo cut a stone for each. Each stone took its name and kept it warm.</p><p>They let the last ember go out on the ninth day. They no longer needed it.</p>"
+				}
+			}
+		},
+		{
+			"slug": "those-who-came-from-the-dark",
+			"order": 3,
+			"content": {
+				"ua": {
+					"title": "Ті, хто прийшов із темряви",
+					"html": "<p>Село росло так, як і обіцяв Данило, із впертості. Камінь за каменем хати видиралися на плече гори: спершу низькі стіни, потім одвірки, потім дахи з плаского сланцю, викладені, як риб'яча луска. У кожній стіні було ім'я. Діти вчилися ходити, тримаючись за теплі камені своїх дідів і бабусь.</p><p>Свій перший камінь Ярина витесала сама на другий рік. Руки так тремтіли, що вона його розколола, і заплакала, а Данило сміявся з неї, доки й вона не засміялася. Другий вона витесала як слід. Чужого імені над ним не промовила. Вона назвала своє, щоб хоч один камінь у селі пам'ятав когось живого.</p><p>Данило довго дивився на нього й нічого не казав, а від нього це була найвища похвала.</p><p>На четвертий рік повернулося світло.</p><p>Спершу це була сіра смужка над солончаками, тонка, як тріщина в горщику. Усе село вилізло на вершину схилу дивитися. Ніхто не радів уголос, бо забули, як це. Стояли разом, доки сіре ставало рожевим, а рожеве золотим, таким яскравим, що аж боліло, і вперше побачили, що збудували: село кольору гори, над яким не здіймалося жодного диму, бо жодній хаті не потрібен був вогонь.</p><p>Тоді заговорила Олена. Вона сказала, що народові потрібне ім'я, як хаті потрібен перший камінь. Що не варто зватися на честь утраченого містечка чи на честь гори, яка їм не належить. Зватися треба на честь дороги. Бо вони народилися вдруге, з темряви.</p><p>Тож вони назвали себе Темнородом, тими, хто народився з темряви. Згодом, коли з'явилися інші села, а потім міста і цілі краї, це ім'я перейшло й на саму землю. Але почалося воно на плечі гори, із сорока однієї втомленої людини, на світанку.</p>"
+				},
+				"en": {
+					"title": "Those Who Came from the Dark",
+					"html": "<p>The village grew the way Danylo had promised, out of stubbornness. Stone by stone, the houses climbed the mountain's shoulder: low walls first, then doorframes, then roofs of flat slate laid like fish scales. Every wall had a name in it. Children learned to walk by holding on to the warm stones of their grandparents.</p><p>Yaryna cut her first stone alone in the second year. Her hands shook so badly that she cracked it, and she cried, and Danylo laughed at her until she laughed too. The second one she cut properly. She did not speak anyone else's name over it. She spoke her own, so that at least one stone in the village would remember someone who was still alive.</p><p>Danylo looked at it for a long time and said nothing, which from him was the highest praise.</p><p>In the fourth year the light came back.</p><p>At first it was a grey line over the salt flats, thin as a crack in a pot. The whole village climbed to the top of the slope to watch. Nobody cheered; they had forgotten how. They stood together while the grey turned pink, and the pink turned to a gold so bright it hurt, and for the first time they saw what they had built: a village the colour of the mountain, with no smoke rising over it at all, because none of the houses needed a fire.</p><p>Then Olena spoke. She said a people needs a name the way a house needs a first stone. They should not name themselves after the town they had lost, or after the mountain, which did not belong to them. They should name themselves after the road. They had been born a second time, out of the dark.</p><p>So they called themselves the Temnorid, the ones born of the dark. Later, when there were other villages, then towns, then whole lands, the name passed to the land itself. But it began on the mountain's shoulder, with forty-one tired people, at dawn.</p>"
+				}
+			}
+		},
+		{
+			"slug": "stone-remembers",
+			"order": 4,
+			"content": {
+				"ua": {
+					"title": "Камінь пам'ятає",
+					"html": "<p>Ярина дожила до глибокої старості. Коли діти питали її про довгу ніч, вона давала їм покласти долоні на стіни й казала, чиє тепло вони відчувають. Кожне ім'я в селі вона знала напам'ять.</p><p>Одного правила вона трималася сама і змусила село триматися його після себе: жодна стіна не постає без імені. Ні клуня, ні тин, ні сходинка. Камінь без імені то просто камінь, казала вона, і гора не знає, що з ним робити.</p><p>Тихими ночами вона й далі спускалася до підніжжя схилу, де стояла перша хата, і прикладала вухо до скелі.</p><p>Стукіт так і не припинився. Повільний, терплячий, глибоко внизу. Раз. Довга тиша. І ще раз.</p><p>Що це, на її думку, було, Ярина нікому не казала. Але останньої своєї зими вона сказала онуці, що гора весь час їх слухала. А все, що слухає, рано чи пізно хоче, щоб йому відповіли.</p>"
+				},
+				"en": {
+					"title": "The Stone Remembers",
+					"html": "<p>Yaryna lived to be very old. When children asked her about the long night, she let them lay their palms on the walls and told them whose warmth they were feeling. She knew every name in the village by heart.</p><p>She kept one rule herself and made the village keep it after her: no wall goes up without a name. Not a barn, not a fence, not a single step. A stone without a name is only a stone, she said, and the mountain does not know what to do with it.</p><p>On quiet nights she still went down to the foot of the slope, where the first house stood, and pressed her ear to the rock.</p><p>The knocking had never stopped. Slow, patient, far below. Once. A long silence. Once again.</p><p>Yaryna never told anyone what she thought it was. But in her last winter she told her granddaughter that the mountain had been listening to them all along. And everything that listens wants, sooner or later, to be answered.</p>"
+				}
+			}
+		}
+	]
+}

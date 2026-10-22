@@ -1,0 +1,125 @@
+[
+	{
+		"slug": "grey-mountain",
+		"storySlugs": ["village-from-stone"],
+		"related": ["locations/village-from-stone", "buildings/first-house", "characters/danylo"],
+		"content": {
+			"ua": {
+				"name": "Сіра гора",
+				"role": "Гора",
+				"summary": "Тепла гора без дерев і снігу, що виросла з темряви. Глибоко в ній щось повільно стукає.",
+				"paragraphs": [
+					"Сіра гора постала перед мандрівниками раптово, наче затамований подих. Її схили гладкі, на них немає ні дерев, ні снігу, а скеля тепла на дотик.",
+					"Камінь гори бере ім'я, яке над ним промовляють, і зберігає тепло. Тому хати на її плечі не потребують вогню.",
+					"Глибоко під схилом лунає стукіт, повільніший за будь-яке серце: раз, довга тиша, і ще раз. Він не припинявся ні разу відтоді, як люди прийшли до гори."
+				]
+			},
+			"en": {
+				"name": "The Grey Mountain",
+				"role": "Mountain",
+				"summary": "A warm mountain without trees or snow that rose out of the dark. Something deep inside it knocks, slowly.",
+				"paragraphs": [
+					"The Grey Mountain appeared before the walkers all at once, like a held breath. Its slopes are smooth and bare of trees and snow, and the rock is warm to the touch.",
+					"The mountain's stone takes the name spoken over it and keeps its warmth. That is why the houses on its shoulder need no fire.",
+					"Deep below the slope comes a knocking, slower than any heart: once, a long silence, once again. It has not stopped once since people came to the mountain."
+				]
+			}
+		}
+	},
+	{
+		"slug": "village-from-stone",
+		"storySlugs": ["village-from-stone"],
+		"related": ["locations/grey-mountain", "buildings/first-house", "buildings/named-houses", "characters/olena"],
+		"content": {
+			"ua": {
+				"name": "Село з каменю",
+				"role": "Перше село",
+				"summary": "Перше село Темнороду, витесане на плечі Сірої гори. У кожній його стіні є ім'я.",
+				"paragraphs": [
+					"Село виросло камінь за каменем на плечі Сірої гори: спершу низькі стіни, потім одвірки, потім дахи з плаского сланцю, викладені, як риб'яча луска. Воно кольору гори, і над ним не здіймається дим.",
+					"Тут народилося ім'я Темнорід. Згодом воно перейшло на інші села, міста і на всю землю."
+				]
+			},
+			"en": {
+				"name": "The Village from Stone",
+				"role": "First village",
+				"summary": "The first village of Temnorid, carved on the shoulder of the Grey Mountain. Every one of its walls holds a name.",
+				"paragraphs": [
+					"The village grew stone by stone on the shoulder of the Grey Mountain: low walls first, then doorframes, then roofs of flat slate laid like fish scales. It is the colour of the mountain, and no smoke rises over it.",
+					"The name Temnorid was born here. Later it passed to other villages, to towns and to the whole land."
+				]
+			}
+		}
+	},
+	{
+		"slug": "salt-flats",
+		"storySlugs": ["village-from-stone"],
+		"related": ["locations/burned-forest", "locations/grey-mountain"],
+		"content": {
+			"ua": {
+				"name": "Солончаки",
+				"role": "Пустка",
+				"summary": "Мертва рівнина, яку мандрівники перейшли перед Сірою горою. Над нею вперше повернулося світло.",
+				"paragraphs": [
+					"Солончаки лежать позаду Сірої гори, на дорозі, якою прийшли люди. Там лишилися могили тих, хто не дійшов.",
+					"На четвертий рік життя біля гори саме над солончаками з'явилася перша сіра смужка світанку, тонка, як тріщина в горщику."
+				]
+			},
+			"en": {
+				"name": "The Salt Flats",
+				"role": "Wasteland",
+				"summary": "The dead plain the walkers crossed before the Grey Mountain. The light first came back over it.",
+				"paragraphs": [
+					"The salt flats lie behind the Grey Mountain, on the road the people came by. The graves of those who did not make it remain there.",
+					"In the fourth year at the mountain, it was over the salt flats that the first grey line of dawn appeared, thin as a crack in a pot."
+				]
+			}
+		}
+	},
+	{
+		"slug": "second-river",
+		"storySlugs": ["village-from-stone"],
+		"related": ["locations/burned-forest"],
+		"content": {
+			"ua": {
+				"name": "Друга річка",
+				"role": "Річка",
+				"summary": "Річка на довгій дорозі, що забрала в мандрівників воза і людину.",
+				"paragraphs": [
+					"На другій річці мандрівники втратили воза. Там же річка забрала чоловіка, чиє ім'я згодом промовили над одним із перших каменів села."
+				]
+			},
+			"en": {
+				"name": "The Second River",
+				"role": "River",
+				"summary": "A river on the long road that took the walkers' cart and one of their people.",
+				"paragraphs": [
+					"At the second river the walkers lost their cart. The river also took a husband, whose name was later spoken over one of the village's first stones."
+				]
+			}
+		}
+	},
+	{
+		"slug": "burned-forest",
+		"storySlugs": ["village-from-stone"],
+		"related": ["locations/salt-flats", "characters/yaryna"],
+		"content": {
+			"ua": {
+				"name": "Згорілий ліс",
+				"role": "Ліс",
+				"summary": "Мертвий ліс на дорозі крізь довгу ніч. Між ним і солончаками померла Яринина мама.",
+				"paragraphs": [
+					"Згорілий ліс лежить на дорозі перед солончаками. Десь між ним і солончаками Яринина мама лягла одного вечора з гарячкою і вже не встала. Її накрили камінням, бо землі, щоб копати, не було."
+				]
+			},
+			"en": {
+				"name": "The Burned Forest",
+				"role": "Forest",
+				"summary": "A dead forest on the road through the long night. Yaryna's mother died between it and the salt flats.",
+				"paragraphs": [
+					"The burned forest lies on the road before the salt flats. Somewhere between it and the flats, Yaryna's mother lay down one evening with a fever and did not get up. They covered her with stones, because there was no earth to dig."
+				]
+			}
+		}
+	}
+]

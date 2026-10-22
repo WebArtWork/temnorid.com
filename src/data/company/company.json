@@ -1,0 +1,121 @@
+{
+	"_id": "",
+	"name": "Temnorid",
+	"title": "Temnorid — Dark Medieval Fantasy World",
+	"description": "Temnorid is a dark medieval fantasy world inspired by the 14th century (1300–1400), where kingdoms, armies, and powerful wizards compete for territory and influence.\n\nStone fortresses, fortified cities, ancient ruins, and dangerous wilderness shape a world of constant conflict. Soldiers fight with swords, shields, bows, and siege weapons, while wizards command powerful elemental magic.\n\nThe first chapter introduces two forces: Fire, representing destruction and raw power, and Stone, representing endurance, protection, and strength.\n\nIn Temnorid, battles are won through steel, magic, and strategy—and every victory shapes the world's future.",
+	"image": "https://temnorid.com/logo.png",
+	"siteUrl": "https://temnorid.com",
+	"lang": "uk",
+	"locale": "uk_UA",
+	"defaultSeo": {
+		"title": "Temnorid — Dark Medieval Fantasy World",
+		"description": "Explore Temnorid, a dark medieval fantasy world inspired by the 14th century, where kingdoms, armies and wizards fight with steel, elemental magic and strategy.",
+		"keywords": [
+			"Temnorid",
+			"Темнорід",
+			"dark medieval fantasy",
+			"14th century fantasy",
+			"elemental magic",
+			"Fire and Stone",
+			"fantasy stories"
+		],
+		"author": "Temnorid",
+		"image": "/seo/home.png",
+		"robots": "index, follow",
+		"type": "website",
+		"twitterCard": "summary_large_image"
+	},
+	"pageSeo": {
+		"/stories": {
+			"title": "Fantasy Stories",
+			"description": "Read the stories of Temnorid, a dark medieval fantasy world of kingdoms, elemental magic and contested lands. Begin with Village from Stone.",
+			"image": "/seo/stories.png"
+		},
+		"/games": {
+			"title": "Fantasy Games",
+			"description": "Discover games set in Temnorid, a dark medieval fantasy world where steel, elemental magic and strategy decide battles and shape the future.",
+			"image": "/seo/games.png"
+		},
+		"/movies": {
+			"title": "Fantasy Movies",
+			"description": "Follow future films set in Temnorid, a dark medieval fantasy world of kingdoms and elemental magic. No films are available yet; start with the stories.",
+			"image": "/seo/movies.png"
+		},
+		"/": {
+			"image": "/seo/home.png"
+		},
+		"/game/lords": {
+			"image": "/seo/game-lords.png"
+		},
+		"/game/farm": {
+			"image": "/seo/game-farm.png"
+		},
+		"/game/arena": {
+			"image": "/seo/game-arena.png"
+		},
+		"/game/conquest": {
+			"image": "/seo/game-conquest.png"
+		},
+		"/stories/village-from-stone": {
+			"image": "/seo/story-village-from-stone.png"
+		},
+		"/stories/village-from-stone/night-that-did-not-end": {
+			"image": "/seo/chapter-night-that-did-not-end.png"
+		},
+		"/stories/village-from-stone/grey-mountain": {
+			"image": "/seo/chapter-grey-mountain.png"
+		},
+		"/stories/village-from-stone/first-stone": {
+			"image": "/seo/chapter-first-stone.png"
+		},
+		"/stories/village-from-stone/those-who-came-from-the-dark": {
+			"image": "/seo/chapter-those-who-came-from-the-dark.png"
+		},
+		"/stories/village-from-stone/stone-remembers": {
+			"image": "/seo/chapter-stone-remembers.png"
+		},
+		"/characters": {
+			"image": "/seo/characters.png"
+		},
+		"/locations": {
+			"image": "/seo/locations.png"
+		},
+		"/soldiers": {
+			"image": "/seo/soldiers.png"
+		},
+		"/buildings": {
+			"image": "/seo/buildings.png"
+		},
+		"/characters/yaryna": {
+			"image": "/seo/character-yaryna.png"
+		},
+		"/characters/danylo": {
+			"image": "/seo/character-danylo.png"
+		},
+		"/characters/olena": {
+			"image": "/seo/character-olena.png"
+		},
+		"/locations/grey-mountain": {
+			"image": "/seo/location-grey-mountain.png"
+		},
+		"/locations/village-from-stone": {
+			"image": "/seo/location-village-from-stone.png"
+		},
+		"/locations/salt-flats": {
+			"image": "/seo/location-salt-flats.png"
+		},
+		"/locations/second-river": {
+			"image": "/seo/location-second-river.png"
+		},
+		"/locations/burned-forest": {
+			"image": "/seo/location-burned-forest.png"
+		},
+		"/buildings/first-house": {
+			"image": "/seo/building-first-house.png"
+		},
+		"/buildings/named-houses": {
+			"image": "/seo/building-named-houses.png"
+		}
+	},
+	"logo": "/logo.png"
+}

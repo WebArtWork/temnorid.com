@@ -1,0 +1,42 @@
+<footer class="t-bar t-rule-t">
+	<div
+		class="mx-auto grid max-w-[var(--container)] gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(14rem,0.8fr)] lg:gap-16"
+	>
+		<div>
+			<p class="t-heading" translate>Темнорід</p>
+			<p class="mt-3 max-w-[var(--reading)] leading-7" translate>
+				У Темнороді битви виграють сталлю, магією та стратегією. Кожна перемога визначає майбутнє світу.
+			</p>
+		</div>
+
+		<div class="flex flex-col gap-4">
+			<p class="font-semibold text-[var(--c-text-strong)]" translate>Сторінки</p>
+			<nav [translate]="{ ariaLabel: 'Навігація сторінками у футері' }">
+				<ul class="space-y-3">
+					@for (page of pageLinks; track page.path) {
+						<li>
+							<a
+								class="theme-focus inline-flex rounded-md font-medium text-[var(--c-text)] transition-colors duration-150 hover:text-[var(--c-primary-text)]"
+								[routerLink]="page.path"
+								[translate]="page.label"
+							>
+								{{ page.label }}
+							</a>
+						</li>
+					}
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<div class="t-rule-t">
+		<div
+			class="mx-auto flex max-w-[var(--container)] px-4 py-4 text-sm text-[var(--c-text-muted)] sm:px-6"
+		>
+			<p>
+				&copy; {{ currentYear }} {{ company().name }}.
+				<span translate>Усі права захищено.</span>
+			</p>
+		</div>
+	</div>
+</footer>

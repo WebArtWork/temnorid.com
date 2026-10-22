@@ -1,0 +1,72 @@
+@if (story(); as story) {
+	@if (chapter(); as chapter) {
+		<article class="mx-auto max-w-[var(--reading)] px-4 sm:px-0 t-page">
+			<app-breadcrumbs
+				[items]="[
+					{ label: 'Історії', link: '/stories', translate: true },
+					{ label: story.title, link: '/stories/' + story.slug },
+					{ label: chapter.title },
+				]"
+			/>
+
+			<header class="mt-8">
+				<p class="text-sm text-[var(--c-text-muted)]">
+					<span translate>Розділ</span> {{ romanNumeral(chapter.number) }} ·
+					{{ chapter.readingMinutes }} <span translate>хв читання</span>
+				</p>
+				<h1 class="mt-3 t-display">
+					{{ chapter.title }}
+				</h1>
+			</header>
+
+			<div class="mt-10 t-prose" [innerHTML]="chapter.html"></div>
+
+			<footer class="t-rule-t mt-16 pt-8">
+				@if (!neighbours().next) {
+					<p class="t-lead text-center" translate>Кінець історії</p>
+				}
+
+				<nav class="mt-8 grid gap-4 sm:grid-cols-2" [translate]="{ ariaLabel: 'Розділи' }">
+					@if (neighbours().previous; as previous) {
+						<a
+							class="theme-interactive theme-focus t-card"
+							[routerLink]="previous.path"
+						>
+							<span class="block text-sm text-[var(--c-text-muted)]" translate>
+								Попередній розділ
+							</span>
+							<span class="mt-1 block t-item">
+								{{ previous.title }}
+							</span>
+						</a>
+					}
+					@if (neighbours().next; as next) {
+						<a
+							class="theme-interactive theme-focus t-card text-right sm:col-start-2"
+							[routerLink]="next.path"
+						>
+							<span class="block text-sm text-[var(--c-text-muted)]" translate>
+								Наступний розділ
+							</span>
+							<span class="mt-1 block t-item">
+								{{ next.title }}
+							</span>
+						</a>
+					} @else {
+						<a
+							class="theme-interactive theme-focus t-card text-right sm:col-start-2"
+							[routerLink]="['/stories', story.slug]"
+						>
+							<span class="block text-sm text-[var(--c-text-muted)]" translate>
+								До історії
+							</span>
+							<span class="mt-1 block t-item">
+								{{ story.title }}
+							</span>
+						</a>
+					}
+				</nav>
+			</footer>
+		</article>
+	}
+}

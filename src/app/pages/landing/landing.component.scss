@@ -1,0 +1,11 @@
+:host {
+	display: block;
+}
+
+.landing-hero {
+	background: radial-gradient(
+		ellipse at 20% 0%,
+		color-mix(in srgb, var(--c-primary) var(--t-hero-glow), transparent),
+		transparent 60%
+	);
+}

@@ -1,0 +1,130 @@
+<app-writer-frame>
+	@switch (status()) {
+		@case ('loading') {
+			<p class="text-[var(--c-text-muted)]" role="status" translate>Завантаження…</p>
+		}
+		@case ('missing') {
+			<p class="leading-7" role="alert" translate>
+				Запис не знайдено. Можливо, його видалили.
+			</p>
+		}
+		@case ('error') {
+			<p class="writer-error" role="alert" translate>
+				Не вдалося завантажити запис. Оновіть сторінку.
+			</p>
+		}
+		@case ('ready') {
+			@if (story(); as story) {
+				<div class="max-w-[48rem]">
+					<header class="flex flex-wrap items-center justify-between gap-4">
+						<div class="min-w-0 flex-1">
+							<app-breadcrumbs
+								heading
+								[items]="[
+									{ label: 'Історії', link: '/write/stories', translate: true },
+									{ label: story.title },
+								]"
+							/>
+							@if (!canEdit()) {
+								<p class="mt-2 text-sm text-[var(--c-text-muted)]">
+									<span translate>Автор</span>: {{ story.ownerName }}.
+									<span translate>Редагувати може лише автор.</span>
+								</p>
+							}
+						</div>
+						@if (canEdit()) {
+							<div class="flex flex-wrap gap-2">
+								<a
+									class="btn btn--primary"
+									routerLink="/write/chapter"
+									[queryParams]="{ story: story.slug }"
+								>
+									<span class="material-symbols-outlined" aria-hidden="true"
+										>add</span
+									>
+									<span translate>Новий розділ</span>
+								</a>
+								<button class="btn" (click)="edit()" type="button">
+									<span class="material-symbols-outlined" aria-hidden="true"
+										>edit</span
+									>
+									<span translate>Редагувати</span>
+								</button>
+								<button class="btn btn--danger" (click)="remove()" type="button">
+									<span class="material-symbols-outlined" aria-hidden="true"
+										>delete</span
+									><span translate>Видалити</span>
+								</button>
+							</div>
+						}
+					</header>
+
+					@if (actionError()) {
+						<p class="writer-error mt-4" role="alert" [translate]="actionError()">
+							{{ actionError() }}
+						</p>
+					}
+
+					<section class="t-stack" [translate]="{ ariaLabel: 'Розділи' }">
+						@if (!chapters().length) {
+							<p class="writer-hint" translate>
+								Розділів ще немає. Текст історії пишеться по розділах.
+							</p>
+						} @else {
+							<ol class="space-y-2">
+								@for (
+									chapter of chapters();
+									track chapter.slug;
+									let index = $index
+								) {
+									<li class="t-card t-row">
+										<a
+											class="theme-interactive theme-focus flex min-h-11 flex-1 items-center rounded-md t-item hover:text-[var(--c-primary-text)]"
+											routerLink="/write/chapter"
+											[queryParams]="{
+												story: story.slug,
+												chapter: chapter.slug,
+											}"
+										>
+											{{ chapter.title }}
+										</a>
+										@if (canEdit()) {
+											<button
+												class="btn btn--icon"
+												[disabled]="index === 0 || reordering()"
+												[translate]="{ ariaLabel: 'Перемістити вище' }"
+												(click)="moveChapter(index, -1)"
+												type="button"
+											>
+												<span
+													class="material-symbols-outlined"
+													aria-hidden="true"
+													>arrow_upward</span
+												>
+											</button>
+											<button
+												class="btn btn--icon"
+												[disabled]="
+													index === chapters().length - 1 || reordering()
+												"
+												[translate]="{ ariaLabel: 'Перемістити нижче' }"
+												(click)="moveChapter(index, 1)"
+												type="button"
+											>
+												<span
+													class="material-symbols-outlined"
+													aria-hidden="true"
+													>arrow_downward</span
+												>
+											</button>
+										}
+									</li>
+								}
+							</ol>
+						}
+					</section>
+				</div>
+			}
+		}
+	}
+</app-writer-frame>

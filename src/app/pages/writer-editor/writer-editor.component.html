@@ -1,0 +1,285 @@
+<app-writer-frame>
+	@switch (status()) {
+		@case ('loading') {
+			<p class="text-[var(--c-text-muted)]" role="status" translate>Завантаження…</p>
+		}
+		@case ('missing') {
+			<p class="leading-7" role="alert" translate>
+				Запис не знайдено. Можливо, його видалили.
+			</p>
+		}
+		@case ('error') {
+			<p class="writer-error" role="alert" translate>
+				Не вдалося завантажити запис. Оновіть сторінку.
+			</p>
+		}
+		@case ('ready') {
+			<form class="max-w-[48rem]" (ngSubmit)="save()" novalidate>
+				<header class="flex flex-wrap items-center justify-between gap-4">
+					<div class="min-w-0 flex-1">
+						<app-breadcrumbs
+							heading
+							[items]="[
+								{ label: config.title, link: config.listPath, translate: true },
+								existing()
+									? { label: current().name || existing()!.slug }
+									: { label: config.newLabel, translate: true },
+							]"
+						/>
+						@if (existing(); as existing) {
+							@if (!canEdit()) {
+								<p class="mt-2 text-[var(--c-text-muted)]">
+									<span translate>Автор</span>: {{ existing.ownerName }}.
+									<span translate>Редагувати може лише автор.</span>
+								</p>
+							}
+						}
+					</div>
+				</header>
+
+				<div class="mt-6 space-y-6">
+					<div>
+						<label class="writer-label" for="writer-name" translate
+							>Ім'я або назва</label
+						>
+						<input
+							id="writer-name"
+							class="writer-input"
+							name="name"
+							type="text"
+							autocomplete="off"
+							maxlength="160"
+							[ngModel]="current().name"
+							(ngModelChange)="setField('name', $event)"
+							[disabled]="!canEdit()"
+							[attr.aria-invalid]="!!errors().name"
+							[attr.aria-describedby]="errors().name ? 'writer-name-error' : null"
+						/>
+						@if (errors().name) {
+							<p
+								id="writer-name-error"
+								class="writer-error"
+								[translate]="errors().name!"
+							>
+								{{ errors().name }}
+							</p>
+						}
+					</div>
+
+					<div>
+						<label class="writer-label" for="writer-role" translate>Роль</label>
+						<input
+							id="writer-role"
+							class="writer-input"
+							name="role"
+							type="text"
+							autocomplete="off"
+							maxlength="160"
+							[translate]="{ placeholder: 'Наприклад: Онука каменяра…' }"
+							[ngModel]="current().role"
+							(ngModelChange)="setField('role', $event)"
+							[disabled]="!canEdit()"
+						/>
+					</div>
+
+					<div>
+						<label class="writer-label" for="writer-summary" translate>
+							Короткий опис
+						</label>
+						<textarea
+							id="writer-summary"
+							class="writer-input"
+							name="summary"
+							rows="3"
+							maxlength="1000"
+							aria-describedby="writer-summary-hint"
+							[ngModel]="current().summary"
+							(ngModelChange)="setField('summary', $event)"
+							[disabled]="!canEdit()"
+						></textarea>
+						<p id="writer-summary-hint" class="writer-hint" translate>
+							Одне-два речення для картки і пошукових систем.
+						</p>
+					</div>
+
+					<div>
+						<p class="writer-label" translate>Опис</p>
+						<tinymce
+							name="html"
+							[config]="editorConfig"
+							(ready)="onEditorReady($event)"
+							[ariaLabel]="bodyLabel()"
+							[ngModel]="current().html"
+							(ngModelChange)="setField('html', $event)"
+							[disabled]="!canEdit()"
+						/>
+						<p class="writer-hint" translate>
+							Лише текст: без зображень, відео й вставок.
+						</p>
+					</div>
+
+					@if (storyOptions().length) {
+						<fieldset>
+							<legend class="writer-label" translate>З'являється в історіях</legend>
+							<ul class="grid gap-1 sm:grid-cols-2">
+								@for (option of storyOptions(); track option.value) {
+									<li>
+										<label
+											class="flex min-h-11 cursor-pointer items-center gap-3 rounded-md px-2 hover:bg-[var(--c-bg-tertiary)]"
+										>
+											<input
+												class="size-4 accent-[var(--c-primary)]"
+												type="checkbox"
+												[checked]="storySlugs().includes(option.value)"
+												[disabled]="!canEdit()"
+												(change)="
+													toggleReference(
+														'storySlugs',
+														option.value,
+														$any($event.target).checked
+													)
+												"
+											/>
+											<span>{{ option.label }}</span>
+										</label>
+									</li>
+								}
+							</ul>
+						</fieldset>
+					}
+
+					@if (relatedGroups().length) {
+						<fieldset>
+							<legend class="writer-label" translate>Пов'язане</legend>
+							<div class="space-y-4">
+								@for (group of relatedGroups(); track group.config.kind) {
+									<div>
+										<p
+											class="text-sm text-[var(--c-text-muted)]"
+											[translate]="group.config.title"
+										>
+											{{ group.config.title }}
+										</p>
+										<ul class="mt-1 grid gap-1 sm:grid-cols-2">
+											@for (option of group.options; track option.value) {
+												<li>
+													<label
+														class="flex min-h-11 cursor-pointer items-center gap-3 rounded-md px-2 hover:bg-[var(--c-bg-tertiary)]"
+													>
+														<input
+															class="size-4 accent-[var(--c-primary)]"
+															type="checkbox"
+															[checked]="
+																related().includes(option.value)
+															"
+															[disabled]="!canEdit()"
+															(change)="
+																toggleReference(
+																	'related',
+																	option.value,
+																	$any($event.target).checked
+																)
+															"
+														/>
+														<span>{{ option.label }}</span>
+													</label>
+												</li>
+											}
+										</ul>
+									</div>
+								}
+							</div>
+						</fieldset>
+					}
+				</div>
+
+				<div
+					class="mt-8 flex flex-wrap items-center gap-3 border-t border-[var(--c-border)] pt-6"
+				>
+					@if (canEdit()) {
+						<button class="btn btn--primary" [disabled]="saving()" type="submit">
+							@if (saving()) {
+								<span
+									class="material-symbols-outlined animate-spin"
+									aria-hidden="true"
+									>progress_activity</span
+								>
+							} @else {
+								<span class="material-symbols-outlined" aria-hidden="true"
+									>save</span
+								>
+							}
+							<span translate>Зберегти</span>
+						</button>
+					}
+					@if (existing()) {
+						<button class="btn" (click)="showExport()" type="button">
+							<span class="material-symbols-outlined" aria-hidden="true"
+								>data_object</span
+							><span translate>JSON для коду</span>
+						</button>
+						@if (canEdit()) {
+							<button
+								class="btn btn--danger sm:ml-auto"
+								(click)="remove()"
+								type="button"
+							>
+								<span class="material-symbols-outlined" aria-hidden="true"
+									>delete</span
+								><span translate>Видалити</span>
+							</button>
+						}
+					}
+				</div>
+
+				<div class="mt-3 min-h-6" aria-live="polite">
+					@if (saveError()) {
+						<p class="writer-error" role="alert" [translate]="saveError()">
+							{{ saveError() }}
+						</p>
+					} @else if (dirty()) {
+						<p class="writer-hint" translate>Є незбережені зміни.</p>
+					} @else if (savedAt()) {
+						<p class="writer-hint" translate>Збережено.</p>
+					}
+				</div>
+			</form>
+
+			@if (exportJson()) {
+				<section class="mt-8 max-w-[48rem]" aria-labelledby="writer-export">
+					<h2
+						id="writer-export"
+						class="font-semibold text-[var(--c-text-strong)]"
+						translate
+					>
+						JSON для коду
+					</h2>
+					<p class="writer-hint" translate>
+						Текст у мові автора: перекладіть поля ua та en після вставлення.
+					</p>
+					<p class="writer-hint">
+						<span translate>Додайте до масиву у</span>
+						<code>{{ exportTarget() }}</code>
+					</p>
+					<textarea
+						class="writer-input mt-3 font-mono text-sm"
+						rows="12"
+						readonly
+						[value]="exportJson()"
+						[translate]="{ ariaLabel: 'JSON для коду' }"
+					></textarea>
+					<button class="btn mt-3" (click)="copyExport()" type="button">
+						@if (copied()) {
+							<span class="material-symbols-outlined" aria-hidden="true">check</span
+							><span translate>Скопійовано</span>
+						} @else {
+							<span class="material-symbols-outlined" aria-hidden="true"
+								>content_copy</span
+							><span translate>Копіювати</span>
+						}
+					</button>
+				</section>
+			}
+		}
+	}
+</app-writer-frame>
