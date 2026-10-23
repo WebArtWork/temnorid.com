@@ -27,11 +27,16 @@ hidden because the code replaced it.
 - **Gaps.** A story can list gaps: what it leaves unexplained on purpose. Another story fills a gap by
   ticking it on its own page. `/write/gaps` lists every open gap.
 - **Sync and AI chats.** The sync icon next to "Workshop" opens an ace JSON editor with all of the
-  author's drafts as one sync object; edited or pasted JSON is checked, then upserted by slug
-  (nothing is deleted). The build writes `/workshop.md` (`tools/workshop/generate-workshop-md.mjs`):
-  released stories, open gaps, released lore, every kind's fields and the sync object format, so any
-  AI chat can write a sync object. Kinds, fields, groups, statuses and info texts live in
+  author's drafts as one sync object; edited or pasted JSON is checked, then upserted by slug, and
+  drafts missing from it are deleted after the author confirms the list. The build writes
+  `/workshop.md` (`tools/workshop/generate-workshop-md.mjs`): released stories, open gaps, released
+  lore, every kind's fields and the sync object format, so any AI chat can write a sync object. The
+  info icon next to sync shows that file. Kinds, fields, groups, statuses and info texts live in
   `src/data/workshop/` for both the app and that guide.
+- **Player names.** `src/data/names/names.json` holds `firstNames` and `secondNames` from Kyivan Rus'
+  and the Cossack era. The build writes `/names.json` (`tools/names/generate-names-json.mjs`) with
+  those plus `existingNames`, the released characters, so the games (Lords onboarding) can generate
+  a player name, reroll unlocked parts and skip names already taken.
 - **Rules.** `firestore.rules` is shared with `arena.temnorid.com` (one Firebase project); keep both
   copies identical and deploy with `npm run rules`.
 
