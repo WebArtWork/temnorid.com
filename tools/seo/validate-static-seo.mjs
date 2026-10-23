@@ -11,6 +11,14 @@ const company = JSON.parse(
 );
 const sitemap = await readFile(path.join(output, 'sitemap.xml'), 'utf8');
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
+const imageManifest = JSON.parse(
+	await readFile(path.join(root, 'tools/seo/image-prompts.json'), 'utf8'),
+).assets;
+assert.deepEqual(
+	imageManifest.map((asset) => company.siteUrl + (asset.route === '/' ? '' : asset.route)).sort(),
+	[...urls].sort(),
+	'Image manifest and public sitemap routes differ',
+);
 const titles = new Set();
 const descriptions = new Set();
 const publicImages = new Set();
@@ -78,14 +86,36 @@ async function checkPage(file) {
 		assert.ok(!descriptions.has(description), `${route}: duplicate description`);
 		const configuredImage = company.pageSeo[route]?.image;
 		assert.ok(configuredImage, `${route}: missing page-specific image configuration`);
-		assert.equal(image, new URL(configuredImage, company.siteUrl).href, `${route}: wrong page image`);
+		assert.equal(
+			image,
+			new URL(configuredImage, company.siteUrl).href,
+			`${route}: wrong page image`,
+		);
 		assert.ok(!publicImages.has(image), `${route}: reused public SEO image`);
+		const manifestEntry = imageManifest.find((asset) => asset.route === route);
+		assert.equal(
+			manifestEntry?.image,
+			configuredImage,
+			`${route}: image manifest mapping mismatch`,
+		);
 		const imageBytes = await readFile(path.join(output, imageUrl.pathname));
-		assert.equal(imageBytes.subarray(0, 8).toString('hex'), '89504e470d0a1a0a', `${route}: expected PNG`);
+		const sourceBytes = await readFile(path.join(root, 'src/assets', imageUrl.pathname));
+		assert.ok(
+			imageBytes.equals(sourceBytes),
+			`${route}: stale build image differs from source`,
+		);
+		assert.equal(
+			imageBytes.subarray(0, 8).toString('hex'),
+			'89504e470d0a1a0a',
+			`${route}: expected PNG`,
+		);
 		const width = imageBytes.readUInt32BE(16);
 		const height = imageBytes.readUInt32BE(20);
 		assert.ok(width >= 1200 && height >= 630, `${route}: image too small for social previews`);
-		assert.ok(width / height > 1.85 && width / height < 1.95, `${route}: expected landscape social image`);
+		assert.ok(
+			width / height > 1.85 && width / height < 1.95,
+			`${route}: expected landscape social image`,
+		);
 		assert.ok(imageBytes.length < 5 * 1024 * 1024, `${route}: image exceeds 5 MB`);
 		const hash = createHash('sha256').update(imageBytes).digest('hex');
 		assert.ok(!publicImageHashes.has(hash), `${route}: duplicate image content`);

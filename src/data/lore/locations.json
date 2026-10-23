@@ -29,7 +29,12 @@
 	{
 		"slug": "village-from-stone",
 		"storySlugs": ["village-from-stone"],
-		"related": ["locations/grey-mountain", "buildings/first-house", "buildings/named-houses", "characters/olena"],
+		"related": [
+			"locations/grey-mountain",
+			"buildings/first-house",
+			"buildings/named-houses",
+			"characters/olena"
+		],
 		"content": {
 			"ua": {
 				"name": "Село з каменю",

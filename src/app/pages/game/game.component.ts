@@ -18,10 +18,7 @@ import { BreadcrumbsComponent } from '../../layouts/breadcrumbs/breadcrumbs.comp
 				/>
 
 				<header class="mt-8">
-					@if (game.status === 'in-development') {
-						<p class="text-sm text-[var(--c-text-muted)]" translate>У розробці</p>
-					}
-					<h1 class="mt-3 t-display">{{ game.title }}</h1>
+					<h1 class="t-display">{{ game.title }}</h1>
 					<p class="mt-5 t-lead">{{ game.summary }}</p>
 				</header>
 

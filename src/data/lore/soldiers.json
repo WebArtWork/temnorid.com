@@ -1,0 +1,35 @@
+[
+	{
+		"slug": "stone-guard",
+		"storySlugs": ["village-from-stone"],
+		"related": ["locations/village-from-stone", "buildings/first-house"],
+		"fields": {
+			"faction": "factions/village-of-names",
+			"equipment": ["items/stonecutters-chisel"],
+			"cost": [
+				{
+					"ref": "resources/warm-stone",
+					"amount": 1
+				}
+			]
+		},
+		"content": {
+			"ua": {
+				"name": "Кам’яна варта",
+				"role": "Захисники села",
+				"summary": "Ті, хто стереже Село з каменю, поки воно спить.",
+				"paragraphs": [
+					"Варту ставили з перших днів села: двоє біля першої хати, двоє на стежці до солончаків. Зброї мало, тож вартові носять те, що мають, і знають кожну стіну на ім’я."
+				]
+			},
+			"en": {
+				"name": "Stone Guard",
+				"role": "Village defenders",
+				"summary": "Those who watch over the Village from Stone while it sleeps.",
+				"paragraphs": [
+					"The guard was set from the village’s first days: two by the first house, two on the path to the salt flats. Weapons were few, so the guards carry what they have and know every wall by name."
+				]
+			}
+		}
+	}
+]

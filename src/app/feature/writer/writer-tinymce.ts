@@ -1,11 +1,20 @@
-import { TinymceInitOptions } from '@wawjs/ngx-tinymce';
+import { TINYMCE_CONFIG, TinymceInitOptions } from '@wawjs/ngx-tinymce';
+
+/**
+ * Where TinyMCE loads from, for the editor pages. Provided by the pages rather than the routes, so
+ * ngx-tinymce (and its forms import) stays out of the initial bundle.
+ */
+export const WRITER_TINYMCE_PROVIDER = {
+	provide: TINYMCE_CONFIG,
+	useValue: { baseURL: '/tinymce/', fileName: 'tinymce.min.js' },
+};
 
 /** Tags TinyMCE drops, so writers add text only. firestore.rules refuses them too. */
 const NO_ASSET_ELEMENTS =
 	'img,picture,source,video,audio,track,iframe,frame,object,embed,svg,canvas,script,style,form,input';
 
 /**
- * TinyMCE setup shared by the chapter and codex editors.
+ * TinyMCE setup shared by the chapter and lore editors.
  * `blockFormats` is TinyMCE's `Label=tag; ...` list, already translated.
  */
 export function writerTinymceConfig(dark: boolean, blockFormats: string): TinymceInitOptions {

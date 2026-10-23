@@ -11,6 +11,8 @@ export interface Game {
 	/** The game's own site. Missing while the game is in development. */
 	url?: string;
 	status: GameStatus;
+	/** English search title and description for the game's page. */
+	seo: { title: string; description: string };
 	/** Keyed by language code. `ua` and `en` are required. */
 	content: { ua: GameContent; en: GameContent } & Partial<Record<string, GameContent>>;
 }

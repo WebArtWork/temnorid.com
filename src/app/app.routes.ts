@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { buildRouteMeta } from '@wawjs/ngx-default';
-import { provideNgxTinymce } from '@wawjs/ngx-tinymce';
-import { CODEX_ENTRIES, CODEX_KINDS } from './feature/codex/codex.data';
+import { LORE_ENTRIES, LORE_KINDS } from './feature/lore/lore.data';
 import { companyProfile } from './feature/company/company.data';
 import { GAMES } from './feature/game/game.data';
 import { STORIES, STORY_FALLBACK_LANGUAGE } from './feature/story/story.data';
@@ -10,11 +9,11 @@ import { WRITER_KINDS } from './feature/writer/writer.data';
 import type { ChapterEditorComponent } from './pages/chapter-editor/chapter-editor.component';
 import type { WriterEditorComponent } from './pages/writer-editor/writer-editor.component';
 
-const codexRoutes: Routes = CODEX_KINDS.flatMap((config) => [
+const loreRoutes: Routes = LORE_KINDS.flatMap((config) => [
 	{
 		path: config.kind,
 		data: {
-			codexKind: config.kind,
+			loreKind: config.kind,
 			meta: {
 				...buildRouteMeta(companyProfile, `/${config.kind}`),
 				title: config.seoTitle,
@@ -22,16 +21,16 @@ const codexRoutes: Routes = CODEX_KINDS.flatMap((config) => [
 			},
 		},
 		loadComponent: () =>
-			import('./pages/codex-list/codex-list.component').then((m) => m.CodexListComponent),
+			import('./pages/lore-list/lore-list.component').then((m) => m.LoreListComponent),
 	},
-	...CODEX_ENTRIES[config.kind].map((entry) => {
+	...LORE_ENTRIES[config.kind].map((entry) => {
 		const content = entry.content[STORY_FALLBACK_LANGUAGE] ?? entry.content.ua;
 
 		return {
 			path: `${config.kind}/${entry.slug}`,
 			data: {
-				codexKind: config.kind,
-				codexSlug: entry.slug,
+				loreKind: config.kind,
+				loreSlug: entry.slug,
 				meta: {
 					...buildRouteMeta(companyProfile, `/${config.kind}/${entry.slug}`),
 					title: content.name,
@@ -39,7 +38,7 @@ const codexRoutes: Routes = CODEX_KINDS.flatMap((config) => [
 				},
 			},
 			loadComponent: () =>
-				import('./pages/codex-entry/codex-entry.component').then((m) => m.CodexEntryComponent),
+				import('./pages/lore-entry/lore-entry.component').then((m) => m.LoreEntryComponent),
 		};
 	}),
 ]);
@@ -58,7 +57,8 @@ const storyRoutes: Routes = STORIES.flatMap((story) => {
 					description: content.summary,
 				},
 			},
-			loadComponent: () => import('./pages/story/story.component').then((m) => m.StoryComponent),
+			loadComponent: () =>
+				import('./pages/story/story.component').then((m) => m.StoryComponent),
 		},
 		...story.chapters.map((chapter) => {
 			const path = `/stories/${story.slug}/${chapter.slug}`;
@@ -90,8 +90,6 @@ const writerMeta = (path: string, title: string) => ({
 	robots: 'noindex, nofollow',
 });
 
-const tinymceProviders = [provideNgxTinymce({ baseURL: '/tinymce/', fileName: 'tinymce.min.js' })];
-
 const writerRoutes: Routes = [
 	{
 		path: 'login',
@@ -106,9 +104,14 @@ const writerRoutes: Routes = [
 	...WRITER_KINDS.flatMap((config) => [
 		{
 			path: config.listPath.slice(1),
-			data: { writerKind: config.kind, meta: writerMeta(config.listPath, `Manage ${config.kind}`) },
+			data: {
+				writerKind: config.kind,
+				meta: writerMeta(config.listPath, `Manage ${config.kind}`),
+			},
 			loadComponent: () =>
-				import('./pages/writer-list/writer-list.component').then((m) => m.WriterListComponent),
+				import('./pages/writer-list/writer-list.component').then(
+					(m) => m.WriterListComponent,
+				),
 		},
 		config.kind === 'stories'
 			? {
@@ -125,7 +128,6 @@ const writerRoutes: Routes = [
 						writerKind: config.kind,
 						meta: writerMeta(config.editorPath, `Edit ${config.kind.slice(0, -1)}`),
 					},
-					providers: tinymceProviders,
 					canDeactivate: [(component: WriterEditorComponent) => component.canLeave()],
 					loadComponent: () =>
 						import('./pages/writer-editor/writer-editor.component').then(
@@ -136,11 +138,24 @@ const writerRoutes: Routes = [
 	{
 		path: 'write/chapter',
 		data: { meta: writerMeta('/write/chapter', 'Edit chapter') },
-		providers: tinymceProviders,
 		canDeactivate: [(component: ChapterEditorComponent) => component.canLeave()],
 		loadComponent: () =>
 			import('./pages/chapter-editor/chapter-editor.component').then(
 				(m) => m.ChapterEditorComponent,
+			),
+	},
+	{
+		path: 'write/gaps',
+		data: { meta: writerMeta('/write/gaps', 'Story gaps') },
+		loadComponent: () =>
+			import('./pages/writer-gaps/writer-gaps.component').then((m) => m.WriterGapsComponent),
+	},
+	{
+		path: 'write/review',
+		data: { meta: writerMeta('/write/review', 'Review drafts') },
+		loadComponent: () =>
+			import('./pages/writer-review/writer-review.component').then(
+				(m) => m.WriterReviewComponent,
 			),
 	},
 ];
@@ -179,8 +194,8 @@ export const routes: Routes = [
 			gameSlug: game.slug,
 			meta: {
 				...buildRouteMeta(companyProfile, `/game/${game.slug}`),
-				title: game.content[STORY_FALLBACK_LANGUAGE]?.title ?? game.content.ua.title,
-				description: game.content[STORY_FALLBACK_LANGUAGE]?.summary ?? game.content.ua.summary,
+				title: game.seo.title,
+				description: game.seo.description,
 			},
 		},
 		loadComponent: () => import('./pages/game/game.component').then((m) => m.GameComponent),
@@ -190,9 +205,10 @@ export const routes: Routes = [
 		data: {
 			meta: buildRouteMeta(companyProfile, '/movies'),
 		},
-		loadComponent: () => import('./pages/movies/movies.component').then((m) => m.MoviesComponent),
+		loadComponent: () =>
+			import('./pages/movies/movies.component').then((m) => m.MoviesComponent),
 	},
-	...codexRoutes,
+	...loreRoutes,
 	...writerRoutes,
 	{
 		path: '**',

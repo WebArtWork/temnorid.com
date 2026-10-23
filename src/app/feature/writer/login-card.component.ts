@@ -10,8 +10,8 @@ import { FirebaseService } from '../firebase/firebase.service';
 		<div class="max-w-[30rem] t-card">
 			<h1 class="t-heading" translate>Пишіть історії Темнороду</h1>
 			<p class="mt-3 leading-7" translate>
-				Увійдіть, щоб створювати історії, персонажів, локації, воїнів і будівлі. Найкращі з
-				них стануть частиною світу.
+				Увійдіть, щоб писати історії та наповнювати світ: персонажів, фракції, місця,
+				предмети, закляття й не тільки. Найкращі записи стануть частиною світу.
 			</p>
 			<button
 				class="btn btn--primary mt-6"

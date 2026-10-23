@@ -37,11 +37,11 @@
 			"prompt": "Use case: stylized-concept. Asset type: a unique website Open Graph / SEO sharing illustration for Temnorid. Create ONE polished landscape image, approximately 1.91:1 aspect ratio (ideally 1200x630), not a collage. World: dark medieval fantasy inspired by 1300–1400. Style: painterly realism, textured oil-paint fantasy book cover art, detailed weathered stone and rough wool, muted charcoal and slate with restrained warm ember gold, cinematic atmospheric light, clear focal subject readable at thumbnail size. Keep important subjects in central 80% for social crops. No text, no titles, no lettering, no logos, no watermarks, no modern objects, no exaggerated high fantasy armor. Each requested scene is distinct. Scene: A cloaked medieval lord seen from behind at an unglazed castle window surveying a fortified town, banners without symbols and contested distant hills. A grounded concept illustration of lordship, not a screenshot or promise of gameplay."
 		},
 		{
-			"route": "/game/farm",
-			"key": "game-farm",
-			"title": "Farm",
-			"image": "/seo/game-farm.png",
-			"prompt": "Use case: stylized-concept. Asset type: a unique website Open Graph / SEO sharing illustration for Temnorid. Create ONE polished landscape image, approximately 1.91:1 aspect ratio (ideally 1200x630), not a collage. World: dark medieval fantasy inspired by 1300–1400. Style: painterly realism, textured oil-paint fantasy book cover art, detailed weathered stone and rough wool, muted charcoal and slate with restrained warm ember gold, cinematic atmospheric light, clear focal subject readable at thumbnail size. Keep important subjects in central 80% for social crops. No text, no titles, no lettering, no logos, no watermarks, no modern objects, no exaggerated high fantasy armor. Each requested scene is distinct. Scene: A modest medieval farm outside protective stone walls, tilled furrows, a wooden plough, grain sheaves and a small goat, a grey fortress distant beneath heavy clouds. Grounded agricultural concept illustration, no gameplay UI."
+			"route": "/game/craft",
+			"key": "game-craft",
+			"title": "Craft",
+			"image": "/seo/game-craft.png",
+			"prompt": "Create ONE landscape SEO sharing illustration for Temnorid, approximately 1.91:1 aspect ratio, at least 1200x630. Dark medieval fantasy inspired by 1300–1400, painterly realism with weathered materials, strong readable composition at thumbnail size. No text, lettering, logos, watermarks, modern objects, interface or collage. Scene: a grounded medieval craft and resource-production workshop. A sturdy foreground wooden bench holds a forged iron hammer, tongs, a plain newly forged sword blade and a simple iron helmet; beside it are baskets of ore, cut grey stone blocks and stacked timber. A stone forge with restrained ember-amber light stands behind, with one adult blacksmith in a rough wool tunic and leather apron. Through a small open doorway a modest farmstead is visible, secondary and distant. The main subject is skilled hands and tools turning raw resources into useful equipment. No grand castles, no huge armies, no futuristic machinery or decorative magic."
 		},
 		{
 			"route": "/game/arena",
@@ -97,7 +97,7 @@
 			"key": "chapter-stone-remembers",
 			"title": "The Stone Remembers",
 			"image": "/seo/chapter-stone-remembers.png",
-			"prompt": "Use case: stylized-concept. Asset type: a unique website Open Graph / SEO sharing illustration for Temnorid. Create ONE polished landscape image, approximately 1.91:1 aspect ratio (ideally 1200x630), not a collage. World: dark medieval fantasy inspired by 1300–1400. Style: painterly realism, textured oil-paint fantasy book cover art, detailed weathered stone and rough wool, muted charcoal and slate with restrained warm ember gold, cinematic atmospheric light, clear focal subject readable at thumbnail size. Keep important subjects in central 80% for social crops. No text, no titles, no lettering, no logos, no watermarks, no modern objects, no exaggerated high fantasy armor. Each requested scene is distinct. Scene: Very old Yaryna, an elderly woman with a lined face and grey hair under a wool shawl, guides a small grandchild to lay a palm on a warm grey stone wall on a quiet winter night. Intimate feeling of memory and listening, no inscriptions, no snow on the mountain."
+			"prompt": "Create one wide landscape 1.91:1 SEO illustration for Temnorid, dark medieval fantasy painterly realism, at least 1200x630. Very old Yaryna, an elderly woman with a lined face and grey hair under a plain wool shawl, gently guides a small grandchild to place a palm on the quietly warm grey stone wall of a humble low house. Intimate memory and listening on a dark quiet night. Only a few simple low grey stone dwellings with flat slate roofs in the softly blurred background on the shoulder of a BARE GREY MOUNTAIN. No castle, fortress, palace, battlements, towers, cathedral, bridge or city anywhere. No chimneys, hearths, smoke, flames, glowing runes or inscriptions. The stone's warmth is suggested by very gentle amber light on hands, no overt magical effects. Charcoal and warm grey, grounded wool texture, readable faces and hands, dignified quiet tenderness. No text, logo, watermark or interface."
 		},
 		{
 			"route": "/characters",
@@ -167,7 +167,7 @@
 			"key": "location-salt-flats",
 			"title": "The Salt Flats",
 			"image": "/seo/location-salt-flats.png",
-			"prompt": "Use case: stylized-concept. Asset type: a unique website Open Graph / SEO sharing illustration for Temnorid. Create ONE polished landscape image, approximately 1.91:1 aspect ratio (ideally 1200x630), not a collage. World: dark medieval fantasy inspired by 1300–1400. Style: painterly realism, textured oil-paint fantasy book cover art, detailed weathered stone and rough wool, muted charcoal and slate with restrained warm ember gold, cinematic atmospheric light, clear focal subject readable at thumbnail size. Keep important subjects in central 80% for social crops. No text, no titles, no lettering, no logos, no watermarks, no modern objects, no exaggerated high fantasy armor. Each requested scene is distinct. Scene: A vast dead plain of pale salt crust and shallow fissures stretching toward the distant Grey Mountain, a thin grey dawn becoming pink at the horizon. A faint trail of travelers crosses the flats, austere and quiet, no dunes or ocean."
+			"prompt": "Create one wide landscape 1.91:1 SEO illustration for Temnorid, dark medieval fantasy painterly realism, at least 1200x630. A vast dead plain of pale dry salt crust and fine fissures, a faint worn path with a few tiny cloaked travelers, a thin line of pale pink first dawn along the horizon. In the far distance ONE broad smooth-sided BARE GREY MOUNTAIN with a rounded monolithic summit: all grey rock, absolutely NO SNOW, NO WHITE PEAKS, NO ICE, NO GLACIERS, NO JAGGED ALPINE RANGE. The white foreground is dry salt, not snow. No trees, no castle, no buildings, no lake or sea. Austere quiet atmosphere, charcoal and slate grey with restrained dawn pink. No text, writing, logos, watermarks, collage or game UI."
 		},
 		{
 			"route": "/locations/second-river",
@@ -196,6 +196,27 @@
 			"title": "The Named Houses",
 			"image": "/seo/building-named-houses.png",
 			"prompt": "Use case: stylized-concept. Asset type: a unique website Open Graph / SEO sharing illustration for Temnorid. Create ONE polished landscape image, approximately 1.91:1 aspect ratio (ideally 1200x630), not a collage. World: dark medieval fantasy inspired by 1300–1400. Style: painterly realism, textured oil-paint fantasy book cover art, detailed weathered stone and rough wool, muted charcoal and slate with restrained warm ember gold, cinematic atmospheric light, clear focal subject readable at thumbnail size. Keep important subjects in central 80% for social crops. No text, no titles, no lettering, no logos, no watermarks, no modern objects, no exaggerated high fantasy armor. Each requested scene is distinct. Scene: A quiet lived-in lane between low grey stone houses with slate roofs on a mountain shoulder. Children steady themselves with palms on subtly warm walls as older villagers watch. The houses have no hearths, chimneys or smoke; names are remembered in stone, not visibly written."
+		},
+		{
+			"route": "/game/dungeons",
+			"key": "game-dungeons",
+			"title": "Dungeons",
+			"image": "/seo/game-dungeons.png",
+			"prompt": "Create ONE landscape SEO sharing illustration for Temnorid, approximately 1.91:1 aspect ratio, at least 1200x630. Dark medieval fantasy inspired by 1300–1400, painterly realism with weathered materials, strong readable composition at thumbnail size. No text, lettering, logos, watermarks, modern objects, interface or collage. Scene: a massive dark stone arch over a narrow torchlit stone stair descending into darkness. Warm amber light from a wall-mounted flame spills across the rough steps and inner arch; the surrounding stone remains charcoal-black. Atmospheric, restrained, mysterious. The arch and stair are the entire focus. Empty scene: no people, monsters, treasure, weapons, distant castles or extra scenery."
+		},
+		{
+			"route": "/game/intrigue",
+			"key": "game-intrigue",
+			"title": "Intrigue",
+			"image": "/seo/game-intrigue.png",
+			"prompt": "Create ONE landscape SEO sharing illustration for Temnorid, approximately 1.91:1 aspect ratio, at least 1200x630. Dark medieval fantasy inspired by 1300–1400, painterly realism with weathered materials, strong readable composition at thumbnail size. No text, lettering, logos, watermarks, modern objects, interface or collage. Scene: a wine-dark medieval council room, deep muted burgundy and near-black shadows. Precisely two small candle glows suspended visually above the long horizontal edge of a heavy dark wooden table, both candles standing on the table. The long table edge anchors the lower third. Restrained warm wax light, subtle burgundy wall hangings dissolve into darkness, quiet political tension. Empty room: no people, maps, readable letters, goblets, windows, bright chandeliers or elaborate decorations. Elegant simple composition, two candle glows and the table edge are the main features."
+		},
+		{
+			"route": "/soldiers/stone-guard",
+			"key": "soldier-stone-guard",
+			"title": "Stone Guard",
+			"image": "/seo/soldier-stone-guard.png",
+			"prompt": "Use case: stylized-concept. Asset type: a unique website Open Graph / SEO sharing illustration for Temnorid. Create ONE polished landscape image, approximately 1.91:1 aspect ratio (ideally 1200x630), not a collage. World: dark medieval fantasy inspired by 1300–1400. Style: painterly realism, textured oil-paint fantasy book cover art, detailed weathered stone and rough wool, muted charcoal and slate with restrained warm ember gold, cinematic atmospheric light, clear focal subject readable at thumbnail size. Keep important subjects in central 80% for social crops. No text, no titles, no lettering, no logos, no watermarks, no modern objects, no exaggerated high fantasy armor. Each requested scene is distinct. Scene: Two village sentries in rough wool and simple helmets with spears, standing by a low stone wall at dusk on a mountain slope, names cut into the wall stones glowing faintly warm. Grounded, no gameplay UI."
 		}
 	],
 	"brandAssets": [

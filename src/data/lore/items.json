@@ -1,0 +1,61 @@
+[
+	{
+		"slug": "stonecutters-chisel",
+		"storySlugs": ["village-from-stone"],
+		"related": ["characters/yaryna", "characters/danylo"],
+		"fields": {
+			"itemType": "tool",
+			"rarity": "rare",
+			"element": "stone",
+			"effect": "Вирізає в камені ім’я, і камінь теплішає.",
+			"foundIn": ["locations/village-from-stone"]
+		},
+		"content": {
+			"ua": {
+				"name": "Долото каменяра",
+				"role": "",
+				"summary": "Дідове долото, яким Ярина вирізала перші імена.",
+				"paragraphs": [
+					"Одне з трьох доліт, які Ярина пронесла крізь довгу ніч разом із молотком і мірним шнуром. Ним вирізано ім’я на першому камені."
+				]
+			},
+			"en": {
+				"name": "Stonecutter’s chisel",
+				"role": "",
+				"summary": "Her grandfather’s chisel, which Yaryna used to cut the first names.",
+				"paragraphs": [
+					"One of the three chisels Yaryna carried through the long night, with a hammer and a knotted measuring cord. The name on the first stone was cut with it."
+				]
+			}
+		}
+	},
+	{
+		"slug": "ember-pot",
+		"storySlugs": ["village-from-stone"],
+		"related": ["factions/ember-keepers"],
+		"fields": {
+			"itemType": "tool",
+			"rarity": "uncommon",
+			"element": "fire",
+			"effect": "Зберігає жар живим у довгій дорозі."
+		},
+		"content": {
+			"ua": {
+				"name": "Горщик із жаром",
+				"role": "",
+				"summary": "Глиняний горщик, у якому жар пережив довгу ніч.",
+				"paragraphs": [
+					"Горщик обкладають мокрим мохом, щоб жар не згас і не обпік руки. Без таких горщиків мандрівники не дійшли б до гори."
+				]
+			},
+			"en": {
+				"name": "Ember pot",
+				"role": "",
+				"summary": "A clay pot in which the embers survived the long night.",
+				"paragraphs": [
+					"The pot is packed with wet moss so the ember neither dies nor burns the hands. Without such pots the walkers would not have reached the mountain."
+				]
+			}
+		}
+	}
+]

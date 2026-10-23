@@ -1,32 +1,38 @@
 <footer class="t-bar t-rule-t">
 	<div
-		class="mx-auto grid max-w-[var(--container)] gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[minmax(0,1.4fr)_minmax(14rem,0.8fr)] lg:gap-16"
+		class="mx-auto grid max-w-[var(--container)] grid-cols-2 gap-x-6 gap-y-10 px-4 py-12 sm:grid-cols-3 sm:px-6 lg:grid-cols-[minmax(0,1.3fr)_repeat(3,minmax(0,1fr))] lg:gap-12"
 	>
-		<div>
-			<p class="t-heading" translate>Темнорід</p>
-			<p class="mt-3 max-w-[var(--reading)] leading-7" translate>
-				У Темнороді битви виграють сталлю, магією та стратегією. Кожна перемога визначає майбутнє світу.
+		<div class="col-span-2 sm:col-span-3 lg:col-span-1">
+			<p class="t-wordmark text-2xl" translate>Темнорід</p>
+			<p class="mt-3 max-w-[28rem] leading-7" translate>
+				Темний середньовічний світ, який ми розповідаємо історіями та іграми. Пишіть власні
+				історії в Майстерні — найкращі стануть частиною світу.
 			</p>
 		</div>
 
-		<div class="flex flex-col gap-4">
-			<p class="font-semibold text-[var(--c-text-strong)]" translate>Сторінки</p>
-			<nav [translate]="{ ariaLabel: 'Навігація сторінками у футері' }">
-				<ul class="space-y-3">
-					@for (page of pageLinks; track page.path) {
+		@for (column of columns(); track column.title) {
+			<nav [translate]="{ ariaLabel: column.title }">
+				<p class="font-semibold text-[var(--c-text-strong)]" [translate]="column.title">
+					{{ column.title }}
+				</p>
+				<ul class="mt-4 space-y-3">
+					@for (link of column.links; track link.path) {
 						<li>
 							<a
-								class="theme-focus inline-flex rounded-md font-medium text-[var(--c-text)] transition-colors duration-150 hover:text-[var(--c-primary-text)]"
-								[routerLink]="page.path"
-								[translate]="page.label"
+								class="theme-focus inline-flex rounded-md text-[var(--c-text)] transition-colors duration-150 hover:text-[var(--c-primary-text)]"
+								[routerLink]="link.path"
 							>
-								{{ page.label }}
+								@if (link.translate) {
+									<span [translate]="link.label">{{ link.label }}</span>
+								} @else {
+									{{ link.label }}
+								}
 							</a>
 						</li>
 					}
 				</ul>
 			</nav>
-		</div>
+		}
 	</div>
 
 	<div class="t-rule-t">

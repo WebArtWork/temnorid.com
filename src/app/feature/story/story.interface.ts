@@ -22,6 +22,22 @@ export interface StoryChapter {
 	>;
 }
 
+/** Something a story leaves unexplained, for a later story to fill. */
+export interface StoryGapContent {
+	title: string;
+	details: string;
+}
+
+export interface StoryGap {
+	slug: string;
+	/** The chapter where the gap shows up, if one. */
+	chapterSlug?: string;
+	/** Keyed by language code. `ua` and `en` are required. */
+	content: { ua: StoryGapContent; en: StoryGapContent } & Partial<
+		Record<string, StoryGapContent>
+	>;
+}
+
 export interface StoryContent {
 	title: string;
 	summary: string;
@@ -35,6 +51,10 @@ export interface Story {
 	/** Keyed by language code. `ua` and `en` are required. */
 	content: { ua: StoryContent; en: StoryContent } & Partial<Record<string, StoryContent>>;
 	chapters: StoryChapter[];
+	/** Open questions this story leaves for later stories. */
+	gaps?: StoryGap[];
+	/** Gaps of earlier stories that this one explains, as `<storySlug>/<gapSlug>`. */
+	fills?: string[];
 }
 
 export interface LocalizedChapter extends StoryChapterContent {

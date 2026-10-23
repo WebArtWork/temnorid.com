@@ -19,7 +19,7 @@ export interface Crumb {
 	selector: 'app-breadcrumbs',
 	imports: [NgTemplateOutlet, RouterLink, TranslateDirective],
 	template: `
-		<nav [translate]="{ ariaLabel: 'Навігація' }">
+		<nav class="flex min-w-0 items-center gap-1" [translate]="{ ariaLabel: 'Навігація' }">
 			<ol class="t-breadcrumbs">
 				@for (crumb of items(); track $index; let first = $first, last = $last) {
 					<li [attr.aria-current]="last ? 'page' : null">
@@ -57,6 +57,8 @@ export interface Crumb {
 					</li>
 				}
 			</ol>
+			<!-- Extra controls after the current page, e.g. an info button. -->
+			<ng-content />
 		</nav>
 
 		<ng-template #label let-crumb>

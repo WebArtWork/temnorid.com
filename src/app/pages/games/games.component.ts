@@ -17,21 +17,11 @@ import { GameService } from '../../feature/game/game.service';
 				@for (game of games(); track game.slug) {
 					<li>
 						<a class="theme-focus flex h-full flex-col t-card" [routerLink]="game.path">
-							@if (game.status === 'in-development') {
-								<span class="text-sm text-[var(--c-text-muted)]" translate>
-									У розробці
-								</span>
-							}
 							<span class="t-item">{{ game.title }}</span>
-							<span class="mt-3 flex-1 leading-7">{{ game.summary }}</span>
-							<span class="t-link mt-6">
-								<span translate>Детальніше</span>
-								<span
-									class="material-symbols-outlined text-[20px]"
-									aria-hidden="true"
-									>arrow_forward</span
-								>
-							</span>
+							<span class="mt-3 font-semibold text-[var(--c-text-strong)]">{{
+								game.summary
+							}}</span>
+							<span class="mt-2 leading-7">{{ game.paragraphs[0] }}</span>
 						</a>
 					</li>
 				}

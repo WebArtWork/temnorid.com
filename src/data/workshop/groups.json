@@ -1,0 +1,26 @@
+[
+	{
+		"group": "stories",
+		"title": "Історії"
+	},
+	{
+		"group": "world",
+		"title": "Світ"
+	},
+	{
+		"group": "heroes",
+		"title": "Герої"
+	},
+	{
+		"group": "economy",
+		"title": "Господарство"
+	},
+	{
+		"group": "magic",
+		"title": "Магія і бій"
+	},
+	{
+		"group": "cards",
+		"title": "Карти"
+	}
+]

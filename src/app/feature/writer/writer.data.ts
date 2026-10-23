@@ -1,42 +1,32 @@
-import { WriterKind, WriterKindConfig } from './writer.interface';
+import groups from '../../../data/workshop/groups.json';
+import kinds from '../../../data/workshop/kinds.json';
+import reviewStatuses from '../../../data/workshop/review-statuses.json';
+import {
+	ReviewStatus,
+	WriterGroup,
+	WriterKind,
+	WriterKindConfig,
+	WriterLoreKind,
+} from './writer.interface';
 
-export const WRITER_KINDS: WriterKindConfig[] = [
-	{
-		kind: 'stories',
-		title: 'Історії',
-		newLabel: 'Нова історія',
-		editorPath: '/write/story',
-		listPath: '/write/stories',
-	},
-	{
-		kind: 'characters',
-		title: 'Персонажі',
-		newLabel: 'Новий персонаж',
-		editorPath: '/write/character',
-		listPath: '/write/characters',
-	},
-	{
-		kind: 'locations',
-		title: 'Локації',
-		newLabel: 'Нова локація',
-		editorPath: '/write/location',
-		listPath: '/write/locations',
-	},
-	{
-		kind: 'soldiers',
-		title: 'Воїни',
-		newLabel: 'Новий воїн',
-		editorPath: '/write/soldier',
-		listPath: '/write/soldiers',
-	},
-	{
-		kind: 'buildings',
-		title: 'Будівлі',
-		newLabel: 'Нова будівля',
-		editorPath: '/write/building',
-		listPath: '/write/buildings',
-	},
-];
+/*
+ * Kinds, their fields, sidebar groups and review statuses live in `src/data/workshop/`, so the
+ * build can also describe them in `/workshop.md` for AI chats. Labels are Ukrainian source text.
+ */
+
+/** Workshop sidebar sections, in order. */
+export const WRITER_GROUPS = groups as { group: WriterGroup; title: string }[];
+
+/** Every workshop kind with its routes and extra fields, in sidebar order. */
+export const WRITER_KINDS = kinds as WriterKindConfig[];
+
+/** The owner's decisions on a draft, in workflow order. */
+export const REVIEW_STATUSES = reviewStatuses as { value: ReviewStatus; label: string }[];
+
+/** Every world-entry kind (all but stories), in sidebar order. */
+export const WRITER_LORE_KINDS = WRITER_KINDS.filter(
+	(config): config is WriterKindConfig & { kind: WriterLoreKind } => config.kind !== 'stories',
+);
 
 export function writerKindConfig(kind: WriterKind): WriterKindConfig {
 	return WRITER_KINDS.find((config) => config.kind === kind)!;
@@ -92,3 +82,7 @@ export function toSlug(text: string): string {
 }
 
 export const SLUG_PATTERN = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+
+export function reviewStatusLabel(status: ReviewStatus): string {
+	return REVIEW_STATUSES.find((item) => item.value === status)?.label ?? 'Нове';
+}

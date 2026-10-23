@@ -1,0 +1,689 @@
+[
+	{
+		"kind": "stories",
+		"group": "stories",
+		"title": "Історії",
+		"newLabel": "Нова історія",
+		"editorPath": "/write/story",
+		"listPath": "/write/stories",
+		"public": true,
+		"role": false,
+		"fields": []
+	},
+	{
+		"kind": "locations",
+		"group": "world",
+		"title": "Локації",
+		"newLabel": "Нова локація",
+		"editorPath": "/write/location",
+		"listPath": "/write/locations",
+		"public": true,
+		"role": false,
+		"fields": [
+			{
+				"key": "locationType",
+				"label": "Тип місця",
+				"type": "select",
+				"options": [
+					{
+						"value": "region",
+						"label": "Край"
+					},
+					{
+						"value": "village",
+						"label": "Село"
+					},
+					{
+						"value": "town",
+						"label": "Містечко"
+					},
+					{
+						"value": "city",
+						"label": "Місто"
+					},
+					{
+						"value": "fortress",
+						"label": "Фортеця"
+					},
+					{
+						"value": "ruin",
+						"label": "Руїни"
+					},
+					{
+						"value": "dungeon",
+						"label": "Підземелля"
+					},
+					{
+						"value": "wilds",
+						"label": "Дикі землі"
+					}
+				]
+			},
+			{
+				"key": "faction",
+				"label": "Кому належить",
+				"type": "ref",
+				"kinds": ["factions"],
+				"multiple": false
+			}
+		]
+	},
+	{
+		"kind": "buildings",
+		"group": "world",
+		"title": "Будівлі",
+		"newLabel": "Нова будівля",
+		"editorPath": "/write/building",
+		"listPath": "/write/buildings",
+		"public": true,
+		"role": false,
+		"fields": [
+			{
+				"key": "cost",
+				"label": "Вартість будівництва",
+				"type": "amounts",
+				"kinds": ["resources"]
+			},
+			{
+				"key": "produces",
+				"label": "Що виробляє",
+				"type": "amounts",
+				"kinds": ["resources", "items"]
+			},
+			{
+				"key": "unlocks",
+				"label": "Що відкриває",
+				"type": "ref",
+				"kinds": ["recipes", "soldiers"],
+				"multiple": true
+			}
+		]
+	},
+	{
+		"kind": "factions",
+		"group": "world",
+		"title": "Фракції",
+		"newLabel": "Нова фракція",
+		"editorPath": "/write/faction",
+		"listPath": "/write/factions",
+		"public": false,
+		"role": false,
+		"fields": [
+			{
+				"key": "leader",
+				"label": "Лідер",
+				"type": "ref",
+				"kinds": ["characters"],
+				"multiple": false
+			},
+			{
+				"key": "seat",
+				"label": "Осідок",
+				"type": "ref",
+				"kinds": ["locations"],
+				"multiple": false
+			},
+			{
+				"key": "allies",
+				"label": "Союзники",
+				"type": "ref",
+				"kinds": ["factions"],
+				"multiple": true
+			},
+			{
+				"key": "rivals",
+				"label": "Суперники",
+				"type": "ref",
+				"kinds": ["factions"],
+				"multiple": true
+			},
+			{
+				"key": "goals",
+				"label": "Цілі",
+				"type": "text"
+			},
+			{
+				"key": "emblem",
+				"label": "Герб",
+				"type": "text",
+				"hint": "Словами: що зображено і якими кольорами."
+			},
+			{
+				"key": "element",
+				"label": "Стихія",
+				"type": "select",
+				"options": [
+					{
+						"value": "fire",
+						"label": "Вогонь"
+					},
+					{
+						"value": "stone",
+						"label": "Камінь"
+					},
+					{
+						"value": "other",
+						"label": "Інше"
+					}
+				]
+			}
+		]
+	},
+	{
+		"kind": "events",
+		"group": "world",
+		"title": "Події",
+		"newLabel": "Нова подія",
+		"editorPath": "/write/event",
+		"listPath": "/write/events",
+		"public": false,
+		"role": false,
+		"fields": [
+			{
+				"key": "when",
+				"label": "Коли",
+				"type": "text",
+				"hint": "Рік, епоха або подія, від якої лічать."
+			},
+			{
+				"key": "places",
+				"label": "Де",
+				"type": "ref",
+				"kinds": ["locations"],
+				"multiple": true
+			},
+			{
+				"key": "factions",
+				"label": "Фракції",
+				"type": "ref",
+				"kinds": ["factions"],
+				"multiple": true
+			},
+			{
+				"key": "characters",
+				"label": "Персонажі",
+				"type": "ref",
+				"kinds": ["characters"],
+				"multiple": true
+			},
+			{
+				"key": "outcome",
+				"label": "Чим закінчилося",
+				"type": "text"
+			}
+		]
+	},
+	{
+		"kind": "characters",
+		"group": "heroes",
+		"title": "Персонажі",
+		"newLabel": "Новий персонаж",
+		"editorPath": "/write/character",
+		"listPath": "/write/characters",
+		"public": true,
+		"role": true,
+		"fields": [
+			{
+				"key": "faction",
+				"label": "Фракція",
+				"type": "ref",
+				"kinds": ["factions"],
+				"multiple": false
+			},
+			{
+				"key": "heroClass",
+				"label": "Клас героя",
+				"type": "select",
+				"options": [
+					{
+						"value": "warrior",
+						"label": "Воїн"
+					},
+					{
+						"value": "mage",
+						"label": "Маг"
+					},
+					{
+						"value": "archer",
+						"label": "Лучник"
+					},
+					{
+						"value": "rogue",
+						"label": "Розвідник"
+					},
+					{
+						"value": "healer",
+						"label": "Цілитель"
+					},
+					{
+						"value": "commander",
+						"label": "Полководець"
+					},
+					{
+						"value": "none",
+						"label": "Не герой"
+					}
+				]
+			}
+		]
+	},
+	{
+		"kind": "soldiers",
+		"group": "heroes",
+		"title": "Війська",
+		"newLabel": "Нове військо",
+		"editorPath": "/write/soldier",
+		"listPath": "/write/soldiers",
+		"public": true,
+		"role": true,
+		"fields": [
+			{
+				"key": "faction",
+				"label": "Фракція",
+				"type": "ref",
+				"kinds": ["factions"],
+				"multiple": false
+			},
+			{
+				"key": "equipment",
+				"label": "Спорядження",
+				"type": "ref",
+				"kinds": ["items"],
+				"multiple": true
+			},
+			{
+				"key": "cost",
+				"label": "Вартість навчання",
+				"type": "amounts",
+				"kinds": ["resources"]
+			}
+		]
+	},
+	{
+		"kind": "creatures",
+		"group": "heroes",
+		"title": "Істоти",
+		"newLabel": "Нова істота",
+		"editorPath": "/write/creature",
+		"listPath": "/write/creatures",
+		"public": false,
+		"role": false,
+		"fields": [
+			{
+				"key": "habitat",
+				"label": "Де живе",
+				"type": "ref",
+				"kinds": ["locations"],
+				"multiple": true
+			},
+			{
+				"key": "danger",
+				"label": "Небезпека",
+				"type": "select",
+				"options": [
+					{
+						"value": "low",
+						"label": "Низька"
+					},
+					{
+						"value": "medium",
+						"label": "Середня"
+					},
+					{
+						"value": "high",
+						"label": "Висока"
+					},
+					{
+						"value": "deadly",
+						"label": "Смертельна"
+					},
+					{
+						"value": "boss",
+						"label": "Бос"
+					}
+				]
+			},
+			{
+				"key": "abilities",
+				"label": "Здібності",
+				"type": "text"
+			},
+			{
+				"key": "spells",
+				"label": "Закляття",
+				"type": "ref",
+				"kinds": ["spells"],
+				"multiple": true
+			},
+			{
+				"key": "drops",
+				"label": "Що залишає",
+				"type": "amounts",
+				"kinds": ["resources", "items"]
+			}
+		]
+	},
+	{
+		"kind": "resources",
+		"group": "economy",
+		"title": "Ресурси",
+		"newLabel": "Новий ресурс",
+		"editorPath": "/write/resource",
+		"listPath": "/write/resources",
+		"public": false,
+		"role": false,
+		"fields": [
+			{
+				"key": "category",
+				"label": "Категорія",
+				"type": "select",
+				"options": [
+					{
+						"value": "raw",
+						"label": "Сировина"
+					},
+					{
+						"value": "food",
+						"label": "Їжа"
+					},
+					{
+						"value": "precious",
+						"label": "Коштовності"
+					},
+					{
+						"value": "magical",
+						"label": "Магічне"
+					}
+				]
+			},
+			{
+				"key": "rarity",
+				"label": "Рідкісність",
+				"type": "select",
+				"options": [
+					{
+						"value": "common",
+						"label": "Звичайна"
+					},
+					{
+						"value": "uncommon",
+						"label": "Незвичайна"
+					},
+					{
+						"value": "rare",
+						"label": "Рідкісна"
+					},
+					{
+						"value": "legendary",
+						"label": "Легендарна"
+					}
+				]
+			},
+			{
+				"key": "foundIn",
+				"label": "Де знайти",
+				"type": "ref",
+				"kinds": ["locations"],
+				"multiple": true
+			}
+		]
+	},
+	{
+		"kind": "items",
+		"group": "economy",
+		"title": "Предмети",
+		"newLabel": "Новий предмет",
+		"editorPath": "/write/item",
+		"listPath": "/write/items",
+		"public": false,
+		"role": false,
+		"fields": [
+			{
+				"key": "itemType",
+				"label": "Вид",
+				"type": "select",
+				"options": [
+					{
+						"value": "tool",
+						"label": "Інструмент"
+					},
+					{
+						"value": "weapon",
+						"label": "Зброя"
+					},
+					{
+						"value": "armour",
+						"label": "Обладунок"
+					},
+					{
+						"value": "consumable",
+						"label": "Витратне"
+					},
+					{
+						"value": "artefact",
+						"label": "Артефакт"
+					}
+				]
+			},
+			{
+				"key": "rarity",
+				"label": "Рідкісність",
+				"type": "select",
+				"options": [
+					{
+						"value": "common",
+						"label": "Звичайна"
+					},
+					{
+						"value": "uncommon",
+						"label": "Незвичайна"
+					},
+					{
+						"value": "rare",
+						"label": "Рідкісна"
+					},
+					{
+						"value": "legendary",
+						"label": "Легендарна"
+					}
+				]
+			},
+			{
+				"key": "element",
+				"label": "Стихія",
+				"type": "select",
+				"options": [
+					{
+						"value": "fire",
+						"label": "Вогонь"
+					},
+					{
+						"value": "stone",
+						"label": "Камінь"
+					},
+					{
+						"value": "other",
+						"label": "Інше"
+					}
+				]
+			},
+			{
+				"key": "effect",
+				"label": "Дія",
+				"type": "text"
+			},
+			{
+				"key": "foundIn",
+				"label": "Де знайти",
+				"type": "ref",
+				"kinds": ["locations", "creatures"],
+				"multiple": true
+			}
+		]
+	},
+	{
+		"kind": "recipes",
+		"group": "economy",
+		"title": "Рецепти",
+		"newLabel": "Новий рецепт",
+		"editorPath": "/write/recipe",
+		"listPath": "/write/recipes",
+		"public": false,
+		"role": false,
+		"fields": [
+			{
+				"key": "ingredients",
+				"label": "Інгредієнти",
+				"type": "amounts",
+				"kinds": ["resources", "items"]
+			},
+			{
+				"key": "result",
+				"label": "Результат",
+				"type": "amounts",
+				"kinds": ["items"]
+			},
+			{
+				"key": "building",
+				"label": "Де виготовляють",
+				"type": "ref",
+				"kinds": ["buildings"],
+				"multiple": false
+			}
+		]
+	},
+	{
+		"kind": "spells",
+		"group": "magic",
+		"title": "Закляття",
+		"newLabel": "Нове закляття",
+		"editorPath": "/write/spell",
+		"listPath": "/write/spells",
+		"public": false,
+		"role": false,
+		"fields": [
+			{
+				"key": "element",
+				"label": "Стихія",
+				"type": "select",
+				"options": [
+					{
+						"value": "fire",
+						"label": "Вогонь"
+					},
+					{
+						"value": "stone",
+						"label": "Камінь"
+					},
+					{
+						"value": "other",
+						"label": "Інше"
+					}
+				]
+			},
+			{
+				"key": "effect",
+				"label": "Дія",
+				"type": "text"
+			},
+			{
+				"key": "cost",
+				"label": "Вартість",
+				"type": "text",
+				"hint": "Наприклад: 20 мани."
+			},
+			{
+				"key": "cooldown",
+				"label": "Перезарядка",
+				"type": "text",
+				"hint": "Наприклад: 5 секунд."
+			}
+		]
+	},
+	{
+		"kind": "quests",
+		"group": "magic",
+		"title": "Завдання",
+		"newLabel": "Нове завдання",
+		"editorPath": "/write/quest",
+		"listPath": "/write/quests",
+		"public": false,
+		"role": false,
+		"fields": [
+			{
+				"key": "giver",
+				"label": "Хто дає",
+				"type": "ref",
+				"kinds": ["characters"],
+				"multiple": false
+			},
+			{
+				"key": "goal",
+				"label": "Мета",
+				"type": "text"
+			},
+			{
+				"key": "locations",
+				"label": "Де",
+				"type": "ref",
+				"kinds": ["locations"],
+				"multiple": true
+			},
+			{
+				"key": "reward",
+				"label": "Нагорода",
+				"type": "amounts",
+				"kinds": ["resources", "items"]
+			}
+		]
+	},
+	{
+		"kind": "cards",
+		"group": "cards",
+		"title": "Карти",
+		"newLabel": "Нова карта",
+		"editorPath": "/write/card",
+		"listPath": "/write/cards",
+		"public": false,
+		"role": false,
+		"fields": [
+			{
+				"key": "cardType",
+				"label": "Тип карти",
+				"type": "select",
+				"options": [
+					{
+						"value": "action",
+						"label": "Дія"
+					},
+					{
+						"value": "unit",
+						"label": "Загін"
+					},
+					{
+						"value": "event",
+						"label": "Подія"
+					},
+					{
+						"value": "intrigue",
+						"label": "Інтрига"
+					},
+					{
+						"value": "resource",
+						"label": "Ресурс"
+					}
+				]
+			},
+			{
+				"key": "effect",
+				"label": "Дія",
+				"type": "text"
+			},
+			{
+				"key": "cost",
+				"label": "Вартість",
+				"type": "text"
+			}
+		]
+	}
+]

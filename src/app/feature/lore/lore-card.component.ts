@@ -1,9 +1,9 @@
 import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LocalizedCodexEntry } from './codex.interface';
+import { LocalizedLoreEntry } from './lore.interface';
 
 @Component({
-	selector: 'app-codex-card',
+	selector: 'app-lore-card',
 	imports: [RouterLink],
 	template: `
 		<a
@@ -18,6 +18,6 @@ import { LocalizedCodexEntry } from './codex.interface';
 		</a>
 	`,
 })
-export class CodexCardComponent {
-	readonly entry = input.required<LocalizedCodexEntry>();
+export class LoreCardComponent {
+	readonly entry = input.required<LocalizedLoreEntry>();
 }

@@ -1,0 +1,60 @@
+[
+	{
+		"slug": "warm-wall",
+		"storySlugs": ["village-from-stone"],
+		"related": ["resources/warm-stone"],
+		"fields": {
+			"element": "stone",
+			"effect": "Стіна гріє до ранку.",
+			"cost": "10 мани",
+			"cooldown": "1 хвилина"
+		},
+		"content": {
+			"ua": {
+				"name": "Тепла стіна",
+				"role": "",
+				"summary": "Будить тепло в названій стіні.",
+				"paragraphs": [
+					"Мешканець кладе долоні на стіну й промовляє ім’я, вирізане в ній. Камінь теплішає, і ті, хто всередині, не замерзнуть до ранку."
+				]
+			},
+			"en": {
+				"name": "Warm wall",
+				"role": "",
+				"summary": "Wakes the warmth in a named wall.",
+				"paragraphs": [
+					"The dweller lays both palms on the wall and speaks the name cut into it. The stone grows warm, and those inside will not freeze before morning."
+				]
+			}
+		}
+	},
+	{
+		"slug": "ember-breath",
+		"storySlugs": [],
+		"related": ["factions/ember-keepers"],
+		"fields": {
+			"element": "fire",
+			"effect": "Жар знову спалахує.",
+			"cost": "5 мани",
+			"cooldown": "10 секунд"
+		},
+		"content": {
+			"ua": {
+				"name": "Подих жару",
+				"role": "",
+				"summary": "Повертає полум’я жару, що вже гасне.",
+				"paragraphs": [
+					"Хранителі вміють подмухати на ледь живий жар так, що він знову займається. Це перше, чого вчать дітей біля горщиків."
+				]
+			},
+			"en": {
+				"name": "Ember breath",
+				"role": "",
+				"summary": "Brings a dying ember back to flame.",
+				"paragraphs": [
+					"The keepers know how to breathe on a barely living ember so that it catches again. It is the first thing children learn beside the pots."
+				]
+			}
+		}
+	}
+]

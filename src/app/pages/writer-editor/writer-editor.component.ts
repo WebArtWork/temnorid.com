@@ -13,27 +13,37 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TinymceComponent, TinymceEditor } from '@wawjs/ngx-tinymce';
 import { TranslateDirective, TranslateService } from '@wawjs/ngx-translate';
 import { ThemeService } from '@wawjs/ngx-ui';
-import { CODEX_KINDS } from '../../feature/codex/codex.data';
-import { CodexKind } from '../../feature/codex/codex.interface';
 import { BreadcrumbsComponent } from '../../layouts/breadcrumbs/breadcrumbs.component';
+import { WriterInfoButtonComponent } from '../../feature/writer/writer-info.component';
+import { WRITER_INFO } from '../../feature/writer/writer-info';
 import { FirebaseService } from '../../feature/firebase/firebase.service';
 import { WriterFrameComponent } from '../../feature/writer/writer-frame.component';
-import { writerTinymceConfig } from '../../feature/writer/writer-tinymce';
-import { writerKindConfig } from '../../feature/writer/writer.data';
-import { codexToCode } from '../../feature/writer/writer.export';
-import { CodexDraft, WriterReference } from '../../feature/writer/writer.interface';
+import { WRITER_TINYMCE_PROVIDER, writerTinymceConfig } from '../../feature/writer/writer-tinymce';
+import { WRITER_LORE_KINDS, writerKindConfig } from '../../feature/writer/writer.data';
+import { loreToCode } from '../../feature/writer/writer.export';
+import {
+	LoreDraft,
+	WriterAmount,
+	WriterLoreKind,
+	WriterFieldDef,
+	WriterFieldValue,
+	WriterReference,
+} from '../../feature/writer/writer.interface';
 import { WriterService, writerErrorMessage } from '../../feature/writer/writer.service';
 
-type EditorFields = Pick<CodexDraft, 'name' | 'role' | 'summary' | 'html'>;
+type EditorFields = Pick<LoreDraft, 'name' | 'role' | 'summary' | 'html'>;
 
 /**
- * /write/character, /write/location, /write/soldier, /write/building.
+ * Editor for every world-entry kind: /write/character, /write/faction, /write/item and so on.
+ * Name, summary and description are shared; the rest comes from the kind's `fields` config.
  * Without `?slug=` it creates a new entry; with it, it edits (or, for someone else's entry, shows) it.
  * Stories have their own page: /write/story.
  */
 @Component({
+	providers: [WRITER_TINYMCE_PROVIDER],
 	imports: [
 		BreadcrumbsComponent,
+		WriterInfoButtonComponent,
 		FormsModule,
 		TinymceComponent,
 		TranslateDirective,
@@ -50,11 +60,13 @@ export class WriterEditorComponent {
 	private readonly _isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 	private readonly _route = inject(ActivatedRoute).snapshot;
 
-	protected readonly kind: CodexKind = this._route.data['writerKind'];
+	protected readonly kind: WriterLoreKind = this._route.data['writerKind'];
 	protected readonly config = writerKindConfig(this.kind);
 
+	/** What this collection is and where it is used, for the info button. */
+	protected readonly info = WRITER_INFO[this.kind];
 	protected readonly status = signal<'loading' | 'ready' | 'missing' | 'error'>('loading');
-	protected readonly existing = signal<CodexDraft | null>(null);
+	protected readonly existing = signal<LoreDraft | null>(null);
 	protected readonly canEdit = computed(() => {
 		const existing = this.existing();
 
@@ -64,12 +76,14 @@ export class WriterEditorComponent {
 	protected readonly current = signal<EditorFields>(_emptyFields());
 	protected readonly storySlugs = signal<string[]>([]);
 	protected readonly related = signal<string[]>([]);
+	/** Values of the kind's extra fields, keyed by field key. */
+	protected readonly fieldValues = signal<Record<string, WriterFieldValue>>({});
 	protected readonly references = signal<WriterReference[]>([]);
 	protected readonly storyOptions = computed(() =>
 		this.references().filter((reference) => reference.kind === 'stories'),
 	);
 	protected readonly relatedGroups = computed(() =>
-		CODEX_KINDS.map((config) => ({
+		WRITER_LORE_KINDS.map((config) => ({
 			config,
 			options: this.references().filter(
 				(reference) =>
@@ -145,6 +159,67 @@ export class WriterEditorComponent {
 		this.dirty.set(true);
 	}
 
+	/** Entries a field can link to, grouped by kind. */
+	protected fieldOptions(field: WriterFieldDef & { kinds: WriterLoreKind[] }) {
+		return field.kinds
+			.map((kind) => ({
+				config: writerKindConfig(kind),
+				options: this.references().filter(
+					(reference) =>
+						reference.kind === kind &&
+						!(kind === this.kind && reference.slug === this.existing()?.slug),
+				),
+			}))
+			.filter((group) => group.options.length);
+	}
+
+	protected text(key: string): string {
+		const value = this.fieldValues()[key];
+
+		return typeof value === 'string' ? value : '';
+	}
+
+	protected refs(key: string): string[] {
+		const value = this.fieldValues()[key];
+
+		return Array.isArray(value) ? (value as string[]) : [];
+	}
+
+	protected amounts(key: string): WriterAmount[] {
+		const value = this.fieldValues()[key];
+
+		return Array.isArray(value) ? (value as WriterAmount[]) : [];
+	}
+
+	protected setValue(key: string, value: WriterFieldValue) {
+		this.fieldValues.update((values) => ({ ...values, [key]: value }));
+		this.dirty.set(true);
+	}
+
+	protected toggleRef(key: string, value: string, checked: boolean) {
+		const refs = this.refs(key);
+
+		this.setValue(key, checked ? [...refs, value] : refs.filter((ref) => ref !== value));
+	}
+
+	protected addAmount(key: string) {
+		this.setValue(key, [...this.amounts(key), { ref: '', amount: 1 }]);
+	}
+
+	protected updateAmount(key: string, index: number, change: Partial<WriterAmount>) {
+		this.setValue(
+			key,
+			this.amounts(key).map((row, i) => (i === index ? { ...row, ...change } : row)),
+		);
+	}
+
+	protected removeAmount(key: string, index: number) {
+		this.setValue(
+			key,
+			this.amounts(key).filter((_, i) => i !== index),
+		);
+	}
+
 	protected toggleReference(list: 'storySlugs' | 'related', value: string, checked: boolean) {
 		this[list].update((values) =>
 			checked ? [...values, value] : values.filter((item) => item !== value),
@@ -177,6 +252,7 @@ export class WriterEditorComponent {
 				summary: this.current().summary.trim(),
 				storySlugs: this.storySlugs(),
 				related: this.related(),
+				fields: this._cleanFields(),
 			};
 			let slug = this.existing()?.slug;
 
@@ -224,8 +300,8 @@ export class WriterEditorComponent {
 	protected showExport() {
 		const existing = this.existing();
 
-		if (existing) {
-			this.exportJson.set(JSON.stringify(codexToCode(existing), null, '\t'));
+		if (existing && this.config.public) {
+			this.exportJson.set(JSON.stringify(loreToCode(existing), null, '\t'));
 			this.copied.set(false);
 		}
 	}
@@ -236,7 +312,7 @@ export class WriterEditorComponent {
 	}
 
 	protected exportTarget() {
-		return `src/data/codex/${this.kind}.json`;
+		return `src/data/lore/${this.kind}.json`;
 	}
 
 	private async _load() {
@@ -265,6 +341,7 @@ export class WriterEditorComponent {
 				});
 				this.storySlugs.set(existing.storySlugs);
 				this.related.set(existing.related);
+				this.fieldValues.set(existing.fields);
 			}
 
 			this.status.set('ready');
@@ -272,6 +349,33 @@ export class WriterEditorComponent {
 			console.error(error);
 			this.status.set('error');
 		}
+	}
+
+	/** Field values to save: trimmed text, no empty values, no amount rows without an entry. */
+	private _cleanFields(): Record<string, WriterFieldValue> {
+		const fields: Record<string, WriterFieldValue> = {};
+
+		for (const field of this.config.fields) {
+			const value = this.fieldValues()[field.key];
+
+			if (field.type === 'amounts') {
+				const rows = this.amounts(field.key)
+					.filter((row) => row.ref)
+					.map((row) => ({ ref: row.ref, amount: Math.max(0, Number(row.amount) || 0) }));
+
+				if (rows.length) {
+					fields[field.key] = rows;
+				}
+			} else if (Array.isArray(value)) {
+				if (value.length) {
+					fields[field.key] = value;
+				}
+			} else if (typeof value === 'string' && value.trim()) {
+				fields[field.key] = value.trim();
+			}
+		}
+
+		return fields;
 	}
 }
 

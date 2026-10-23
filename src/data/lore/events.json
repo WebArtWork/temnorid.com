@@ -1,0 +1,62 @@
+[
+	{
+		"slug": "long-night",
+		"storySlugs": ["village-from-stone"],
+		"related": ["locations/grey-mountain"],
+		"fields": {
+			"when": "До заснування села",
+			"places": ["locations/burned-forest", "locations/salt-flats", "locations/second-river"],
+			"characters": ["characters/yaryna", "characters/danylo", "characters/olena"],
+			"factions": ["factions/ember-keepers"],
+			"outcome": "Мандрівники дійшли до Сірої гори."
+		},
+		"content": {
+			"ua": {
+				"name": "Довга ніч",
+				"role": "",
+				"summary": "Дорога сорока однієї людини крізь темряву до Сірої гори.",
+				"paragraphs": [
+					"Ніхто не пам’ятав останнього світанку. Мандрівники пройшли повз Згорілий ліс, солончаки й Другу ріку і втратили дорогою кількох своїх, поки не дійшли до гори."
+				]
+			},
+			"en": {
+				"name": "The Long Night",
+				"role": "",
+				"summary": "The road of forty-one people through the dark to the Grey Mountain.",
+				"paragraphs": [
+					"Nobody remembered the last dawn. The walkers passed the Burned Forest, the salt flats and the Second River, and lost some of their own on the way, until they reached the mountain."
+				]
+			}
+		}
+	},
+	{
+		"slug": "first-stone",
+		"storySlugs": ["village-from-stone"],
+		"related": ["buildings/first-house"],
+		"fields": {
+			"when": "Перший рік села",
+			"places": ["locations/village-from-stone"],
+			"characters": ["characters/yaryna", "characters/danylo"],
+			"factions": ["factions/village-of-names"],
+			"outcome": "Звели першу хату."
+		},
+		"content": {
+			"ua": {
+				"name": "Перший камінь",
+				"role": "",
+				"summary": "День, коли камінь уперше потеплішав від імені.",
+				"paragraphs": [
+					"Ярина назвала перший камінь іменем своєї мами, і камінь потеплішав. Так почалося Село з каменю."
+				]
+			},
+			"en": {
+				"name": "The First Stone",
+				"role": "",
+				"summary": "The day a stone first grew warm from a name.",
+				"paragraphs": [
+					"Yaryna gave the first stone her mother’s name, and the stone grew warm. That was how the Village from Stone began."
+				]
+			}
+		}
+	}
+]

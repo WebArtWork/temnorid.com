@@ -7,7 +7,7 @@ const rootDir = path.resolve(__dirname, '../..');
 const outputDirs = [path.join(rootDir, 'dist/app/browser')];
 
 const storyRoutes = await readStoryRoutes();
-const codexRoutes = await readCodexRoutes();
+const loreRoutes = await readLoreRoutes();
 const games = await readJson('src/data/games/games.json');
 const staticRoutes = [
 	'/',
@@ -16,7 +16,7 @@ const staticRoutes = [
 	'/movies',
 	...games.map((game) => `/game/${game.slug}`),
 	...storyRoutes,
-	...codexRoutes,
+	...loreRoutes,
 ];
 
 const company = await readJson('src/data/company/company.json');
@@ -83,11 +83,11 @@ async function readStoryRoutes() {
 		]);
 }
 
-async function readCodexRoutes() {
+async function readLoreRoutes() {
 	const kinds = ['characters', 'locations', 'soldiers', 'buildings'];
 	const routes = await Promise.all(
 		kinds.map(async (kind) => {
-			const entries = await readJson(`src/data/codex/${kind}.json`);
+			const entries = await readJson(`src/data/lore/${kind}.json`);
 
 			return [`/${kind}`, ...entries.map((entry) => `/${kind}/${entry.slug}`)];
 		}),

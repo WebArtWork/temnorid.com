@@ -2,7 +2,12 @@
 	{
 		"slug": "yaryna",
 		"storySlugs": ["village-from-stone"],
-		"related": ["characters/danylo", "characters/olena", "buildings/first-house", "locations/grey-mountain"],
+		"related": [
+			"characters/danylo",
+			"characters/olena",
+			"buildings/first-house",
+			"locations/grey-mountain"
+		],
 		"content": {
 			"ua": {
 				"name": "Ярина",

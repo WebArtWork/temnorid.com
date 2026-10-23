@@ -2,32 +2,96 @@
 	{
 		"slug": "lords",
 		"status": "in-development",
+		"seo": {
+			"title": "Lords — Fantasy Strategy Game",
+			"description": "Lords is the central Temnorid strategy game: grow settlements, build cities, command armies and expand your lands. Every other game connects to it."
+		},
 		"content": {
 			"ua": {
 				"title": "Лорди",
-				"summary": "Лорди — гра в розробці у світі темного середньовічного фентезі Темнорід. Подробиці з’являться тут.",
-				"paragraphs": []
+				"summary": "Головна стратегія та центральний світ Темнороду.",
+				"paragraphs": [
+					"Розвивай поселення, будуй міста, керуй арміями та розширюй свої володіння. Усі інші ігри пов’язані з Лордами через спільний світ, ресурси та прогрес."
+				]
 			},
 			"en": {
 				"title": "Lords",
-				"summary": "Lords is a game in development set in Temnorid, a dark medieval fantasy world. More details will appear here.",
-				"paragraphs": []
+				"summary": "The main strategy game and the heart of the Temnorid world.",
+				"paragraphs": [
+					"Grow settlements, build cities, command armies and expand your lands. Every other game connects to Lords through a shared world, resources and progress."
+				]
 			}
 		}
 	},
 	{
-		"slug": "farm",
+		"slug": "craft",
 		"status": "in-development",
+		"seo": {
+			"title": "Craft — Resource and Crafting Game",
+			"description": "In Temnorid Craft you farm, gather wood, stone and ore, and make tools, weapons and armour that supply the settlements of Lords."
+		},
 		"content": {
 			"ua": {
-				"title": "Ферма",
-				"summary": "Ферма — гра в розробці у світі темного середньовічного фентезі Темнорід. Подробиці з’являться тут.",
-				"paragraphs": []
+				"title": "Ремесло",
+				"summary": "Видобуток ресурсів, ремесла та виробництво.",
+				"paragraphs": [
+					"Розвивай господарство, вирощуй їжу, добувай деревину, камінь і руду, створюй інструменти, зброю та обладунки. Забезпечуй ресурсами поселення у Лордах."
+				]
 			},
 			"en": {
-				"title": "Farm",
-				"summary": "Farm is a game in development set in Temnorid, a dark medieval fantasy world. More details will appear here.",
-				"paragraphs": []
+				"title": "Craft",
+				"summary": "Gathering, crafting and production.",
+				"paragraphs": [
+					"Build up your farmstead, grow food, gather wood, stone and ore, and make tools, weapons and armour. Supply the settlements in Lords with resources."
+				]
+			}
+		}
+	},
+	{
+		"slug": "dungeons",
+		"status": "in-development",
+		"seo": {
+			"title": "Dungeons — Fantasy Adventure Game",
+			"description": "Explore dangerous ruins in Temnorid Dungeons: fight monsters, defeat bosses and find rare treasure, gear and magical artefacts for your heroes."
+		},
+		"content": {
+			"ua": {
+				"title": "Підземелля",
+				"summary": "Пригоди, підземелля та пошук артефактів.",
+				"paragraphs": [
+					"Досліджуй небезпечні руїни, бийся з монстрами, перемагай босів і знаходь рідкісні скарби. Здобувай спорядження та магічні артефакти для своїх героїв."
+				]
+			},
+			"en": {
+				"title": "Dungeons",
+				"summary": "Adventures, dungeons and the hunt for artefacts.",
+				"paragraphs": [
+					"Explore dangerous ruins, fight monsters, defeat bosses and find rare treasure. Win gear and magical artefacts for your heroes."
+				]
+			}
+		}
+	},
+	{
+		"slug": "conquest",
+		"status": "in-development",
+		"seo": {
+			"title": "Conquest — Territory War Game",
+			"description": "Command troops in Temnorid Conquest: plan sieges, capture villages and cities, defend your lands and change the political map of the world."
+		},
+		"content": {
+			"ua": {
+				"title": "Завоювання",
+				"summary": "Війни за території та захоплення поселень.",
+				"paragraphs": [
+					"Командуй військами, плануй облоги, атакуй ворожі села й міста та захищай власні землі. Результати битв змінюють політичну карту Темнороду."
+				]
+			},
+			"en": {
+				"title": "Conquest",
+				"summary": "Wars for territory and the capture of settlements.",
+				"paragraphs": [
+					"Command troops, plan sieges, attack enemy villages and cities, and defend your own lands. The outcome of each battle changes the political map of Temnorid."
+				]
 			}
 		}
 	},
@@ -35,81 +99,49 @@
 		"slug": "arena",
 		"url": "https://temnorid-arena.webart.work",
 		"status": "released",
+		"seo": {
+			"title": "Arena — Heroic Duel Game",
+			"description": "Duel other heroes in Temnorid Arena with weapons and elemental magic. Win fights, raise your reputation and earn unique trophies."
+		},
 		"content": {
 			"ua": {
 				"title": "Арена",
-				"summary": "Закляття замість зброї. Швидка арена для магів на ПК, телефоні та Meta Quest 3.",
+				"summary": "Героїчні поєдинки, слава та трофеї.",
 				"paragraphs": [
-					"Арена — швидка гра для магів. Кидай вогняні кулі, заморожуй усіх, хто підійшов надто близько, ховайся за щитом і телепортуйся з небезпеки. Грай на ПК, телефоні чи у VR на Meta Quest 3 — усі в тих самих матчах.",
-					"Версія 0.1 — нескінченний бій усіх проти всіх. Ти починаєш матч, приєднуються п'ять ботів, і всі б'ються з усіма на кам'яній арені. Переможені маги повертаються за три секунди.",
-					"Кожен маг має ті самі чотири закляття. Кожне коштує ману й має перезарядку, а мана відновлюється сама, тож бій вирішує вчасність, а не здобич."
+					"Виходь на арену, змагайся з іншими героями, використовуй зброю та стихійну магію. Перемагай, підвищуй репутацію й здобувай унікальні нагороди."
 				]
 			},
 			"en": {
 				"title": "Arena",
-				"summary": "Spells instead of guns. A fast arena game for mages on PC, phone and Meta Quest 3.",
+				"summary": "Heroic duels, glory and trophies.",
 				"paragraphs": [
-					"Arena is a fast arena game for mages. Throw fireballs, freeze anyone who gets close, shield up and blink out of trouble. Play on PC, a phone or in VR on Meta Quest 3, all in the same matches.",
-					"Version 0.1 is an endless free-for-all deathmatch. You start a match, five bots join, and everyone fights everyone in a stone arena. Defeated mages come back three seconds later.",
-					"Every mage carries the same four spells. Each costs mana and has a cooldown, and mana refills on its own, so the fight is about timing, not loot."
+					"Step into the arena, face other heroes, and fight with weapons and elemental magic. Win, raise your reputation and earn unique rewards."
 				]
 			}
 		}
 	},
 	{
-		"slug": "politics",
+		"slug": "intrigue",
 		"url": "https://temnorid-conquest.webart.work",
 		"status": "released",
+		"seo": {
+			"title": "Intrigue — Political Strategy Game",
+			"description": "Temnorid Intrigue is a board and online strategy game of alliances, factions and plots, where political wins bring resources to cities in Lords."
+		},
 		"content": {
 			"ua": {
-				"title": "Політика",
-				"summary": "Здобудь вплив. Збери силу. Завоюй Темнорід. Стратегічна онлайн-гра для 1–4 гравців.",
+				"title": "Інтриги",
+				"summary": "Політика, дипломатія та боротьба за вплив.",
 				"paragraphs": [
-					"Темнорід розділений між силами, що борються за владу. Збирай власну колоду, відправляй героїв у ключові місця світу, укладай союзи, накопичуй ресурси та вступай у битви, які можуть змінити хід усієї гри.",
-					"Світ Темнороду — це не просто карта. Міста, фортеці, руїни, магічні місця та території створюють мережу можливостей, за які борються всі гравці.",
-					"Кожне важливе місце може бути зайняте суперником. Тому кожен хід — це не лише те, що потрібно тобі, а й те, що не можна дозволити отримати іншому."
+					"Настільна й онлайн-стратегія, де гравці укладають союзи, керують фракціями, плетуть інтриги та змагаються за владу. Політичні перемоги приносять ресурси й переваги містам у Лордах."
 				]
 			},
 			"en": {
-				"title": "Politics",
-				"summary": "Gain influence. Build power. Conquer Temnorid. An online strategy game for 1–4 players.",
+				"title": "Intrigue",
+				"summary": "Politics, diplomacy and the struggle for influence.",
 				"paragraphs": [
-					"Temnorid is divided between powers competing for control. Build your deck, send heroes to key locations, form alliances, gather resources and enter battles capable of changing the course of the game.",
-					"The world of Temnorid is more than a map. Cities, fortresses, ruins, magical locations and contested territories form a network of opportunities shared by every player.",
-					"Every important location may be claimed first. Every move is not only about what you need, but what you cannot allow an enemy to gain."
+					"A board and online strategy game where players form alliances, lead factions, weave intrigues and compete for power. Political victories bring resources and advantages to cities in Lords."
 				]
-			}
-		}
-	},
-	{
-		"slug": "dungeon",
-		"status": "in-development",
-		"content": {
-			"ua": {
-				"title": "Підземелля",
-				"summary": "Гра в розробці. Подробиці з'являться тут.",
-				"paragraphs": []
-			},
-			"en": {
-				"title": "Dungeon",
-				"summary": "In development. Details will appear here.",
-				"paragraphs": []
-			}
-		}
-	},
-	{
-		"slug": "conquest",
-		"status": "in-development",
-		"content": {
-			"ua": {
-				"title": "Завоювання",
-				"summary": "Гра в розробці. Подробиці з'являться тут.",
-				"paragraphs": []
-			},
-			"en": {
-				"title": "Conquest",
-				"summary": "In development. Details will appear here.",
-				"paragraphs": []
 			}
 		}
 	}

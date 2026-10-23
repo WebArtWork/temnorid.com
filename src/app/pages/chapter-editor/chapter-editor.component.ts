@@ -13,11 +13,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TinymceComponent, TinymceEditor } from '@wawjs/ngx-tinymce';
 import { TranslateDirective, TranslateService } from '@wawjs/ngx-translate';
 import { ThemeService } from '@wawjs/ngx-ui';
-import { CODEX_KINDS } from '../../feature/codex/codex.data';
 import { BreadcrumbsComponent } from '../../layouts/breadcrumbs/breadcrumbs.component';
+import { WriterInfoButtonComponent } from '../../feature/writer/writer-info.component';
+import { WRITER_INFO } from '../../feature/writer/writer-info';
 import { FirebaseService } from '../../feature/firebase/firebase.service';
 import { WriterFrameComponent } from '../../feature/writer/writer-frame.component';
-import { writerTinymceConfig } from '../../feature/writer/writer-tinymce';
+import { WRITER_TINYMCE_PROVIDER, writerTinymceConfig } from '../../feature/writer/writer-tinymce';
+import { WRITER_LORE_KINDS } from '../../feature/writer/writer.data';
 import { ChapterDraft, StoryDraft, WriterReference } from '../../feature/writer/writer.interface';
 import { WriterService, writerErrorMessage } from '../../feature/writer/writer.service';
 
@@ -26,8 +28,10 @@ import { WriterService, writerErrorMessage } from '../../feature/writer/writer.s
  * Without `chapter` it adds a new chapter at the end.
  */
 @Component({
+	providers: [WRITER_TINYMCE_PROVIDER],
 	imports: [
 		BreadcrumbsComponent,
+		WriterInfoButtonComponent,
 		FormsModule,
 		TinymceComponent,
 		TranslateDirective,
@@ -44,6 +48,8 @@ export class ChapterEditorComponent {
 	private readonly _isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 	private readonly _query = inject(ActivatedRoute).snapshot.queryParamMap;
 
+	/** What this collection is and where it is used, for the info button. */
+	protected readonly info = WRITER_INFO.chapters;
 	protected readonly status = signal<'loading' | 'ready' | 'missing' | 'error'>('loading');
 	protected readonly story = signal<StoryDraft | null>(null);
 	protected readonly chapter = signal<ChapterDraft | null>(null);
@@ -54,9 +60,9 @@ export class ChapterEditorComponent {
 	protected readonly current = signal({ title: '', html: '' });
 	protected readonly tags = signal<string[]>([]);
 	private readonly _references = signal<WriterReference[]>([]);
-	/** Codex entries to tag, grouped by kind, from the code and from Firestore. */
+	/** Lore entries to tag, grouped by kind, from the code and from Firestore. */
 	protected readonly tagGroups = computed(() =>
-		CODEX_KINDS.map((config) => ({
+		WRITER_LORE_KINDS.map((config) => ({
 			config,
 			options: this._references().filter((reference) => reference.kind === config.kind),
 		})).filter((group) => group.options.length),

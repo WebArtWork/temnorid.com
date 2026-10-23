@@ -1,15 +1,15 @@
 {
 	"_id": "",
 	"name": "Temnorid",
-	"title": "Temnorid — Dark Medieval Fantasy World",
-	"description": "Temnorid is a dark medieval fantasy world inspired by the 14th century (1300–1400), where kingdoms, armies, and powerful wizards compete for territory and influence.\n\nStone fortresses, fortified cities, ancient ruins, and dangerous wilderness shape a world of constant conflict. Soldiers fight with swords, shields, bows, and siege weapons, while wizards command powerful elemental magic.\n\nThe first chapter introduces two forces: Fire, representing destruction and raw power, and Stone, representing endurance, protection, and strength.\n\nIn Temnorid, battles are won through steel, magic, and strategy—and every victory shapes the world's future.",
+	"title": "Temnorid — Dark Medieval Fantasy World of Stories and Games",
+	"description": "Temnorid is a dark medieval fantasy world inspired by the 14th century (1300–1400), where kingdoms, armies and wizards compete for territory and influence.\n\nThe world is told through stories, written chapter by chapter, and the lore of its characters, locations, troops and buildings. Six connected games share it: Lords at the centre, with Craft, Dungeons, Conquest, Arena and Intrigue around it. Films are planned.\n\nIn the Temnorid workshop anyone can write stories and world entries; the best become part of the world.",
 	"image": "https://temnorid.com/logo.png",
 	"siteUrl": "https://temnorid.com",
 	"lang": "uk",
 	"locale": "uk_UA",
 	"defaultSeo": {
-		"title": "Temnorid — Dark Medieval Fantasy World",
-		"description": "Explore Temnorid, a dark medieval fantasy world inspired by the 14th century, where kingdoms, armies and wizards fight with steel, elemental magic and strategy.",
+		"title": "Temnorid — Dark Medieval Fantasy World of Stories and Games",
+		"description": "Temnorid is a dark medieval fantasy world told through stories, its lore and six connected games, from the Lords strategy game to duels in the Arena.",
 		"keywords": [
 			"Temnorid",
 			"Темнорід",
@@ -17,7 +17,11 @@
 			"14th century fantasy",
 			"elemental magic",
 			"Fire and Stone",
-			"fantasy stories"
+			"fantasy stories",
+			"fantasy games",
+			"fantasy strategy game",
+			"Temnorid Lords",
+			"Temnorid Arena"
 		],
 		"author": "Temnorid",
 		"image": "/seo/home.png",
@@ -28,17 +32,17 @@
 	"pageSeo": {
 		"/stories": {
 			"title": "Fantasy Stories",
-			"description": "Read the stories of Temnorid, a dark medieval fantasy world of kingdoms, elemental magic and contested lands. Begin with Village from Stone.",
+			"description": "Read Temnorid stories chapter by chapter: a dark medieval fantasy of kingdoms, elemental magic and contested lands. Begin with Village from Stone.",
 			"image": "/seo/stories.png"
 		},
 		"/games": {
-			"title": "Fantasy Games",
-			"description": "Discover games set in Temnorid, a dark medieval fantasy world where steel, elemental magic and strategy decide battles and shape the future.",
+			"title": "Fantasy Strategy and Adventure Games",
+			"description": "Six connected Temnorid games share one world: rule in Lords, craft, explore dungeons, wage conquest, duel in the Arena and win power through intrigue.",
 			"image": "/seo/games.png"
 		},
 		"/movies": {
-			"title": "Fantasy Movies",
-			"description": "Follow future films set in Temnorid, a dark medieval fantasy world of kingdoms and elemental magic. No films are available yet; start with the stories.",
+			"title": "Fantasy Films",
+			"description": "Films set in Temnorid, the dark medieval fantasy world of its stories and games, are still to come. Until then, start with the stories.",
 			"image": "/seo/movies.png"
 		},
 		"/": {
@@ -47,8 +51,8 @@
 		"/game/lords": {
 			"image": "/seo/game-lords.png"
 		},
-		"/game/farm": {
-			"image": "/seo/game-farm.png"
+		"/game/craft": {
+			"image": "/seo/game-craft.png"
 		},
 		"/game/arena": {
 			"image": "/seo/game-arena.png"
@@ -115,6 +119,15 @@
 		},
 		"/buildings/named-houses": {
 			"image": "/seo/building-named-houses.png"
+		},
+		"/game/dungeons": {
+			"image": "/seo/game-dungeons.png"
+		},
+		"/game/intrigue": {
+			"image": "/seo/game-intrigue.png"
+		},
+		"/soldiers/stone-guard": {
+			"image": "/seo/soldier-stone-guard.png"
 		}
 	},
 	"logo": "/logo.png"

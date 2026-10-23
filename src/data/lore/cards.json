@@ -1,0 +1,52 @@
+[
+	{
+		"slug": "named-wall",
+		"storySlugs": [],
+		"related": ["spells/warm-wall"],
+		"fields": {
+			"cardType": "action",
+			"effect": "Поселення не мерзне один хід.",
+			"cost": "1 теплий камінь"
+		},
+		"content": {
+			"ua": {
+				"name": "Іменна стіна",
+				"role": "",
+				"summary": "Захищає поселення від холоду на один хід.",
+				"paragraphs": ["Карта нагадує правило Села з каменю: стіна з ім’ям тримає тепло."]
+			},
+			"en": {
+				"name": "Named wall",
+				"role": "",
+				"summary": "Protects a settlement from the cold for one turn.",
+				"paragraphs": [
+					"The card recalls the rule of the Village from Stone: a wall with a name keeps the warmth."
+				]
+			}
+		}
+	},
+	{
+		"slug": "ember-keepers",
+		"storySlugs": [],
+		"related": ["factions/ember-keepers"],
+		"fields": {
+			"cardType": "unit",
+			"effect": "Поселення отримує вогонь.",
+			"cost": "1 їжа"
+		},
+		"content": {
+			"ua": {
+				"name": "Хранителі жару",
+				"role": "",
+				"summary": "Приносять вогонь у поселення, де його немає.",
+				"paragraphs": ["Загін хранителів, які вміють донести жар куди завгодно."]
+			},
+			"en": {
+				"name": "Ember Keepers",
+				"role": "",
+				"summary": "Bring fire to a settlement that has none.",
+				"paragraphs": ["A band of keepers who can carry an ember anywhere."]
+			}
+		}
+	}
+]

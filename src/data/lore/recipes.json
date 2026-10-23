@@ -1,0 +1,40 @@
+[
+	{
+		"slug": "ember-pot",
+		"storySlugs": [],
+		"related": ["items/ember-pot"],
+		"fields": {
+			"ingredients": [
+				{
+					"ref": "resources/clay",
+					"amount": 2
+				}
+			],
+			"result": [
+				{
+					"ref": "items/ember-pot",
+					"amount": 1
+				}
+			],
+			"building": "buildings/first-house"
+		},
+		"content": {
+			"ua": {
+				"name": "Горщик для жару",
+				"role": "",
+				"summary": "Як зробити горщик, що донесе жар.",
+				"paragraphs": [
+					"Глину мнуть із піском, ліплять товсті стінки й обпалюють на тому самому жарі, який горщик потім нестиме."
+				]
+			},
+			"en": {
+				"name": "Ember pot",
+				"role": "",
+				"summary": "How to make a pot that will carry an ember.",
+				"paragraphs": [
+					"The clay is kneaded with sand, shaped with thick walls and fired on the very ember the pot will later carry."
+				]
+			}
+		}
+	}
+]

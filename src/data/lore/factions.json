@@ -1,0 +1,63 @@
+[
+	{
+		"slug": "village-of-names",
+		"storySlugs": ["village-from-stone"],
+		"related": ["characters/olena", "locations/village-from-stone"],
+		"fields": {
+			"leader": "characters/olena",
+			"seat": "locations/village-from-stone",
+			"allies": ["factions/ember-keepers"],
+			"goals": "Зберегти кожну стіну названою, а гору теплою.",
+			"emblem": "Сірий камінь із вирізаним ім’ям на грубій вовні.",
+			"element": "stone"
+		},
+		"content": {
+			"ua": {
+				"name": "Село імен",
+				"role": "",
+				"summary": "Люди Села з каменю, які дають кожній стіні ім’я.",
+				"paragraphs": [
+					"Ті, хто дійшов до Сірої гори й лишився там. Їх веде старшина Олена, а правило в них одне: жодна стіна не постає без імені."
+				]
+			},
+			"en": {
+				"name": "Village of Names",
+				"role": "",
+				"summary": "The people of the Village from Stone, who give every wall a name.",
+				"paragraphs": [
+					"Those who reached the Grey Mountain and stayed. Headwoman Olena leads them, and they keep one rule: no wall goes up without a name."
+				]
+			}
+		}
+	},
+	{
+		"slug": "ember-keepers",
+		"storySlugs": ["village-from-stone"],
+		"related": ["items/ember-pot"],
+		"fields": {
+			"seat": "locations/village-from-stone",
+			"allies": ["factions/village-of-names"],
+			"goals": "Щоб у селі ніколи не згас вогонь.",
+			"emblem": "Глиняний горщик із червоним жаром.",
+			"element": "fire"
+		},
+		"content": {
+			"ua": {
+				"name": "Хранителі жару",
+				"role": "",
+				"summary": "Ті, хто проніс вогонь крізь довгу ніч у глиняних горщиках.",
+				"paragraphs": [
+					"У дорозі жар важив більше за все. Його несли в горщиках, обкладених мокрим мохом, і щовечора будили знову. Хранителі досі пам’ятають, як це робити."
+				]
+			},
+			"en": {
+				"name": "Ember Keepers",
+				"role": "",
+				"summary": "Those who carried fire through the long night in clay pots.",
+				"paragraphs": [
+					"On the road the embers weighed more than anything. They were carried in pots packed with wet moss and woken again every evening. The keepers still remember how."
+				]
+			}
+		}
+	}
+]

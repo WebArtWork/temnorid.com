@@ -12,23 +12,49 @@ In Temnorid, battles are won through steel, magic, and strategy—and every vict
 
 SEO defaults and page overrides live in `src/data/company/company.json`. Every public route has a distinct generated landscape illustration under `src/assets/seo/` for Open Graph and Twitter previews. The Fire and Stone brand assets are `src/assets/logo.png` (1024 × 1024) and `src/assets/favicon.png` (64 × 64). Full built-in image generation prompts and the page-to-image manifest are in `tools/seo/image-prompts.json`; open `output/seo-review/index.html` to review the images locally. Public pages are prerendered with page-specific titles and descriptions; sign-in and workshop pages remain `noindex, nofollow`. The production build validates every generated page automatically. Run `npm run seo:check` to repeat the check against an existing build. This also checks page image mappings, distinct file contents, landscape dimensions and the 5 MB sharing-image limit.
 
+## Workshop and releases
+
+Anyone signed in with Google can write in the workshop (`/write`): stories with chapters and gaps,
+and world entries of every kind. Everything in Firestore is a **draft**, whoever wrote it.
+**Released** means "in the code": only the project owner decides what is released, by adding its JSON
+to `src/data/`. The workshop shows released entries read-only, and a draft whose slug is released is
+hidden because the code replaced it.
+
+- **Owners.** Create the Firestore document `admins/<uid>` in the Firebase console (the uid is under
+  Authentication → Users). Owners see "Огляд чернеток" (`/write/review`): every draft, a decision
+  (new, considering, chosen, released, declined) with a note authors see in their lists, and
+  "JSON для коду" with the entry in released format.
+- **Gaps.** A story can list gaps: what it leaves unexplained on purpose. Another story fills a gap by
+  ticking it on its own page. `/write/gaps` lists every open gap.
+- **Sync and AI chats.** The sync icon next to "Workshop" opens an ace JSON editor with all of the
+  author's drafts as one sync object; edited or pasted JSON is checked, then upserted by slug
+  (nothing is deleted). The build writes `/workshop.md` (`tools/workshop/generate-workshop-md.mjs`):
+  released stories, open gaps, released lore, every kind's fields and the sync object format, so any
+  AI chat can write a sync object. Kinds, fields, groups, statuses and info texts live in
+  `src/data/workshop/` for both the app and that guide.
+- **Rules.** `firestore.rules` is shared with `arena.temnorid.com` (one Firebase project); keep both
+  copies identical and deploy with `npm run rules`.
+
 ## Adding a story
 
-1. Create `src/data/stories/<slug>.json` with `slug`, `number`, `readingMinutes`, `publishedAt` and
-   `content.ua` / `content.en` (`title`, `summary`, `parts[]` with `title` and `paragraphs[]`). Copy
-   `village-from-stone.json` as a starting point.
+1. Create `src/data/stories/<slug>.json`, or copy the JSON from the review page. It has `slug`,
+   `number`, `readingMinutes`, `publishedAt`, `content.ua` / `content.en` (`title`, `summary`),
+   `chapters[]` (`slug`, `order`, optional `tags`, `content.ua` / `content.en` with `title` and
+   `html`), optional `gaps[]` and optional `fills[]` (`<story>/<gap>`). Translate `en` after pasting.
 2. Import it in `src/app/feature/story/story.data.ts` and add it to `STORIES`.
 
-The route `/stories/<slug>`, its SEO meta, the sitemap entry and the landing card are generated from
-that data. The site has two languages: Ukrainian (default) and English.
+The routes `/stories/<slug>` and `/stories/<slug>/<chapter>`, their SEO meta and the sitemap entries
+are generated from that data. Each new public page also needs a share image in `src/data/company/
+company.json` and `src/assets/seo/`. The site has two languages: Ukrainian (default) and English.
 
-## Adding characters, locations, soldiers and buildings
+## Adding world entries
 
-Add an object to the matching array in `src/data/codex/` (`characters.json`, `locations.json`,
-`soldiers.json`, `buildings.json`) with `slug`, `storySlugs` (stories it appears in), `related`
-(links like `locations/grey-mountain`) and `content.ua` / `content.en` (`name`, `role`, `summary`,
-`paragraphs[]`). Its page `/<kind>/<slug>`, list card, sitemap entry and the "In this story" link on
-each story are generated automatically.
+Add an object to the matching array in `src/data/lore/<kind>.json` with `slug`, `storySlugs`,
+`related` (links like `locations/grey-mountain`), optional `fields` (the kind's workshop fields) and
+`content.ua` / `content.en` (`name`, `role`, `summary`, `paragraphs[]`). Characters, locations, troops
+(`soldiers`) and buildings get a public page `/<kind>/<slug>`; the other kinds (factions, resources,
+items, recipes, spells, creatures, quests, events, cards) are released for the games and the
+workshop only.
 
 ---
 

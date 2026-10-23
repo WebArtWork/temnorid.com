@@ -62,8 +62,10 @@
 								"output": "/tinymce/"
 							}
 						],
-						"styles": ["node_modules/@wawjs/ngx-ui/styles.css",
-					"src/styles.scss"],
+						"styles": [
+							"node_modules/@wawjs/ngx-ui/styles.css",
+							"src/styles.scss"
+						],
 						"server": "src/main.server.ts",
 						"outputMode": "server",
 						"security": {
@@ -71,7 +73,10 @@
 						},
 						"ssr": {
 							"entry": "src/server.ts"
-						}
+						},
+						"allowedCommonJsDependencies": [
+							"ace-builds"
+						]
 					},
 					"configurations": {
 						"production": {
@@ -84,7 +89,7 @@
 							"budgets": [
 								{
 									"type": "initial",
-									"maximumWarning": "500kB",
+									"maximumWarning": "600kB",
 									"maximumError": "1MB"
 								},
 								{

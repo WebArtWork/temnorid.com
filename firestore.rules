@@ -2,7 +2,7 @@ rules_version = '2';
 
 // One ruleset for the whole `temnorid-arena` Firebase project. temnorid.com and the
 // temnorid-arena Unity game share it, so a deploy from either repo replaces the other's rules:
-// keep both halves here and in temnorid-arena/firestore.rules.
+// keep every part here and in arena.temnorid.com/firestore.rules identical.
 // Deploy: npm run rules
 //
 // Temnorid Arena (3d-unity-firebase layout):
@@ -14,8 +14,15 @@ rules_version = '2';
 // temnorid.com story writer. The document id is the slug, so `<kind>/<slug>` references match the
 // JSON files in temnorid.com/src/data/:
 //   stories/{slug}
-//   stories/{slug}/chapters/{chapterSlug}   ordered by `order`; `tags` lists the codex entries in it
-//   characters/{slug}, locations/{slug}, soldiers/{slug}, buildings/{slug}
+//   stories/{slug}/chapters/{chapterSlug}   ordered by `order`; `tags` lists the lore entries in it
+//   stories/{slug}/gaps/{gapSlug}           what the story leaves unexplained; `fills` on a story
+//                                           lists the gaps of other stories it explains
+//   admins/{uid}                            project owners; created by hand in the console only
+//   reviews/{kind}__{slug}                  an owner's decision on a draft (only owners write)
+// Released entries live in the code (temnorid.com/src/data/); Firestore holds drafts.
+//   characters/{slug}, locations/{slug}, soldiers/{slug}, buildings/{slug}, and the workshop-only
+//   factions, resources, items, recipes, spells, creatures, quests, events and cards: name,
+//   summary, description, links, and a `fields` map with the kind's extra fields
 // Every signed-in user reads every entry (the games read stories too); only the author writes.
 // Writers sign in with Google (not anonymously) and add text only: no images, video or embeds.
 //
@@ -96,10 +103,35 @@ service cloud.firestore {
 
     // Text is in whatever language the author writes; we translate when it moves into the code.
     function validStory(data, slug) {
-      return data.keys().hasOnly(['slug', 'ownerUid', 'ownerName', 'title', 'summary', 'createdAt', 'updatedAt'])
+      return data.keys().hasOnly(['slug', 'ownerUid', 'ownerName', 'title', 'summary', 'fills', 'createdAt', 'updatedAt'])
         && validEntry(data, slug)
         && requiredText(data.title, 160)
-        && shortText(data.summary, 1000);
+        && shortText(data.summary, 1000)
+        && (!('fills' in data) || references(data.fills));
+    }
+
+    function validGap(data, slug) {
+      return data.keys().hasOnly(['slug', 'title', 'details', 'chapterSlug', 'createdAt', 'updatedAt'])
+        && data.slug == slug
+        && validSlug(slug)
+        && data.updatedAt == request.time
+        && requiredText(data.title, 160)
+        && shortText(data.details, 2000)
+        && shortText(data.chapterSlug, 80);
+    }
+
+    function isAdmin() {
+      return isWriter() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
+    }
+
+    function validReview(data) {
+      return data.keys().hasOnly(['kind', 'slug', 'status', 'note', 'reviewerUid', 'updatedAt'])
+        && data.status in ['new', 'considering', 'chosen', 'released', 'declined']
+        && shortText(data.kind, 40)
+        && shortText(data.slug, 80)
+        && shortText(data.note, 1000)
+        && data.reviewerUid == request.auth.uid
+        && data.updatedAt == request.time;
     }
 
     function validChapter(data, slug) {
@@ -113,15 +145,21 @@ service cloud.firestore {
         && (!('tags' in data) || references(data.tags));
     }
 
-    function validCodex(data, slug) {
-      return data.keys().hasOnly(['slug', 'ownerUid', 'ownerName', 'name', 'role', 'summary', 'html', 'storySlugs', 'related', 'createdAt', 'updatedAt'])
+    function validLore(data, slug) {
+      return data.keys().hasOnly(['slug', 'ownerUid', 'ownerName', 'name', 'role', 'summary', 'html', 'storySlugs', 'related', 'fields', 'createdAt', 'updatedAt'])
         && validEntry(data, slug)
         && requiredText(data.name, 120)
         && shortText(data.role, 160)
         && shortText(data.summary, 1000)
         && textOnlyHtml(data.html)
         && references(data.storySlugs)
-        && references(data.related);
+        && references(data.related)
+        && (!('fields' in data) || (data.fields is map && data.fields.size() <= 30));
+    }
+
+    function loreKind(kind) {
+      return kind in ['characters', 'locations', 'soldiers', 'buildings', 'factions', 'resources',
+        'items', 'recipes', 'spells', 'creatures', 'quests', 'events', 'cards'];
     }
 
     function canCreate() {
@@ -160,15 +198,45 @@ service cloud.firestore {
           && validChapter(request.resource.data, chapter);
         allow delete: if ownsStory(slug);
       }
+
+      // Gaps belong to the story's author too. Delete them before the story.
+      match /gaps/{gap} {
+        allow read: if signedIn();
+        allow create: if ownsStory(slug)
+          && request.resource.data.createdAt == request.time
+          && validGap(request.resource.data, gap);
+        allow update: if ownsStory(slug)
+          && request.resource.data.createdAt == resource.data.createdAt
+          && validGap(request.resource.data, gap);
+        allow delete: if ownsStory(slug);
+      }
+    }
+
+    // The open-gaps page reads every story's gaps in one collection-group query.
+    match /{path=**}/gaps/{gap} {
+      allow read: if signedIn();
+    }
+
+    // A user may check whether they are an owner. Owners are added in the console only.
+    match /admins/{uid} {
+      allow read: if isUser(uid);
+      allow write: if false;
+    }
+
+    // Everyone signed in sees the owners' decisions; only owners make them.
+    match /reviews/{id} {
+      allow read: if signedIn();
+      allow create, update: if isAdmin() && validReview(request.resource.data);
+      allow delete: if isAdmin();
     }
 
     match /{kind}/{slug} {
-      allow read: if kind in ['characters', 'locations', 'soldiers', 'buildings'] && signedIn();
-      allow create: if kind in ['characters', 'locations', 'soldiers', 'buildings']
-        && canCreate() && validCodex(request.resource.data, slug);
-      allow update: if kind in ['characters', 'locations', 'soldiers', 'buildings']
-        && canUpdate() && validCodex(request.resource.data, slug);
-      allow delete: if kind in ['characters', 'locations', 'soldiers', 'buildings'] && canDelete();
+      allow read: if loreKind(kind) && signedIn();
+      allow create: if loreKind(kind)
+        && canCreate() && validLore(request.resource.data, slug);
+      allow update: if loreKind(kind)
+        && canUpdate() && validLore(request.resource.data, slug);
+      allow delete: if loreKind(kind) && canDelete();
     }
 
     // ---- Temnorid: Lords ----

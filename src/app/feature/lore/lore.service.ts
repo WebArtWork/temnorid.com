@@ -1,34 +1,34 @@
 import { computed, inject, Service } from '@angular/core';
 import { LanguageService } from '@wawjs/ngx-translate';
-import { CODEX_ENTRIES, CODEX_KINDS } from './codex.data';
-import { CodexEntry, CodexKind, LocalizedCodexEntry } from './codex.interface';
+import { LORE_ENTRIES, LORE_KINDS } from './lore.data';
+import { LoreEntry, LoreKind, LocalizedLoreEntry } from './lore.interface';
 
 @Service()
-export class CodexService {
+export class LoreService {
 	private readonly _languageService = inject(LanguageService);
 
 	readonly entries = computed(() => {
 		const language = this._languageService.language();
 
-		return CODEX_KINDS.flatMap(({ kind }) =>
-			CODEX_ENTRIES[kind].map((entry) => _localize(kind, entry, language)),
+		return LORE_KINDS.flatMap(({ kind }) =>
+			LORE_ENTRIES[kind].map((entry) => _localize(kind, entry, language)),
 		);
 	});
 
-	byKind(kind: CodexKind) {
+	byKind(kind: LoreKind) {
 		return computed(() => this.entries().filter((entry) => entry.kind === kind));
 	}
 
-	entry(kind: CodexKind, slug: string) {
+	entry(kind: LoreKind, slug: string) {
 		return computed(() => this._find(`${kind}/${slug}`));
 	}
 
 	/** Resolves `<kind>/<slug>` references, skipping any that do not exist. */
-	related(kind: CodexKind, slug: string) {
+	related(kind: LoreKind, slug: string) {
 		return computed(() =>
 			(this._find(`${kind}/${slug}`)?.related ?? [])
 				.map((path) => this._find(path))
-				.filter((entry): entry is LocalizedCodexEntry => !!entry),
+				.filter((entry): entry is LocalizedLoreEntry => !!entry),
 		);
 	}
 
@@ -43,7 +43,7 @@ export class CodexService {
 	}
 }
 
-function _localize(kind: CodexKind, entry: CodexEntry, language: string): LocalizedCodexEntry {
+function _localize(kind: LoreKind, entry: LoreEntry, language: string): LocalizedLoreEntry {
 	const content = entry.content[language] ?? entry.content.ua;
 
 	return {

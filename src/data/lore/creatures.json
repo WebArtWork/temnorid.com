@@ -1,0 +1,30 @@
+[
+	{
+		"slug": "ash-wolf",
+		"storySlugs": [],
+		"related": ["locations/burned-forest"],
+		"fields": {
+			"habitat": ["locations/burned-forest"],
+			"danger": "medium",
+			"abilities": "Полюють зграєю, ховаються в попелі."
+		},
+		"content": {
+			"ua": {
+				"name": "Попелястий вовк",
+				"role": "",
+				"summary": "Сірі вовки, що полюють серед спалених дерев.",
+				"paragraphs": [
+					"Вони живуть у Згорілому лісі й тримаються зграями. Шерсть у них кольору попелу, тож їх видно, лише коли вже пізно."
+				]
+			},
+			"en": {
+				"name": "Ash wolf",
+				"role": "",
+				"summary": "Grey wolves that hunt among the burned trees.",
+				"paragraphs": [
+					"They live in the Burned Forest and keep to packs. Their fur is the colour of ash, so they are seen only when it is too late."
+				]
+			}
+		}
+	}
+]

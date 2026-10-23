@@ -1,0 +1,22 @@
+[
+	{
+		"value": "new",
+		"label": "Нове"
+	},
+	{
+		"value": "considering",
+		"label": "На розгляді"
+	},
+	{
+		"value": "chosen",
+		"label": "Обрано до випуску"
+	},
+	{
+		"value": "released",
+		"label": "Випущено"
+	},
+	{
+		"value": "declined",
+		"label": "Відхилено"
+	}
+]

@@ -2,7 +2,7 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { TranslateDirective } from '@wawjs/ngx-translate';
 import { BreadcrumbsComponent } from '../../layouts/breadcrumbs/breadcrumbs.component';
-import { CodexService } from '../../feature/codex/codex.service';
+import { LoreService } from '../../feature/lore/lore.service';
 import { romanNumeral } from '../../feature/story/story.data';
 import { StoryService } from '../../feature/story/story.service';
 
@@ -17,6 +17,6 @@ export class StoryComponent {
 
 	protected readonly story = this._storyService.story(this._slug);
 	protected readonly neighbours = this._storyService.neighbours(this._slug);
-	protected readonly entries = inject(CodexService).inStory(this._slug);
+	protected readonly entries = inject(LoreService).inStory(this._slug);
 	protected readonly romanNumeral = romanNumeral;
 }

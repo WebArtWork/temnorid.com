@@ -84,5 +84,35 @@
 				}
 			}
 		}
-	]
+	],
+	"gaps": [
+		{
+			"slug": "what-knocks",
+			"chapterSlug": "stone-remembers",
+			"content": {
+				"ua": {
+					"title": "Що стукає в горі?",
+					"details": "Стукіт у глибині Сірої гори так і не припинився. Ярина казала, що гора слухає і колись захоче відповіді, але що там стукає — невідомо."
+				},
+				"en": {
+					"title": "What knocks inside the mountain?",
+					"details": "The knocking deep in the Grey Mountain never stopped. Yaryna said the mountain listens and will one day want an answer, but what is knocking is unknown."
+				}
+			}
+		},
+		{
+			"slug": "where-the-night-came-from",
+			"content": {
+				"ua": {
+					"title": "Звідки прийшла нескінченна ніч?",
+					"details": "Ніхто не пам'ятав останнього світанку. Чому настала довга ніч і що сталося зі світом до неї, історія не пояснює."
+				},
+				"en": {
+					"title": "Where did the endless night come from?",
+					"details": "Nobody remembered the last dawn. Why the long night came, and what happened to the world before it, the story does not explain."
+				}
+			}
+		}
+	],
+	"fills": []
 }

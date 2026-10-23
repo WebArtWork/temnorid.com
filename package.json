@@ -3,7 +3,7 @@
 	"version": "22.0.1",
 	"scripts": {
 		"start": "ng serve",
-		"build": "ng build --configuration=production && node tools/seo/generate-static-seo.mjs && node tools/seo/validate-static-seo.mjs",
+		"build": "ng build --configuration=production && node tools/seo/generate-static-seo.mjs && node tools/workshop/generate-workshop-md.mjs && node tools/seo/validate-static-seo.mjs",
 		"rules": "firebase deploy --only firestore:rules",
 		"seo:check": "node tools/seo/validate-static-seo.mjs"
 	},
@@ -16,6 +16,7 @@
 		"@angular/platform-server": "22.2.1",
 		"@angular/router": "22.2.1",
 		"@angular/ssr": "22.2.2",
+		"@wawjs/ngx-ace": "22.0.9",
 		"@wawjs/ngx-core": "22.0.9",
 		"@wawjs/ngx-default": "22.0.3",
 		"@wawjs/ngx-tinymce": "22.0.9",

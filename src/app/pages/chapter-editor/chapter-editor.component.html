@@ -31,7 +31,9 @@
 										? { label: current().title }
 										: { label: 'Новий розділ', translate: true },
 								]"
-							/>
+							>
+								<app-writer-info-button [info]="info" />
+							</app-breadcrumbs>
 							@if (!canEdit()) {
 								<p class="mt-2 text-[var(--c-text-muted)]">
 									<span translate>Автор</span>: {{ story.ownerName }}.

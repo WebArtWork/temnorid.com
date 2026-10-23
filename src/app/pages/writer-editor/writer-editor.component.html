@@ -25,7 +25,9 @@
 									? { label: current().name || existing()!.slug }
 									: { label: config.newLabel, translate: true },
 							]"
-						/>
+						>
+							<app-writer-info-button [info]="info" />
+						</app-breadcrumbs>
 						@if (existing(); as existing) {
 							@if (!canEdit()) {
 								<p class="mt-2 text-[var(--c-text-muted)]">
@@ -66,21 +68,23 @@
 						}
 					</div>
 
-					<div>
-						<label class="writer-label" for="writer-role" translate>Роль</label>
-						<input
-							id="writer-role"
-							class="writer-input"
-							name="role"
-							type="text"
-							autocomplete="off"
-							maxlength="160"
-							[translate]="{ placeholder: 'Наприклад: Онука каменяра…' }"
-							[ngModel]="current().role"
-							(ngModelChange)="setField('role', $event)"
-							[disabled]="!canEdit()"
-						/>
-					</div>
+					@if (config.role) {
+						<div>
+							<label class="writer-label" for="writer-role" translate>Роль</label>
+							<input
+								id="writer-role"
+								class="writer-input"
+								name="role"
+								type="text"
+								autocomplete="off"
+								maxlength="160"
+								[translate]="{ placeholder: 'Наприклад: Онука каменяра…' }"
+								[ngModel]="current().role"
+								(ngModelChange)="setField('role', $event)"
+								[disabled]="!canEdit()"
+							/>
+						</div>
+					}
 
 					<div>
 						<label class="writer-label" for="writer-summary" translate>
@@ -117,6 +121,245 @@
 							Лише текст: без зображень, відео й вставок.
 						</p>
 					</div>
+
+					@for (field of config.fields; track field.key) {
+						@switch (field.type) {
+							@case ('text') {
+								<div>
+									<label
+										class="writer-label"
+										[for]="'field-' + field.key"
+										[translate]="field.label"
+										>{{ field.label }}</label
+									>
+									<input
+										class="writer-input"
+										type="text"
+										autocomplete="off"
+										maxlength="300"
+										[id]="'field-' + field.key"
+										[value]="text(field.key)"
+										[disabled]="!canEdit()"
+										(input)="setValue(field.key, $any($event.target).value)"
+									/>
+									@if (field.hint) {
+										<p class="writer-hint" [translate]="field.hint">
+											{{ field.hint }}
+										</p>
+									}
+								</div>
+							}
+							@case ('select') {
+								<div>
+									<label
+										class="writer-label"
+										[for]="'field-' + field.key"
+										[translate]="field.label"
+										>{{ field.label }}</label
+									>
+									<select
+										class="writer-input"
+										[id]="'field-' + field.key"
+										[disabled]="!canEdit()"
+										(change)="setValue(field.key, $any($event.target).value)"
+									>
+										<option value="" [selected]="!text(field.key)">—</option>
+										@for (option of field.options; track option.value) {
+											<option
+												[value]="option.value"
+												[selected]="text(field.key) === option.value"
+												[translate]="option.label"
+											>
+												{{ option.label }}
+											</option>
+										}
+									</select>
+								</div>
+							}
+							@case ('ref') {
+								@if (field.multiple) {
+									<fieldset>
+										<legend class="writer-label" [translate]="field.label">
+											{{ field.label }}
+										</legend>
+										@for (
+											group of fieldOptions(field);
+											track group.config.kind
+										) {
+											@if (field.kinds.length > 1) {
+												<p
+													class="mt-2 text-sm text-[var(--c-text-muted)]"
+													[translate]="group.config.title"
+												>
+													{{ group.config.title }}
+												</p>
+											}
+											<ul class="mt-1 grid gap-1 sm:grid-cols-2">
+												@for (option of group.options; track option.value) {
+													<li>
+														<label
+															class="flex min-h-11 cursor-pointer items-center gap-3 rounded-md px-2 hover:bg-[var(--c-bg-tertiary)]"
+														>
+															<input
+																class="size-4 accent-[var(--c-primary)]"
+																type="checkbox"
+																[checked]="
+																	refs(field.key).includes(
+																		option.value
+																	)
+																"
+																[disabled]="!canEdit()"
+																(change)="
+																	toggleRef(
+																		field.key,
+																		option.value,
+																		$any($event.target).checked
+																	)
+																"
+															/>
+															<span>{{ option.label }}</span>
+														</label>
+													</li>
+												}
+											</ul>
+										} @empty {
+											<p class="writer-hint" translate>
+												Ще немає записів, на які можна послатися.
+											</p>
+										}
+									</fieldset>
+								} @else {
+									<div>
+										<label
+											class="writer-label"
+											[for]="'field-' + field.key"
+											[translate]="field.label"
+											>{{ field.label }}</label
+										>
+										<select
+											class="writer-input"
+											[id]="'field-' + field.key"
+											[disabled]="!canEdit()"
+											(change)="
+												setValue(field.key, $any($event.target).value)
+											"
+										>
+											<option value="" [selected]="!text(field.key)">
+												—
+											</option>
+											@for (
+												group of fieldOptions(field);
+												track group.config.kind
+											) {
+												@for (option of group.options; track option.value) {
+													<option
+														[value]="option.value"
+														[selected]="
+															text(field.key) === option.value
+														"
+													>
+														{{ option.label }}
+													</option>
+												}
+											}
+										</select>
+									</div>
+								}
+							}
+							@case ('amounts') {
+								<fieldset>
+									<legend class="writer-label" [translate]="field.label">
+										{{ field.label }}
+									</legend>
+									<ul class="space-y-2">
+										@for (
+											row of amounts(field.key);
+											track $index;
+											let index = $index
+										) {
+											<li class="flex items-center gap-2">
+												<select
+													class="writer-input min-w-0 flex-1"
+													[translate]="{ ariaLabel: 'Запис' }"
+													[disabled]="!canEdit()"
+													(change)="
+														updateAmount(field.key, index, {
+															ref: $any($event.target).value,
+														})
+													"
+												>
+													<option value="" [selected]="!row.ref">
+														—
+													</option>
+													@for (
+														group of fieldOptions(field);
+														track group.config.kind
+													) {
+														@for (
+															option of group.options;
+															track option.value
+														) {
+															<option
+																[value]="option.value"
+																[selected]="
+																	row.ref === option.value
+																"
+															>
+																{{ option.label }}
+															</option>
+														}
+													}
+												</select>
+												<input
+													class="writer-input !w-24"
+													type="number"
+													min="0"
+													step="1"
+													inputmode="numeric"
+													[translate]="{ ariaLabel: 'Кількість' }"
+													[value]="row.amount"
+													[disabled]="!canEdit()"
+													(input)="
+														updateAmount(field.key, index, {
+															amount: +$any($event.target).value,
+														})
+													"
+												/>
+												@if (canEdit()) {
+													<button
+														class="btn btn--icon"
+														type="button"
+														[translate]="{ ariaLabel: 'Прибрати' }"
+														(click)="removeAmount(field.key, index)"
+													>
+														<span
+															class="material-symbols-outlined"
+															aria-hidden="true"
+															>close</span
+														>
+													</button>
+												}
+											</li>
+										}
+									</ul>
+									@if (canEdit()) {
+										<button
+											class="btn mt-2"
+											type="button"
+											(click)="addAmount(field.key)"
+										>
+											<span
+												class="material-symbols-outlined"
+												aria-hidden="true"
+												>add</span
+											>
+											<span translate>Додати</span>
+										</button>
+									}
+								</fieldset>
+							}
+						}
+					}
 
 					@if (storyOptions().length) {
 						<fieldset>
@@ -213,11 +456,13 @@
 						</button>
 					}
 					@if (existing()) {
-						<button class="btn" (click)="showExport()" type="button">
-							<span class="material-symbols-outlined" aria-hidden="true"
-								>data_object</span
-							><span translate>JSON для коду</span>
-						</button>
+						@if (config.public) {
+							<button class="btn" (click)="showExport()" type="button">
+								<span class="material-symbols-outlined" aria-hidden="true"
+									>data_object</span
+								><span translate>JSON для коду</span>
+							</button>
+						}
 						@if (canEdit()) {
 							<button
 								class="btn btn--danger sm:ml-auto"

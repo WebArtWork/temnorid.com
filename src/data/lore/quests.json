@@ -1,0 +1,36 @@
+[
+	{
+		"slug": "name-the-stone",
+		"storySlugs": ["village-from-stone"],
+		"related": ["characters/yaryna", "resources/warm-stone"],
+		"fields": {
+			"giver": "characters/yaryna",
+			"goal": "Покласти в стіну названий камінь.",
+			"locations": ["locations/grey-mountain", "locations/village-from-stone"],
+			"reward": [
+				{
+					"ref": "resources/warm-stone",
+					"amount": 1
+				}
+			]
+		},
+		"content": {
+			"ua": {
+				"name": "Назви камінь",
+				"role": "",
+				"summary": "Принеси камінь із Сірої гори і дай йому ім’я.",
+				"paragraphs": [
+					"Ярина дає це завдання кожному, хто хоче лишитися в селі: знайти свій камінь, вирізати на ньому ім’я й покласти в стіну."
+				]
+			},
+			"en": {
+				"name": "Name the stone",
+				"role": "",
+				"summary": "Bring a stone from the Grey Mountain and give it a name.",
+				"paragraphs": [
+					"Yaryna gives this task to everyone who wants to stay in the village: find your stone, cut a name into it and lay it in a wall."
+				]
+			}
+		}
+	}
+]

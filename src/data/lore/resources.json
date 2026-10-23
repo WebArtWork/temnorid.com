@@ -1,0 +1,58 @@
+[
+	{
+		"slug": "warm-stone",
+		"storySlugs": ["village-from-stone"],
+		"related": ["locations/grey-mountain"],
+		"fields": {
+			"category": "magical",
+			"rarity": "uncommon",
+			"foundIn": ["locations/grey-mountain"]
+		},
+		"content": {
+			"ua": {
+				"name": "Теплий камінь",
+				"role": "",
+				"summary": "Камінь Сірої гори, що теплішає, коли йому дають ім’я.",
+				"paragraphs": [
+					"Його тешуть зі схилів Сірої гори. Безіменний він холодний, як будь-який камінь; названий — гріє стіну, у яку його поклали."
+				]
+			},
+			"en": {
+				"name": "Warm stone",
+				"role": "",
+				"summary": "Stone of the Grey Mountain that grows warm once it is given a name.",
+				"paragraphs": [
+					"It is cut from the slopes of the Grey Mountain. Unnamed, it is cold like any stone; named, it warms the wall it is laid in."
+				]
+			}
+		}
+	},
+	{
+		"slug": "clay",
+		"storySlugs": [],
+		"related": ["locations/second-river"],
+		"fields": {
+			"category": "raw",
+			"rarity": "common",
+			"foundIn": ["locations/second-river"]
+		},
+		"content": {
+			"ua": {
+				"name": "Глина",
+				"role": "",
+				"summary": "Річкова глина для горщиків і печей.",
+				"paragraphs": [
+					"Її беруть на березі Другої ріки. З неї ліплять горщики для жару й обмазують печі."
+				]
+			},
+			"en": {
+				"name": "Clay",
+				"role": "",
+				"summary": "River clay for pots and ovens.",
+				"paragraphs": [
+					"It is dug on the banks of the Second River. Ember pots are shaped from it, and ovens are sealed with it."
+				]
+			}
+		}
+	}
+]
