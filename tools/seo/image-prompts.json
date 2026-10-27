@@ -217,6 +217,20 @@
 			"title": "Stone Guard",
 			"image": "/seo/soldier-stone-guard.png",
 			"prompt": "Use case: stylized-concept. Create ONE polished landscape Open Graph / SEO illustration for the Stone Guard page of Temnorid, approximately 1.91:1 aspect ratio, at least 1200x630 pixels. Dark medieval fantasy inspired by 1300–1400; painterly realism, weathered grey stone, rough wool, muted charcoal and restrained warm amber. Scene: the humble defenders of the FIRST Village from Stone at night. Two watchful ordinary adult village sentries stand beside a low grey stone wall and the simple doorway of the first house; one carries a plain wooden spear and the other an old short sword, improvised modest equipment, plain wool cloaks, no ornate armour. Farther down a path, two tiny fellow sentries watch the route toward pale salt flats. A broad bare grey mountain slope rises behind the low houses. The village is small: low stone dwellings with flat slate roofs, no chimneys, no smoke, no fire because its named stones retain warmth. Suggest the stones' warmth only through soft amber reflected on the sentries' hands and faces against cool night. No written names, inscriptions, letters or glowing runes. Quiet vigilance and protection, not combat; silhouettes and facial expressions readable at thumbnail size. No grand castle, city, towers, battlements, snowy peaks, monsters, modern objects, text, logos, watermark, game UI, collage or schematic stick figures. Keep key subjects inside the central 80% for social cropping."
+		},
+		{
+			"route": "/game/hippodrome",
+			"key": "game-hippodrome",
+			"title": "Hippodrome",
+			"image": "/seo/game-hippodrome.png",
+			"prompt": "Create ONE landscape SEO sharing illustration for Temnorid, approximately 1.91:1 aspect ratio, at least 1200x630. Dark medieval fantasy inspired by 1300–1400, painterly realism with weathered materials, strong readable composition at thumbnail size. No text, lettering, logos, watermarks, modern objects, interface or collage. Scene: a medieval racing track at dusk, a dark earthen oval with a weathered timber fence, two galloping horses with simple riders as small silhouettes kicking up dust, warm amber low sun and deep brown shadows. Empty stands, no crowd, no banners with writing. Simple composition, the horses and the sweep of the track are the main features."
+		},
+		{
+			"route": "/game/caravan",
+			"key": "game-caravan",
+			"title": "Caravan Guard",
+			"image": "/seo/game-caravan.png",
+			"prompt": "Create ONE landscape SEO sharing illustration for Temnorid, approximately 1.91:1 aspect ratio, at least 1200x630. Dark medieval fantasy inspired by 1300–1400, painterly realism with weathered materials, strong readable composition at thumbnail size. No text, lettering, logos, watermarks, modern objects, interface or collage. Scene: a lone trade caravan of two heavy covered wagons on a muddy forest road, a few guards with spears as small silhouettes walking alongside, dark pines closing in on both sides, cold grey-green light with a faint warm lantern glow on the lead wagon. No readable symbols. Simple composition, the wagons and the narrow road are the main features."
 		}
 	],
 	"brandAssets": [

@@ -144,5 +144,59 @@
 				]
 			}
 		}
+	},
+	{
+		"slug": "hippodrome",
+		"status": "in-development",
+		"seo": {
+			"title": "Hippodrome: Medieval Horse Racing Game",
+			"description": "Breed, train and race horses in Temnorid Hippodrome: run village fairs and city tournaments, win bloodlines and saddles, and send fast mounts to the armies of Lords."
+		},
+		"content": {
+			"ua": {
+				"title": "Іподром",
+				"summary": "Розведення, тренування та перегони коней.",
+				"paragraphs": [
+					"Розводь і тренуй коней, годуй їх і виводь на перегони. Швидкість, витривалість і норов коня разом із твоїм вмінням тримати темп вирішують, хто прийде першим.",
+					"Починай із сільських ярмарків, а далі змагайся на міських турнірах із призами та ставками. Перемоги приносять родоводи, сідла та кінську броню, які стають у пригоді в Завоюванні й на Арені.",
+					"Швидкі коні з Іподрому поповнюють армії Лордів, а згодом перегони можна буде проводити просто в твоїх містах."
+				]
+			},
+			"en": {
+				"title": "Hippodrome",
+				"summary": "Breeding, training and racing horses.",
+				"paragraphs": [
+					"Breed and train horses, feed them well and bring them to the track. A horse's speed, stamina and temper, together with your sense of pacing, decide who crosses the line first.",
+					"Start at village fairs, then compete in city tournaments with prizes and betting. Wins bring bloodlines, saddles and horse armour that help in Conquest and the Arena.",
+					"Fast horses from the Hippodrome join the armies of Lords, and in time races can be held right inside your cities."
+				]
+			}
+		}
+	},
+	{
+		"slug": "caravan",
+		"status": "in-development",
+		"seo": {
+			"title": "Caravan Guard: Trade Route Defence Game",
+			"description": "Protect trade caravans on the roads of Temnorid Caravan Guard: place guards along the route, fend off raiders and bring goods safely to the markets of Lords."
+		},
+		"content": {
+			"ua": {
+				"title": "Охорона каравану",
+				"summary": "Захист торгових караванів на небезпечних дорогах.",
+				"paragraphs": [
+					"Торговий караван вирушає дорогою Темнороду, а на шляху чекають розбійники, степові загони та голодні вовки. Розставляй охорону вздовж маршруту, обирай, де поставити лучників, списників і засідки, та доведи вози до цілі.",
+					"Чим більше товарів дійде, тим жвавіша торгівля у твоєму місті в Лордах: дохід ринку росте, а купці приїздять частіше. Втрачений караван означає порожні лавки."
+				]
+			},
+			"en": {
+				"title": "Caravan Guard",
+				"summary": "Defending trade caravans on dangerous roads.",
+				"paragraphs": [
+					"A trade caravan sets out along a Temnorid road, and raiders, steppe riders and hungry wolves lie in wait. Place guards along the route, decide where archers, spearmen and ambushes go, and bring the wagons home.",
+					"The more goods arrive, the busier trade becomes in your city in Lords: market income grows and merchants visit more often. A lost caravan means empty stalls."
+				]
+			}
+		}
 	}
 ]

@@ -2,14 +2,14 @@
 	"_id": "",
 	"name": "Temnorid",
 	"title": "Temnorid — Dark Medieval Fantasy World of Stories and Games",
-	"description": "Temnorid is a dark medieval fantasy world inspired by the 14th century (1300–1400), where kingdoms, armies and wizards compete for territory and influence.\n\nThe world is told through stories, written chapter by chapter, and the lore of its characters, locations, troops and buildings. Six connected games share it: Lords at the centre, with Craft, Dungeons, Conquest, Arena and Intrigue around it. Films are planned.\n\nIn the Temnorid workshop anyone can write stories and world entries; the best become part of the world.",
+	"description": "Temnorid is a dark medieval fantasy world inspired by the 14th century (1300–1400), where kingdoms, armies and wizards compete for territory and influence.\n\nThe world is told through stories, written chapter by chapter, and the lore of its characters, locations, troops and buildings. Eight connected games share it: Lords at the centre, with Craft, Dungeons, Conquest, Arena, Intrigue, Hippodrome and Caravan Guard around it. Films are planned.\n\nIn the Temnorid workshop anyone can write stories and world entries; the best become part of the world.",
 	"image": "https://temnorid.com/logo.png",
 	"siteUrl": "https://temnorid.com",
 	"lang": "uk",
 	"locale": "uk_UA",
 	"defaultSeo": {
 		"title": "Temnorid — Dark Medieval Fantasy World of Stories and Games",
-		"description": "Temnorid is a dark medieval fantasy world told through stories, its lore and six connected games, from the Lords strategy game to duels in the Arena.",
+		"description": "Temnorid is a dark medieval fantasy world told through stories, its lore and eight connected games, from the Lords strategy game to duels in the Arena.",
 		"keywords": [
 			"Temnorid",
 			"Темнорід",
@@ -37,7 +37,7 @@
 		},
 		"/games": {
 			"title": "Fantasy Strategy and Adventure Games",
-			"description": "Six connected Temnorid games share one world: rule in Lords, craft, explore dungeons, wage conquest, duel in the Arena and win power through intrigue.",
+			"description": "Eight connected Temnorid games share one world: rule in Lords, craft, explore dungeons, wage conquest, duel in the Arena, race horses, guard caravans and win power through intrigue.",
 			"image": "/seo/games.png"
 		},
 		"/movies": {
@@ -59,6 +59,12 @@
 		},
 		"/game/conquest": {
 			"image": "/seo/game-conquest.png"
+		},
+		"/game/hippodrome": {
+			"image": "/seo/game-hippodrome.png"
+		},
+		"/game/caravan": {
+			"image": "/seo/game-caravan.png"
 		},
 		"/stories/village-from-stone": {
 			"image": "/seo/story-village-from-stone.png"
