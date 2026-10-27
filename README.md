@@ -33,7 +33,7 @@ hidden because the code replaced it.
   lore, every kind's fields and the sync object format, so any AI chat can write a sync object. The
   info icon next to sync shows that file. Kinds, fields, groups, statuses and info texts live in
   `src/data/workshop/` for both the app and that guide.
-- **Player names.** `src/data/names/names.json` holds `firstNames` and `secondNames` from Kyivan Rus'
+- **Player names.** `src/data/names/names.json` holds `firstNames` (also split into `firstNamesMale` and `firstNamesFemale`) and `secondNames` from Kyivan Rus'
   and the Cossack era. The build writes `/names.json` (`tools/names/generate-names-json.mjs`) with
   those plus `existingNames`, the released characters, so the games (Lords onboarding) can generate
   a player name, reroll unlocked parts and skip names already taken.

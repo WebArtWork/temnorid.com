@@ -1,6 +1,6 @@
 /*
  * Builds /names.json: the shared pool every Temnorid game draws player names from (Lords uses it
- * for the lord's name). First and second names come from src/data/names/names.json; existingNames
+ * for the lord's name). First names (also split by gender) and second names come from src/data/names/names.json; existingNames
  * are the released characters, so a game can reroll a generated name that is already taken.
  */
 import { readFile, writeFile } from 'node:fs/promises';
@@ -28,6 +28,8 @@ await writeFile(
 	output,
 	`${JSON.stringify({
 		firstNames: names.firstNames,
+		firstNamesMale: names.firstNamesMale,
+		firstNamesFemale: names.firstNamesFemale,
 		secondNames: names.secondNames,
 		existingNames,
 	})}\n`,
