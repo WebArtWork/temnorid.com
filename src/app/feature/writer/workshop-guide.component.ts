@@ -2,6 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Component, inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { AceComponent, registerAceMode, registerAceTheme } from '@wawjs/ngx-ace';
 import { TranslateDirective } from '@wawjs/ngx-translate';
+import { SpinnerComponent } from '../../layouts/spinner/spinner.component';
 import { ThemeService } from '@wawjs/ngx-ui';
 
 registerAceMode('markdown', () => import('ace-builds/src-noconflict/mode-markdown'));
@@ -16,7 +17,7 @@ const GUIDE_URL = '/workshop.md';
  * Shown via `ModalService.show()`; the modal assigns `close` before the first render.
  */
 @Component({
-	imports: [AceComponent, TranslateDirective],
+	imports: [AceComponent, SpinnerComponent, TranslateDirective],
 	template: `
 		<div class="p-1">
 			<h2 id="workshop-guide-heading" class="t-heading" translate>
@@ -32,9 +33,7 @@ const GUIDE_URL = '/workshop.md';
 				class="mt-4 h-[32rem] overflow-hidden rounded-[var(--t-radius)] border border-[var(--c-border)]"
 			>
 				@if (loading()) {
-					<p class="p-4 text-[var(--c-text-muted)]" role="status" translate>
-						Завантаження…
-					</p>
+					<app-spinner />
 				} @else if (error()) {
 					<p class="writer-error p-4" role="alert" translate>
 						Не вдалося завантажити інструкцію.

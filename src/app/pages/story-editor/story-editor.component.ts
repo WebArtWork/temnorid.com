@@ -1,6 +1,7 @@
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslateDirective, TranslateService } from '@wawjs/ngx-translate';
+import { SpinnerComponent } from '../../layouts/spinner/spinner.component';
 import { ModalService } from '@wawjs/ngx-ui';
 import { BreadcrumbsComponent } from '../../layouts/breadcrumbs/breadcrumbs.component';
 import { WriterInfoButtonComponent } from '../../feature/writer/writer-info.component';
@@ -24,6 +25,7 @@ import { WriterService, writerErrorMessage } from '../../feature/writer/writer.s
  */
 @Component({
 	imports: [
+		SpinnerComponent,
 		BreadcrumbsComponent,
 		WriterInfoButtonComponent,
 		RouterLink,

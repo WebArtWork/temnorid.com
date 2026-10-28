@@ -2,6 +2,7 @@ import { NgTemplateOutlet } from '@angular/common';
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateDirective } from '@wawjs/ngx-translate';
+import { SpinnerComponent } from '../../layouts/spinner/spinner.component';
 import { FirebaseService } from '../../feature/firebase/firebase.service';
 import { WRITER_INFO } from '../../feature/writer/writer-info';
 import { WriterInfoButtonComponent } from '../../feature/writer/writer-info.component';
@@ -16,6 +17,7 @@ import { BreadcrumbsComponent } from '../../layouts/breadcrumbs/breadcrumbs.comp
  */
 @Component({
 	imports: [
+		SpinnerComponent,
 		BreadcrumbsComponent,
 		NgTemplateOutlet,
 		RouterLink,
@@ -31,9 +33,7 @@ import { BreadcrumbsComponent } from '../../layouts/breadcrumbs/breadcrumbs.comp
 
 			@switch (status()) {
 				@case ('loading') {
-					<p class="t-stack text-[var(--c-text-muted)]" role="status" translate>
-						Завантаження…
-					</p>
+					<app-spinner />
 				}
 				@case ('error') {
 					<p class="writer-error t-stack" role="alert" translate>

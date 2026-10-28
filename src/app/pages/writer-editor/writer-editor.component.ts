@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TinymceComponent, TinymceEditor } from '@wawjs/ngx-tinymce';
 import { TranslateDirective, TranslateService } from '@wawjs/ngx-translate';
+import { SpinnerComponent } from '../../layouts/spinner/spinner.component';
 import { ThemeService } from '@wawjs/ngx-ui';
 import { BreadcrumbsComponent } from '../../layouts/breadcrumbs/breadcrumbs.component';
 import { WriterInfoButtonComponent } from '../../feature/writer/writer-info.component';
@@ -42,6 +43,7 @@ type EditorFields = Pick<LoreDraft, 'name' | 'role' | 'summary' | 'html'>;
 @Component({
 	providers: [WRITER_TINYMCE_PROVIDER],
 	imports: [
+		SpinnerComponent,
 		BreadcrumbsComponent,
 		WriterInfoButtonComponent,
 		FormsModule,

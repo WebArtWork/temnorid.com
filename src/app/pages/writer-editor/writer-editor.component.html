@@ -1,7 +1,7 @@
 <app-writer-frame>
 	@switch (status()) {
 		@case ('loading') {
-			<p class="text-[var(--c-text-muted)]" role="status" translate>Завантаження…</p>
+			<app-spinner />
 		}
 		@case ('missing') {
 			<p class="leading-7" role="alert" translate>

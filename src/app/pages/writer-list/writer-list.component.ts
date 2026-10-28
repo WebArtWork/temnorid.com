@@ -2,6 +2,7 @@ import { DatePipe, NgTemplateOutlet } from '@angular/common';
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslateDirective } from '@wawjs/ngx-translate';
+import { SpinnerComponent } from '../../layouts/spinner/spinner.component';
 import { ModalService } from '@wawjs/ngx-ui';
 import { BreadcrumbsComponent } from '../../layouts/breadcrumbs/breadcrumbs.component';
 import { WriterInfoButtonComponent } from '../../feature/writer/writer-info.component';
@@ -20,6 +21,7 @@ import { WriterService } from '../../feature/writer/writer.service';
  */
 @Component({
 	imports: [
+		SpinnerComponent,
 		BreadcrumbsComponent,
 		WriterInfoButtonComponent,
 		DatePipe,
@@ -48,7 +50,7 @@ import { WriterService } from '../../feature/writer/writer.service';
 			</div>
 
 			@if (status() === 'loading') {
-				<p class="mt-8 text-[var(--c-text-muted)]" role="status" translate>Завантаження…</p>
+				<app-spinner />
 			} @else if (status() === 'error') {
 				<p class="writer-error mt-8" role="alert" translate>
 					Не вдалося завантажити записи. Оновіть сторінку.

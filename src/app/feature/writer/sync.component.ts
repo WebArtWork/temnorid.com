@@ -2,6 +2,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { Component, inject, OnInit, PLATFORM_ID, signal } from '@angular/core';
 import { AceComponent, registerAceMode, registerAceTheme } from '@wawjs/ngx-ace';
 import { TranslateDirective } from '@wawjs/ngx-translate';
+import { SpinnerComponent } from '../../layouts/spinner/spinner.component';
 import { ThemeService } from '@wawjs/ngx-ui';
 import { syncRemovals, validateSync, WriterSyncService } from './writer-sync';
 import { SyncIssue, SyncRemoval, SyncResult, WorkshopSync } from './writer.interface';
@@ -17,7 +18,7 @@ registerAceTheme('tomorrow_night', () => import('ace-builds/src-noconflict/theme
  * Shown via `ModalService.show()`; the modal assigns `close` before the first render.
  */
 @Component({
-	imports: [AceComponent, TranslateDirective],
+	imports: [AceComponent, SpinnerComponent, TranslateDirective],
 	template: `
 		<div class="p-1">
 			<h2 id="sync-heading" class="t-heading" translate>Синхронізація</h2>
@@ -30,9 +31,7 @@ registerAceTheme('tomorrow_night', () => import('ace-builds/src-noconflict/theme
 				class="mt-4 h-[26rem] overflow-hidden rounded-[var(--t-radius)] border border-[var(--c-border)]"
 			>
 				@if (loading()) {
-					<p class="p-4 text-[var(--c-text-muted)]" role="status" translate>
-						Завантаження…
-					</p>
+					<app-spinner />
 				} @else {
 					<ace
 						[mode]="$any('json')"

@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, computed, effect, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateDirective } from '@wawjs/ngx-translate';
+import { SpinnerComponent } from '../../layouts/spinner/spinner.component';
 import { ModalService } from '@wawjs/ngx-ui';
 import { FirebaseService } from '../../feature/firebase/firebase.service';
 import { ExportJsonComponent } from '../../feature/writer/export-json.component';
@@ -30,6 +31,7 @@ interface ReviewRow {
  */
 @Component({
 	imports: [
+		SpinnerComponent,
 		BreadcrumbsComponent,
 		DatePipe,
 		RouterLink,
@@ -57,9 +59,7 @@ interface ReviewRow {
 			} @else {
 				@switch (status()) {
 					@case ('loading') {
-						<p class="t-stack text-[var(--c-text-muted)]" role="status" translate>
-							Завантаження…
-						</p>
+						<app-spinner />
 					}
 					@case ('error') {
 						<p class="writer-error t-stack" role="alert" translate>
