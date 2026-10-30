@@ -182,6 +182,13 @@ export const routes: Routes = [
 	},
 	...storyRoutes,
 	{
+		path: 'models',
+		data: {
+			meta: { ...buildRouteMeta(companyProfile, '/models'), robots: 'noindex, nofollow' },
+		},
+		loadComponent: () => import('./pages/models/models.component').then((m) => m.ModelsComponent),
+	},
+	{
 		path: 'games',
 		data: {
 			meta: buildRouteMeta(companyProfile, '/games'),

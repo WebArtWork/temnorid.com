@@ -231,6 +231,34 @@
 			"title": "Caravan Guard",
 			"image": "/seo/game-caravan.png",
 			"prompt": "Use case: stylized-concept. Create ONE landscape SEO sharing illustration for Temnorid, approximately 1.91:1 aspect ratio, at least 1200x630. Dark medieval fantasy inspired by 1300–1400, painterly realism with weathered materials, strong readable composition at thumbnail size. No text, lettering, logos, watermarks, modern objects, interface or collage. Scene: a lone trade caravan of two heavy covered wagons on a muddy forest road, a few guards with spears as small silhouettes walking alongside, dark pines closing in on both sides, cold grey-green light with a faint warm lantern glow on the lead wagon. No readable symbols. Simple composition, the wagons and the narrow road are the main features. Keep key subjects inside the central 80% for social cropping."
+		},
+		{
+			"route": "/game/legends",
+			"key": "game-legends",
+			"title": "Legends",
+			"image": "/seo/game-legends.png",
+			"prompt": "Use case: stylized-concept. Create ONE landscape SEO sharing illustration for Temnorid, approximately 1.91:1 aspect ratio, at least 1200x630. Dark medieval fantasy inspired by 1300–1400, painterly realism with weathered materials, strong readable composition at thumbnail size. No text, lettering, logos, watermarks, modern objects, interface or collage. Scene: a lone armoured warrior with a shield and a sword stands at the edge of an abandoned border village at dusk, empty timber houses and a cold fire in the square, a faint warm torch glow, a narrow stone stair leading down into darkness behind the houses, thin mist. Cinematic fixed-camera framing like a classic survival-horror game. Keep key subjects inside the central 80% for social cropping."
+		},
+		{
+			"route": "/game/master",
+			"key": "game-master",
+			"title": "Master",
+			"image": "/seo/game-master.png",
+			"prompt": "Use case: stylized-concept. Create ONE landscape SEO sharing illustration for Temnorid, approximately 1.91:1 aspect ratio, at least 1200x630. Dark medieval fantasy inspired by 1300–1400, painterly realism with weathered materials, strong readable composition at thumbnail size. No text, lettering, logos, watermarks, modern objects, interface or collage. Scene: a warm medieval village workshop seen from a fixed three-quarter camera, six workbenches in a row under timber beams: a scribe's desk with a quill and a wax seal, a glowing forge with an anvil and hammer, a mechanic's table with brass gears, a kitchen pot over a fire, a tailor's table with cloth and shears, an herbalist's bench with a mortar and clay jars, and a chestnut foal with a white blaze looking in from a stable door at the side, golden lantern light. Calm, cozy, no human figures. Keep key subjects inside the central 80% for social cropping."
+		},
+		{
+			"route": "/game/escape",
+			"key": "game-escape",
+			"title": "Escape",
+			"image": "/seo/game-escape.png",
+			"prompt": "Use case: stylized-concept. Create ONE landscape SEO sharing illustration for Temnorid, approximately 1.91:1 aspect ratio, at least 1200x630. Dark medieval fantasy inspired by 1300–1400, painterly realism with weathered materials, strong readable composition at thumbnail size. No text, lettering, logos, watermarks, modern objects, interface or collage. Scene: a fixed cinematic camera in the corner of a damp stone prison corridor under a village watchtower, a hooded prisoner crouching behind a cluster of barrels in a small alcove, a village guard with a spear and a red tabard walking away along the torch-lit corridor, an iron-barred cell door standing open behind them, cold daylight from a barred window. Tense and quiet, no violence. Keep key subjects inside the central 80% for social cropping."
+		},
+		{
+			"route": "/game/detective",
+			"key": "game-detective",
+			"title": "Detective",
+			"image": "/seo/game-detective.png",
+			"prompt": "Use case: stylized-concept. Create ONE landscape SEO sharing illustration for Temnorid, approximately 1.91:1 aspect ratio, at least 1200x630. Dark medieval fantasy inspired by 1300–1400, painterly realism with weathered materials, strong readable composition at thumbnail size. No text, lettering, logos, watermarks, modern objects, interface or collage. Scene: an overcast dawn in a small timber village, a fixed cinematic camera high above a grain store with an open back gate, a cloaked investigator crouching to examine a torn red cart strap in the mud, three villagers watching from a distance with guarded expressions, a covered cart track leading toward a misty river. Quiet, tense, no violence shown. Keep key subjects inside the central 80% for social cropping."
 		}
 	],
 	"brandAssets": [

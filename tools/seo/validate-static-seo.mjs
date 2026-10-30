@@ -75,7 +75,7 @@ async function checkPage(file) {
 		`${route}: missing image asset`,
 	);
 	assert.equal(value('name', 'twitter:card'), 'summary_large_image');
-	const privatePage = route === '/login' || route.startsWith('/write/');
+	const privatePage = route === '/login' || route === '/models' || route.startsWith('/write/');
 	if (privatePage) {
 		assert.match(value('name', 'robots'), /noindex/);
 		assert.ok(!urls.includes(url), `${route}: private page in sitemap`);

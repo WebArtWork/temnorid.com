@@ -61,6 +61,69 @@ Add an object to the matching array in `src/data/lore/<kind>.json` with `slug`, 
 items, recipes, spells, creatures, quests, events, cards) are released for the games and the
 workshop only.
 
+## Models plan
+
+`/models` ("План моделей", `noindex`) lists the 3D models of the ten Unity games
+(`craft`, `dungeons`, `conquest`, `hippodrome`, `caravan`, `arena`, `legends`, `master`, `escape`, `detective`). The games first ship with
+simple primitive models; this page is the list to replace them later with generated, proper ones.
+
+- **Data.** `src/data/models/models.json`: `families[]` and `models[]`. A model has a stable `id`
+  (also the asset id the games load it by, e.g. `track/rail`), `family`, `status`
+  (`done`, `placeholder` = primitive in the game now, `planned` = not built yet), `kind`, `name`,
+  `uses[]` (`game`, `count` instances in one scene or run, `null` when not decided, optional
+  `note`), optional `size`, `triangles`, `note`, and `brief`, the description to generate it from.
+  Every text is `{ ua, en }`.
+- **Page.** Models are sorted by total instances, then by number of games. The default filter
+  "To replace" hides finished models; "Copy brief" copies the brief with the shared requirements
+  (low-poly dark medieval fantasy, one mesh, Y up, 1 unit = 1 m, pivot at the base centre, GLB with
+  PBR, textures up to 1024 px, T-pose humanoid rig scaled like the mage).
+- **Replacing a model.** Generate it from its brief, keep the `id` and the size, put the GLB where
+  the game keeps its models, then set `status` to `done` here. Arena's finished models and their
+  Blender sources are in `arena.temnorid.com/Assets/Models` and `output/`.
+- **Code.** `src/app/feature/models/` (interface, data, service) and
+  `src/app/pages/models/models.component.ts`; route `models` in `app.routes.ts`.
+
+## Games
+
+The Unity games are separate projects next to this one (`D:\work\temnorid\<name>.temnorid.com`), each with its own
+site (`docs/index.html`, `docs/CNAME`), README, Windows build and installer. This site lists them under `/games` and
+`/game/<slug>` from `src/data/games/games.json`.
+
+| Slug | Game | Project |
+|---|---|---|
+| `lords` | Lords (the connected world game, built separately) | `lords.temnorid.com` |
+| `craft`, `dungeons`, `conquest`, `arena` (released), `hippodrome`, `caravan`, `legends` | the first seven games | `<slug>.temnorid.com` (`caravan` is `caravan-guard.temnorid.com`) |
+| `master` | **Master**: seven trades in one workshop (stable, scribe, forge, workshop, kitchen, tailor, herbalist), offline | `master.temnorid.com` |
+| `escape`, `detective` | short fixed-camera episodes | `<slug>.temnorid.com` |
+| `intrigue` | listed on the site (status `released`); no Unity project next to this one | none here |
+
+**Pets and Scribe are retired.** Master replaces both (the foal, its care and its two trainings are Master's Stable; the Academy
+desk is Master's Scribe), so they are no longer in `games.json`, `/models` or the SEO images. Their project folders are left as
+they were; nothing is deleted or changed there.
+
+- **Adding or changing a game.** Edit its entry in `src/data/games/games.json` (`slug`, `status`, `seo`, `content.ua|en`), give
+  its route a share image in `src/data/company/company.json` (`/game/<slug>`) and an entry in `tools/seo/image-prompts.json`
+  (generate the image from the prompt into `src/assets/seo/game-<slug>.png`), list its models in `src/data/models/models.json`
+  (see "Models plan") and add the slug to `GameKey` and `GAME_KEYS` in `src/app/feature/models/` and to the two name tables in
+  `src/app/pages/models/models.component.ts`. `npm run build` checks that every public page has its own image.
+- **Placeholder image.** `game-master.png` is a copy of the old Scribe illustration until a real one is generated from its prompt.
+- **No download link is made up.** A game's page says "Coming soon" until a GitHub Release exists.
+
+### Shared game packages
+
+All games reference these by local path (`file:../../<package>` in `Packages/manifest.json`). Code two games both need lives
+here, not in a game.
+
+| Package | What it holds |
+|---|---|
+| `3d-unity-core`, `3d-unity-input` | startup and services; the only input entry point (`EngineInput`) |
+| `3d-unity-ui` | `UiBuilder` (panels, labels, bars, buttons, event system), `UiShapes` (circle sprite, screen rectangle, quit), `LineDrawer` |
+| `3d-unity-graybox` | asset ids, scene-builder helpers, world text with a depth-tested shader |
+| `3d-unity-save` | atomic JSON save slots, corrupt saves set aside, optional backup of the previous save |
+| `3d-unity-synth` | generated sounds: `Tone` (clip builder) and `SoundBoard` (volumes, ambience, one-shots) |
+| `3d-unity-feedback`, `3d-unity-combat` | flashes, rings, health bars; combat basics |
+| `3d-unity-fixed-camera`, `3d-unity-topdown-camera`, `3d-unity-character`, `3d-unity-inventory`, `3d-unity-ai` | cameras and character, inventory and AI for the games that need them |
+
 ---
 
 # Angular Landing Template (SSR + Prerender)

@@ -198,5 +198,109 @@
 				]
 			}
 		}
+	},
+	{
+		"slug": "legends",
+		"status": "in-development",
+		"seo": {
+			"title": "Legends: Story Action Adventure Game",
+			"description": "Temnorid Legends is a story-driven 3D action, adventure and survival-horror game: play the legends of different heroes, explore abandoned villages and ancient dungeons, fight, solve riddles and uncover the secrets of Temnorid."
+		},
+		"content": {
+			"ua": {
+				"title": "Легенди",
+				"summary": "Сюжетні історії героїв: пригоди, бої та жахи Темнороду.",
+				"paragraphs": [
+					"Кожна легенда має власного героя, сюжет і кінцівку. Досліджуй покинуті села та стародавні підземелля, бийся з тим, що там живе, розгадуй загадки та відкривай таємниці світу.",
+					"Перше демо, «Покинуте село», відправляє воїна з’ясувати, чому прикордонне поселення замовкло. Фіксовані кінематографічні камери під час дослідження, камера через плече в бою, короткі сюжетні сцени. Нові легенди — оборона фортеці, загублений храм, чорний ліс і падіння короля — використають ті самі системи."
+				]
+			},
+			"en": {
+				"title": "Legends",
+				"summary": "Story-driven tales of heroes: the adventures, battles and horrors of Temnorid.",
+				"paragraphs": [
+					"Every legend has its own hero, plot and ending. Explore abandoned villages and ancient dungeons, fight what lives there, solve riddles and uncover the secrets of the world.",
+					"The first demo, The Abandoned Village, sends a warrior to find out why a border settlement went silent. Fixed cinematic cameras while exploring, an over-the-shoulder camera in a fight, short story scenes. New legends (a fortress under siege, a lost temple, the black forest and the fall of a king) will use the same systems."
+				]
+			}
+		}
+	},
+	{
+		"slug": "master",
+		"status": "in-development",
+		"seo": {
+			"title": "Master: Medieval Workshop Career Game",
+			"description": "Temnorid Master is a cozy offline workshop game: learn seven trades (stable, scribe, forge, workshop, kitchen, tailor, herbalist), do short hands-on orders with the mouse, raise and train a foal and earn coins and experience in the world of Temnorid."
+		},
+		"content": {
+			"ua": {
+				"title": "Майстер",
+				"summary": "Обери ремесло, зроби роботу, заслужи ім’я.",
+				"paragraphs": [
+					"Теплий середньовічний цех, де ти вчишся семи ремесел власними руками: доглядай і тренуй лоша, перевіряй і скріплюй печаткою документи, кувай, збирай механізми, вари, ший і готуй трав’яні набори. Короткі замовлення, пряма робота мишкою, чесні повтори.",
+					"Один гаманець, один рівень і одне збереження на всі ремесла; без реклами, входів і мережі. Помилка лише означає, що гра пояснить причину, а ти спробуєш ще раз безкоштовно. «Майстер» замінює окремі ігри «Улюбленці» та «Писар»."
+				]
+			},
+			"en": {
+				"title": "Master",
+				"summary": "Choose a trade, do the work, earn your name.",
+				"paragraphs": [
+					"A warm medieval workshop where you learn seven trades with your own hands: raise and train a foal, verify and seal documents, forge, build mechanisms, cook, sew and prepare herb bundles. Short orders, direct mouse work, fair retries.",
+					"One wallet, one level and one save for every trade; no ads, no logins and no network. A mistake only means the game tells you why and you try again for free. Master replaces the separate Pets and Scribe games."
+				]
+			}
+		}
+	},
+	{
+		"slug": "escape",
+		"status": "in-development",
+		"seo": {
+			"title": "Escape: Medieval Prison Escape Game",
+			"description": "Temnorid Escape is a short offline adventure: a captured scout wakes in a village watchtower prison and escapes through clues, three puzzles and one patrolling guard, seen through fixed cinematic cameras."
+		},
+		"content": {
+			"ua": {
+				"title": "Втеча",
+				"summary": "Утечи з в'язниці сторожової вежі.",
+				"paragraphs": [
+					"Захоплений розвідник прокидається в камері під сторожовою вежею села. Ні зброї, ні бою: лише уважність, терпіння й навколишні речі. Знайди підказки, розв'яжи три загадки, пройди повз охоронця й вийди через службові ворота.",
+					"Класичні нерухомі камери, десять-п'ятнадцять хвилин гри, збереження, підказки без примусу. Це перший епізод: пізніше втеча стане наслідком провалених місій розвідки й крадіжки у Lords."
+				]
+			},
+			"en": {
+				"title": "Escape",
+				"summary": "Escape from the watchtower prison.",
+				"paragraphs": [
+					"A captured scout wakes in a cell under a village watchtower. No weapons and no combat: only observation, patience and the things around you. Find the clues, solve three puzzles, slip past a guard and leave by the service gate.",
+					"Classic fixed cameras, ten to fifteen minutes of play, saving and hints that never force you. This is the first episode; later an escape will follow a failed scouting or theft mission in Lords."
+				]
+			}
+		}
+	},
+	{
+		"slug": "detective",
+		"status": "in-development",
+		"seo": {
+			"title": "Detective: Medieval Village Investigation Game",
+			"description": "Temnorid Detective is a short offline investigation: walk a medieval village, inspect clues, question residents, compare their accounts and report whom you believe, or that the evidence is not enough. You can be wrong."
+		},
+		"content": {
+			"ua": {
+				"title": "Детектив",
+				"summary": "Розслідуй, допитуй, вирішуй. Ти можеш помилитися.",
+				"paragraphs": [
+					"У коморі села Грейфорд зникли чотири мішки зерна, а нічний сторож загинув. Обійди село, огляньте сліди, вислухай людей, порівняй їхні розповіді та скажи старості, кому ти віриш, або що доказів недостатньо.",
+					"Класичні нерухомі камери, п'ятнадцять-двадцять п'ять хвилин гри й чесна невпевненість: гра ніколи не каже, чи твій звіт був правильним. Це перша справа; пізніше розслідування виникатимуть із подій у Lords."
+				]
+			},
+			"en": {
+				"title": "Detective",
+				"summary": "Investigate, interview, decide. You can be wrong.",
+				"paragraphs": [
+					"Four sacks of grain are missing from the granary of Greyford and the night watchman is dead. Walk the village, inspect the clues, hear the people out, compare their accounts and tell the elder whom you believe, or that the evidence is not enough.",
+					"Classic fixed cameras, fifteen to twenty-five minutes of play and honest uncertainty: the game never tells you whether your report was right. This is the first case; later, investigations will come from events in Lords."
+				]
+			}
+		}
 	}
 ]
