@@ -111,7 +111,7 @@ they were; nothing is deleted or changed there.
 
 ### Shared game packages
 
-All games reference these by local path (`file:../../<package>` in `Packages/manifest.json`). Code two games both need lives
+All games reference these by their GitHub URL in `Packages/manifest.json` (`https://github.com/IT-Kamianets/<package>.git`). Code two games both need lives
 here, not in a game.
 
 | Package | What it holds |
@@ -122,6 +122,9 @@ here, not in a game.
 | `3d-unity-save` | atomic JSON save slots, corrupt saves set aside, optional backup of the previous save |
 | `3d-unity-synth` | generated sounds: `Tone` (clip builder) and `SoundBoard` (volumes, ambience, one-shots) |
 | `3d-unity-feedback`, `3d-unity-combat` | flashes, rings, health bars; combat basics |
+| `3d-unity-shell` | the structure every game follows, after the Lords app: Boot (splash, update), Menu (landing, onboarding, lobby, profile), in-game top and bottom bars; Android and iOS settings |
+| `3d-unity-net` | multiplayer over Netcode for GameObjects: host or join by address or Relay code, roster, events, poses, host-published entities |
+| `3d-unity-update` | self-update from the newest GitHub release (silent installer on Windows) |
 | `3d-unity-fixed-camera`, `3d-unity-topdown-camera`, `3d-unity-character`, `3d-unity-inventory`, `3d-unity-ai` | cameras and character, inventory and AI for the games that need them |
 
 ---
