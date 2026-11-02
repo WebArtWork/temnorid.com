@@ -1,0 +1,1 @@
+import{i as o}from"./chunk-CDN9hKcv.js";var f=o((t,e)=>{(function(){ace.require([`ace/mode/text`],function(o){typeof e==`object`&&typeof t==`object`&&e&&(e.exports=o)})})()});var chunk_YN34AVM3_default=f();export{chunk_YN34AVM3_default as default};
