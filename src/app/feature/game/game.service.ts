@@ -26,6 +26,13 @@ function _localize(game: Game, language: string): LocalizedGame {
 		slug: game.slug,
 		url: game.url,
 		status: game.status,
+		version: game.version,
+		platforms: game.platforms ?? [],
+		players: game.players,
+		download: game.download,
+		repo: game.repo,
+		image: `seo/game-${game.slug}.png`,
+		screenshots: game.screenshots ?? [],
 		path: `/game/${game.slug}`,
 	};
 }

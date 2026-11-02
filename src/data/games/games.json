@@ -1,7 +1,12 @@
 [
 	{
 		"slug": "lords",
+		"url": "https://lords.temnorid.com",
 		"status": "in-development",
+		"platforms": [
+			"web"
+		],
+		"repo": "https://github.com/WebArtWork/lords.temnorid.com",
 		"seo": {
 			"title": "Lords — Fantasy Strategy Game",
 			"description": "Lords is the central Temnorid strategy game: grow settlements, build cities, command armies and expand your lands. Every other game connects to it."
@@ -25,7 +30,16 @@
 	},
 	{
 		"slug": "craft",
+		"url": "https://craft.temnorid.com",
 		"status": "in-development",
+		"version": "0.4.1",
+		"platforms": [
+			"windows",
+			"android",
+			"ios"
+		],
+		"download": "https://github.com/WebArtWork/craft.temnorid.com/releases/latest/download/Temnorid-Craft-Setup.exe",
+		"repo": "https://github.com/WebArtWork/craft.temnorid.com",
 		"seo": {
 			"title": "Craft — Resource and Crafting Game",
 			"description": "In Temnorid Craft you farm, gather wood, stone and ore, and make tools, weapons and armour that supply the settlements of Lords."
@@ -36,6 +50,12 @@
 				"summary": "Видобуток ресурсів, ремесла та виробництво.",
 				"paragraphs": [
 					"Розвивай господарство, вирощуй їжу, добувай деревину, камінь і руду, створюй інструменти, зброю та обладунки. Забезпечуй ресурсами поселення у Лордах."
+				],
+				"features": [
+					"Збирай шість ресурсів у власному селі та на фермі з Лордів",
+					"Носи їх у наплічнику й складай на склад села",
+					"Увійди через Google, і склад буде спільним із Лордами: що зберіг тут, те є й там",
+					"Онлайн: друзі бачать село господаря"
 				]
 			},
 			"en": {
@@ -43,13 +63,29 @@
 				"summary": "Gathering, crafting and production.",
 				"paragraphs": [
 					"Build up your farmstead, grow food, gather wood, stone and ore, and make tools, weapons and armour. Supply the settlements in Lords with resources."
+				],
+				"features": [
+					"Gather six resources in your own Lords village and farm",
+					"Carry them in a backpack and store them in the village warehouse",
+					"Sign in with Google and the stock is shared with Lords: what you store here is there too",
+					"Online: friends see the host’s village"
 				]
 			}
 		}
 	},
 	{
 		"slug": "dungeons",
+		"url": "https://dungeons.temnorid.com",
 		"status": "in-development",
+		"version": "0.1.0",
+		"platforms": [
+			"windows",
+			"android",
+			"ios"
+		],
+		"players": 4,
+		"download": "https://github.com/WebArtWork/dungeons.temnorid.com/releases/latest/download/Temnorid-Dungeons-Setup.exe",
+		"repo": "https://github.com/WebArtWork/dungeons.temnorid.com",
 		"seo": {
 			"title": "Dungeons — Fantasy Adventure Game",
 			"description": "Explore dangerous ruins in Temnorid Dungeons: fight monsters, defeat bosses and find rare treasure, gear and magical artefacts for your heroes."
@@ -60,6 +96,12 @@
 				"summary": "Пригоди, підземелля та пошук артефактів.",
 				"paragraphs": [
 					"Досліджуй небезпечні руїни, бийся з монстрами, перемагай босів і знаходь рідкісні скарби. Здобувай спорядження та магічні артефакти для своїх героїв."
+				],
+				"features": [
+					"Одне компактне підземелля: монстри, бос із помітним попередженням про удар і скриня, яку він охороняє",
+					"Меч і ударна хвиля; зелені кулі зцілення від монстрів",
+					"Здобич: золото, Вогняний клинок і Печатка боса",
+					"Кооператив до чотирьох героїв"
 				]
 			},
 			"en": {
@@ -67,13 +109,29 @@
 				"summary": "Adventures, dungeons and the hunt for artefacts.",
 				"paragraphs": [
 					"Explore dangerous ruins, fight monsters, defeat bosses and find rare treasure. Win gear and magical artefacts for your heroes."
+				],
+				"features": [
+					"One compact dungeon: monsters, a boss with a visible attack warning and the chest it guards",
+					"A sword and a shockwave; green heal orbs dropped by monsters",
+					"Loot: gold, the Ember Blade and a Boss Sigil",
+					"Co-op for up to four heroes"
 				]
 			}
 		}
 	},
 	{
 		"slug": "conquest",
+		"url": "https://conquest.temnorid.com",
 		"status": "in-development",
+		"version": "0.3.0",
+		"platforms": [
+			"windows",
+			"android",
+			"ios"
+		],
+		"players": 4,
+		"download": "https://github.com/WebArtWork/conquest.temnorid.com/releases/latest/download/Temnorid-Conquest-Setup.exe",
+		"repo": "https://github.com/WebArtWork/conquest.temnorid.com",
 		"seo": {
 			"title": "Conquest — Territory War Game",
 			"description": "Command troops in Temnorid Conquest: plan sieges, capture villages and cities, defend your lands and change the political map of the world."
@@ -84,6 +142,12 @@
 				"summary": "Війни за території та захоплення поселень.",
 				"paragraphs": [
 					"Командуй військами, плануй облоги, атакуй ворожі села й міста та захищай власні землі. Результати битв змінюють політичну карту Темнороду."
+				],
+				"features": [
+					"Штурмуй село як лорд: меч і Ривок, бій власною персоною",
+					"Дві дороги до перемоги: переможи ворожого лорда або дістанься зали в серці села",
+					"Починай із власного села з Лордів",
+					"До чотирьох лордів штурмують разом"
 				]
 			},
 			"en": {
@@ -91,14 +155,29 @@
 				"summary": "Wars for territory and the capture of settlements.",
 				"paragraphs": [
 					"Command troops, plan sieges, attack enemy villages and cities, and defend your own lands. The outcome of each battle changes the political map of Temnorid."
+				],
+				"features": [
+					"Storm a village as a Lord, fighting in person with a sword and the Charge",
+					"Two ways to win: defeat the enemy Lord or reach the hall at the heart of the village",
+					"March out from your own Lords home village",
+					"Up to four Lords attack together"
 				]
 			}
 		}
 	},
 	{
 		"slug": "arena",
-		"url": "https://temnorid-arena.webart.work",
-		"status": "released",
+		"url": "https://arena.temnorid.com",
+		"status": "in-development",
+		"version": "0.2.0",
+		"platforms": [
+			"windows",
+			"android",
+			"ios"
+		],
+		"players": 4,
+		"download": "https://github.com/WebArtWork/arena.temnorid.com/releases/latest/download/Temnorid-Arena-Setup.exe",
+		"repo": "https://github.com/WebArtWork/arena.temnorid.com",
 		"seo": {
 			"title": "Arena — Heroic Duel Game",
 			"description": "Duel other heroes in Temnorid Arena with weapons and elemental magic. Win fights, raise your reputation and earn unique trophies."
@@ -109,6 +188,12 @@
 				"summary": "Героїчні поєдинки, слава та трофеї.",
 				"paragraphs": [
 					"Виходь на арену, змагайся з іншими героями, використовуй зброю та стихійну магію. Перемагай, підвищуй репутацію й здобувай унікальні нагороди."
+				],
+				"features": [
+					"Бій усіх проти всіх у кам’яному дворі: Воїн, Лучник або Маг",
+					"Періоди по 90 секунд: найкращий боєць кожного класу стає Героєм",
+					"Боти доповнюють склад бійців",
+					"Онлайн до чотирьох гравців, працює й на телефонах"
 				]
 			},
 			"en": {
@@ -116,14 +201,19 @@
 				"summary": "Heroic duels, glory and trophies.",
 				"paragraphs": [
 					"Step into the arena, face other heroes, and fight with weapons and elemental magic. Win, raise your reputation and earn unique rewards."
+				],
+				"features": [
+					"A free-for-all in a stone courtyard as a Warrior, Archer or Mage",
+					"90-second periods: the best fighter of each class becomes that class’s Hero",
+					"Bots fill the remaining fighters",
+					"Up to four players online, phones supported"
 				]
 			}
 		}
 	},
 	{
 		"slug": "intrigue",
-		"url": "https://temnorid-conquest.webart.work",
-		"status": "released",
+		"status": "in-development",
 		"seo": {
 			"title": "Intrigue — Political Strategy Game",
 			"description": "Temnorid Intrigue is a board and online strategy game of alliances, factions and plots, where political wins bring resources to cities in Lords."
@@ -147,7 +237,15 @@
 	},
 	{
 		"slug": "hippodrome",
+		"url": "https://hippodrome.temnorid.com",
 		"status": "in-development",
+		"version": "0.4.0",
+		"platforms": [
+			"windows"
+		],
+		"players": 4,
+		"download": "https://github.com/WebArtWork/hippodrome.temnorid.com/releases/latest/download/Temnorid-Hippodrome-Setup.exe",
+		"repo": "https://github.com/WebArtWork/hippodrome.temnorid.com",
 		"seo": {
 			"title": "Hippodrome: Medieval Horse Racing Game",
 			"description": "Breed, train and race horses in Temnorid Hippodrome: run village fairs and city tournaments, win bloodlines and saddles, and send fast mounts to the armies of Lords."
@@ -160,6 +258,12 @@
 					"Розводь і тренуй коней, годуй їх і виводь на перегони. Швидкість, витривалість і норов коня разом із твоїм вмінням тримати темп вирішують, хто прийде першим.",
 					"Починай із сільських ярмарків, а далі змагайся на міських турнірах із призами та ставками. Перемоги приносять родоводи, сідла та кінську броню, які стають у пригоді в Завоюванні й на Арені.",
 					"Швидкі коні з Іподрому поповнюють армії Лордів, а згодом перегони можна буде проводити просто в твоїх містах."
+				],
+				"features": [
+					"Три кола навколо траси проти суперників, що обганяють і прискорюються",
+					"Shift дає ривок (витривалість), пробіл — стрибок через перешкоди",
+					"Коні штовхають одне одного й сповільнюються біля огорожі",
+					"Перегони онлайн до чотирьох гравців"
 				]
 			},
 			"en": {
@@ -169,13 +273,29 @@
 					"Breed and train horses, feed them well and bring them to the track. A horse's speed, stamina and temper, together with your sense of pacing, decide who crosses the line first.",
 					"Start at village fairs, then compete in city tournaments with prizes and betting. Wins bring bloodlines, saddles and horse armour that help in Conquest and the Arena.",
 					"Fast horses from the Hippodrome join the armies of Lords, and in time races can be held right inside your cities."
+				],
+				"features": [
+					"Three laps around the track against riders that overtake and boost",
+					"Shift for a burst of speed (it costs stamina), Space to jump the hurdles",
+					"Horses push each other and slow down against the rails",
+					"Race online with up to four players"
 				]
 			}
 		}
 	},
 	{
 		"slug": "caravan",
+		"url": "https://caravan-guard.temnorid.com",
 		"status": "in-development",
+		"version": "0.1.0",
+		"platforms": [
+			"windows",
+			"android",
+			"ios"
+		],
+		"players": 4,
+		"download": "https://github.com/WebArtWork/caravan-guard.temnorid.com/releases/latest/download/Temnorid-CaravanGuard-Setup.exe",
+		"repo": "https://github.com/WebArtWork/caravan-guard.temnorid.com",
 		"seo": {
 			"title": "Caravan Guard: Trade Route Defence Game",
 			"description": "Protect trade caravans on the roads of Temnorid Caravan Guard: place guards along the route, fend off raiders and bring goods safely to the markets of Lords."
@@ -187,6 +307,12 @@
 				"paragraphs": [
 					"Торговий караван вирушає дорогою Темнороду, а на шляху чекають розбійники, степові загони та голодні вовки. Розставляй охорону вздовж маршруту, обирай, де поставити лучників, списників і засідки, та доведи вози до цілі.",
 					"Чим більше товарів дійде, тим жвавіша торгівля у твоєму місті в Лордах: дохід ринку росте, а купці приїздять частіше. Втрачений караван означає порожні лавки."
+				],
+				"features": [
+					"Дивись зверху: купуй і покращуй лучників на десяти постах охорони",
+					"Три хвилі нападників, 180 монет на старті",
+					"Доведи три вози до воріт ринку",
+					"Кооператив до чотирьох командирів"
 				]
 			},
 			"en": {
@@ -195,13 +321,29 @@
 				"paragraphs": [
 					"A trade caravan sets out along a Temnorid road, and raiders, steppe riders and hungry wolves lie in wait. Place guards along the route, decide where archers, spearmen and ambushes go, and bring the wagons home.",
 					"The more goods arrive, the busier trade becomes in your city in Lords: market income grows and merchants visit more often. A lost caravan means empty stalls."
+				],
+				"features": [
+					"Play from above: buy and upgrade archers at ten guard posts",
+					"Three waves of attackers and 180 coins to start with",
+					"Bring three wagons to the market gate",
+					"Co-op for up to four commanders"
 				]
 			}
 		}
 	},
 	{
 		"slug": "legends",
+		"url": "https://legends.temnorid.com",
 		"status": "in-development",
+		"version": "0.1.0",
+		"platforms": [
+			"windows",
+			"android",
+			"ios"
+		],
+		"players": 2,
+		"download": "https://github.com/WebArtWork/legends.temnorid.com/releases/latest/download/Temnorid-Legends-Setup.exe",
+		"repo": "https://github.com/WebArtWork/legends.temnorid.com",
 		"seo": {
 			"title": "Legends: Story Action Adventure Game",
 			"description": "Temnorid Legends is a story-driven 3D action, adventure and survival-horror game: play the legends of different heroes, explore abandoned villages and ancient dungeons, fight, solve riddles and uncover the secrets of Temnorid."
@@ -213,6 +355,12 @@
 				"paragraphs": [
 					"Кожна легенда має власного героя, сюжет і кінцівку. Досліджуй покинуті села та стародавні підземелля, бийся з тим, що там живе, розгадуй загадки та відкривай таємниці світу.",
 					"Перше демо, «Покинуте село», відправляє воїна з’ясувати, чому прикордонне поселення замовкло. Фіксовані кінематографічні камери під час дослідження, камера через плече в бою, короткі сюжетні сцени. Нові легенди — оборона фортеці, загублений храм, чорний ліс і падіння короля — використають ті самі системи."
+				],
+				"features": [
+					"Перше демо «Займище»: 15–20 хвилин таємниці й виживання",
+					"Фіксовані кінематографічні камери під час огляду, камера за плечем у бою",
+					"Меч, щит і перекат; проклятий бос і замок із трьома символами",
+					"Двоє героїв можуть досліджувати село разом"
 				]
 			},
 			"en": {
@@ -221,13 +369,29 @@
 				"paragraphs": [
 					"Every legend has its own hero, plot and ending. Explore abandoned villages and ancient dungeons, fight what lives there, solve riddles and uncover the secrets of the world.",
 					"The first demo, The Abandoned Village, sends a warrior to find out why a border settlement went silent. Fixed cinematic cameras while exploring, an over-the-shoulder camera in a fight, short story scenes. New legends (a fortress under siege, a lost temple, the black forest and the fall of a king) will use the same systems."
+				],
+				"features": [
+					"First demo, The Abandoned Village: 15 to 20 minutes of mystery and survival horror",
+					"Fixed cinematic cameras while exploring, an over-the-shoulder camera in fights",
+					"Sword, shield and roll; a cursed boss and a three-symbol lock",
+					"Two heroes can explore the village together"
 				]
 			}
 		}
 	},
 	{
 		"slug": "master",
+		"url": "https://master.temnorid.com",
 		"status": "in-development",
+		"version": "0.1.0",
+		"platforms": [
+			"windows",
+			"android",
+			"ios"
+		],
+		"players": 4,
+		"download": "https://github.com/WebArtWork/master.temnorid.com/releases/latest/download/Temnorid-Master-Setup.exe",
+		"repo": "https://github.com/WebArtWork/master.temnorid.com",
 		"seo": {
 			"title": "Master: Medieval Workshop Career Game",
 			"description": "Temnorid Master is a cozy offline workshop game: learn seven trades (stable, scribe, forge, workshop, kitchen, tailor, herbalist), do short hands-on orders with the mouse, raise and train a foal and earn coins and experience in the world of Temnorid."
@@ -238,7 +402,13 @@
 				"summary": "Обери ремесло, зроби роботу, заслужи ім’я.",
 				"paragraphs": [
 					"Теплий середньовічний цех, де ти вчишся семи ремесел власними руками: доглядай і тренуй лоша, перевіряй і скріплюй печаткою документи, кувай, збирай механізми, вари, ший і готуй трав’яні набори. Короткі замовлення, пряма робота мишкою, чесні повтори.",
-					"Один гаманець, один рівень і одне збереження на всі ремесла; без реклами, входів і мережі. Помилка лише означає, що гра пояснить причину, а ти спробуєш ще раз безкоштовно. «Майстер» замінює окремі ігри «Улюбленці» та «Писар»."
+					"Один гаманець, один рівень і одне збереження на всі ремесла; без реклами й входів; працює без мережі, а кооператив — за бажанням. Помилка лише означає, що гра пояснить причину, а ти спробуєш ще раз безкоштовно."
+				],
+				"features": [
+					"Сім ремесел в одній майстерні: стайня, писар, кузня, верстак, кухня, кравець і травник",
+					"Дванадцять авторських замовлень, оплата за якість, повтор без штрафу",
+					"Один гаманець, один рівень і одне збереження; працює без мережі",
+					"Легкий кооператив до чотирьох"
 				]
 			},
 			"en": {
@@ -246,14 +416,30 @@
 				"summary": "Choose a trade, do the work, earn your name.",
 				"paragraphs": [
 					"A warm medieval workshop where you learn seven trades with your own hands: raise and train a foal, verify and seal documents, forge, build mechanisms, cook, sew and prepare herb bundles. Short orders, direct mouse work, fair retries.",
-					"One wallet, one level and one save for every trade; no ads, no logins and no network. A mistake only means the game tells you why and you try again for free. Master replaces the separate Pets and Scribe games."
+					"One wallet, one level and one save for every trade; no ads and no logins; it works offline, and co-op is optional. A mistake only means the game tells you why and you try again for free."
+				],
+				"features": [
+					"Seven trades in one workshop: stable, scribe, forge, workshop, kitchen, tailor and herbalist",
+					"Twelve authored orders paid by quality, with free retries",
+					"One wallet, one level and one save; works offline",
+					"Light co-op for up to four"
 				]
 			}
 		}
 	},
 	{
 		"slug": "escape",
+		"url": "https://escape.temnorid.com",
 		"status": "in-development",
+		"version": "0.1.0",
+		"platforms": [
+			"windows",
+			"android",
+			"ios"
+		],
+		"players": 2,
+		"download": "https://github.com/WebArtWork/escape.temnorid.com/releases/latest/download/Temnorid-Escape-Setup.exe",
+		"repo": "https://github.com/WebArtWork/escape.temnorid.com",
 		"seo": {
 			"title": "Escape: Medieval Prison Escape Game",
 			"description": "Temnorid Escape is a short offline adventure: a captured scout wakes in a village watchtower prison and escapes through clues, three puzzles and one patrolling guard, seen through fixed cinematic cameras."
@@ -265,6 +451,12 @@
 				"paragraphs": [
 					"Захоплений розвідник прокидається в камері під сторожовою вежею села. Ні зброї, ні бою: лише уважність, терпіння й навколишні речі. Знайди підказки, розв'яжи три загадки, пройди повз охоронця й вийди через службові ворота.",
 					"Класичні нерухомі камери, десять-п'ятнадцять хвилин гри, збереження, підказки без примусу. Це перший епізод: пізніше втеча стане наслідком провалених місій розвідки й крадіжки у Lords."
+				],
+				"features": [
+					"Фіксовані камери, три головоломки й один вартовий на обході",
+					"Без зброї й бою: спостерігай і чекай слушної миті",
+					"10–15 хвилин, підказки не нав’язуються",
+					"Двоє в’язнів можуть тікати разом"
 				]
 			},
 			"en": {
@@ -273,13 +465,29 @@
 				"paragraphs": [
 					"A captured scout wakes in a cell under a village watchtower. No weapons and no combat: only observation, patience and the things around you. Find the clues, solve three puzzles, slip past a guard and leave by the service gate.",
 					"Classic fixed cameras, ten to fifteen minutes of play, saving and hints that never force you. This is the first episode; later an escape will follow a failed scouting or theft mission in Lords."
+				],
+				"features": [
+					"Fixed cameras, three puzzles and one patrolling guard",
+					"No weapons and no combat: observe and wait for your moment",
+					"10 to 15 minutes, with hints that never force you",
+					"Two prisoners can escape together"
 				]
 			}
 		}
 	},
 	{
 		"slug": "detective",
+		"url": "https://detective.temnorid.com",
 		"status": "in-development",
+		"version": "0.1.0",
+		"platforms": [
+			"windows",
+			"android",
+			"ios"
+		],
+		"players": 2,
+		"download": "https://github.com/WebArtWork/detective.temnorid.com/releases/latest/download/Temnorid-Detective-Setup.exe",
+		"repo": "https://github.com/WebArtWork/detective.temnorid.com",
 		"seo": {
 			"title": "Detective: Medieval Village Investigation Game",
 			"description": "Temnorid Detective is a short offline investigation: walk a medieval village, inspect clues, question residents, compare their accounts and report whom you believe, or that the evidence is not enough. You can be wrong."
@@ -291,6 +499,12 @@
 				"paragraphs": [
 					"У коморі села Грейфорд зникли чотири мішки зерна, а нічний сторож загинув. Обійди село, огляньте сліди, вислухай людей, порівняй їхні розповіді та скажи старості, кому ти віриш, або що доказів недостатньо.",
 					"Класичні нерухомі камери, п'ятнадцять-двадцять п'ять хвилин гри й чесна невпевненість: гра ніколи не каже, чи твій звіт був правильним. Це перша справа; пізніше розслідування виникатимуть із подій у Lords."
+				],
+				"features": [
+					"Огляд місць, допити, порівняння свідчень, доповідь старості",
+					"Помилкова доповідь — звичайна кінцівка, а не поразка",
+					"15–25 хвилин у селі Грейфорд",
+					"Двоє слідчих можуть працювати разом"
 				]
 			},
 			"en": {
@@ -299,6 +513,12 @@
 				"paragraphs": [
 					"Four sacks of grain are missing from the granary of Greyford and the night watchman is dead. Walk the village, inspect the clues, hear the people out, compare their accounts and tell the elder whom you believe, or that the evidence is not enough.",
 					"Classic fixed cameras, fifteen to twenty-five minutes of play and honest uncertainty: the game never tells you whether your report was right. This is the first case; later, investigations will come from events in Lords."
+				],
+				"features": [
+					"Inspect places, question people, compare accounts and report to the elder",
+					"A wrong report is a normal ending, not a game over",
+					"15 to 25 minutes in the village of Greyford",
+					"Two investigators can work together"
 				]
 			}
 		}
